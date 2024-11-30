@@ -263,6 +263,8 @@ return table.extend({
                     else
                         Osi.ApplyStatus(character, "EPI_GALEGOD", -1)
                     end
+                elseif Osi.HasAppliedStatus(character, "MIND_FLAYER_FORM") == 1 then
+                    Osi.ApplyStatus(character, "TOT_ASCENSION_MINDFLAYER", -1)
                 else
                     Osi.ApplyStatus(character, "TOT_ASCENSION", -1)
                 end
@@ -273,10 +275,10 @@ return table.extend({
         Id = "BuyMindflayerForm",
         Name = Localization.Get("hd58a2099g6c22g499fga7acgab8d6fda5615"),
         Icon = "TadpoleSuperPower_Ceremorphosis",
-        Cost = 900,
+        Cost = 1200,
         Amount = 1,
         Character = true,
-        Requirement = 75,
+        Requirement = 200,
         OnBuy = function(self, character)
             Osi.ApplyStatus(character, "MIND_FLAYER_FORM", -1)
             -- takes a bit to transform
@@ -477,61 +479,61 @@ return table.extend({
             Osi.PROC_CAMP_GiveFreeSupplies()
         end,
     },
-    {
-        Id = "ShortRestRecovery",
-        Name = "Restore Resources on Short Rest",
-        Icon = "Action_EndGame_IsobelHeal",
-        Cost = 200,
-        Requirement = 100,
-        Amount = 1,
-        Character = false,
-        OnBuy = function(self, character)
-            self:OnInit()
-        end,
-        Register = U.Once(function(self)
-            Ext.Osiris.RegisterListener("ShortRested", 1, "after", function(character)
-                local entity = Ext.Entity.Get(character)
-                local resources = get(entity.ActionResources, "Resources", {})
-                for uuid, list in pairs(resources) do
-                    for _, resource in pairs(list) do
-                        L.Dump(
-                            "Restoring Resource",
-                            character,
-                            get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
-                        )
-
-                        local toRestore = math.max(1, resource.MaxAmount / 2)
-                        resource.Amount = math.min(resource.MaxAmount, math.floor(resource.Amount + toRestore))
-                    end
-                end
-
-                entity:Replicate("ActionResources")
-            end)
-        end),
-        OnInit = function(self)
-            if self.Bought > 0 then
-                self:Register()
-            end
-        end,
-    },
-    -- {
-    --     Id = "BuyRestore",
-    --     Name = __("Fully Restore Character"),
-    --     Icon = "Action_EndGame_IsobelHeal",
-    --     Description = __("Heal character and restore used spells."),
-    --     Cost = 20,
-    --     Amount = nil,
-    --     Character = true,
-    --     OnBuy = function(self, character)
-    --         -- for _, p in pairs(GE.GetParty()) do
-    --         --     Osi.PROC_CharacterFullRestore(p.Uuid.EntityUuid)
-    --         --     Osi.UseSpell(p.Uuid.EntityUuid, "Shout_DivineIntervention_Healing", p.Uuid.EntityUuid)
-    --         -- end
-    --         -- Osi.PROC_GLO_PartyMembers_TempRestore(character)
-    --         Osi.PROC_CharacterFullRestore(character)
-    --         -- Osi.ApplyStatus(character, "ALCH_POTION_REST_SLEEP_GREATER_RESTORATION", 1)
-    --     end,
-    -- },
+--   {
+--       Id = "ShortRestRecovery",
+--       Name = "Restore Resources on Short Rest",
+--       Icon = "Action_EndGame_IsobelHeal",
+--       Cost = 200,
+--       Requirement = 100,
+--       Amount = 1,
+--       Character = false,
+--       OnBuy = function(self, character)
+--           self:OnInit()
+--       end,
+--       Register = U.Once(function(self)
+--           Ext.Osiris.RegisterListener("ShortRested", 1, "after", function(character)
+--               local entity = Ext.Entity.Get(character)
+--               local resources = get(entity.ActionResources, "Resources", {})
+--               for uuid, list in pairs(resources) do
+--                   for _, resource in pairs(list) do
+--                       L.Dump(
+--                           "Restoring Resource",
+--                          character,
+--                           get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
+--                       )
+--
+--                       local toRestore = math.max(1, resource.MaxAmount / 2)
+--                       resource.Amount = math.min(resource.MaxAmount, math.floor(resource.Amount + toRestore))
+--                   end
+--               end
+--
+--               entity:Replicate("ActionResources")
+--           end)
+--       end),
+--       OnInit = function(self)
+--           if self.Bought > 0 then
+--               self:Register()
+--           end
+--       end,
+--   },
+--    {
+--         Id = "BuyRestore",
+--         Name = __("Fully Restore Character"),
+--         Icon = "Action_EndGame_IsobelHeal",
+--         Description = __("Heal character and restore used spells."),
+--         Cost = 20,
+--         Amount = nil,
+--         Character = true,
+--         OnBuy = function(self, character)
+--              for _, p in pairs(GE.GetParty()) do
+--                  Osi.PROC_CharacterFullRestore(p.Uuid.EntityUuid)
+--                  Osi.UseSpell(p.Uuid.EntityUuid, "Shout_DivineIntervention_Healing", p.Uuid.EntityUuid)
+--              end
+--              Osi.PROC_GLO_PartyMembers_TempRestore(character)
+--              Osi.PROC_CharacterFullRestore(character)
+--              Osi.ApplyStatus(character, "ALCH_POTION_REST_SLEEP_GREATER_RESTORATION", 1)
+--        end,
+--    },
     {
         Id = "Moonshield",
         Name = __("Get Pixie Blessing"),
@@ -681,7 +683,7 @@ return table.extend({
         Icon = "GenericIcon_Intent_Healing",
         Description = Localization.Get("hce17bfdcg2d30g4a97g9850g0219c6a5116a", 20), --"Grants 20 Temporary HP after Long Rest.",
         Cost = 80,
-        Requirement = 100,
+        Requirement = 75,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
@@ -713,7 +715,7 @@ return table.extend({
             Ext.Stats.Get("LOW_Astarion_VampireAscendant").DescriptionParams
         ), --"Gain Ascendant Bite and Misty Escape (Vampire Ascendant).",
         Cost = 300,
-        Requirement = 100,
+        Requirement = 75,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
@@ -726,7 +728,7 @@ return table.extend({
         Icon = "PassiveFeature_Generic_Blood",
         Description = Localization.Get("h473ffdccgc70fg4761gaa67gbf0fb07d475f"), --"Gain Stunning Gaze and Critical Hit requirement reduced by 2.",
         Cost = 80,
-        Requirement = 100,
+        Requirement = 75,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
@@ -745,8 +747,8 @@ return table.extend({
         Name = Localization.Get("h7ee059fega56bg48d4g99abg0a1ee50238d1"),
         Description = Localization.Get("h67dd3fb6ge300g42f0gaea3g0ecb374132c7", 10),
         Icon = "Action_DarkUrge",
-        Requirement = 100,
-        Cost = 100,
+        Requirement = 75,
+        Cost = 200,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)

@@ -37,8 +37,8 @@ function GameMode.GetTiers(cow, score)
         { name = C.EnemyTier[3], min = 60, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
         { name = C.EnemyTier[4], min = 80, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
         { name = C.EnemyTier[5], min = 100, value = 48, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
-        { name = C.EnemyTier[6], min = 160, value = 80, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-        { name = C.EnemyTier[7], min = 240, value = 170, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+        { name = C.EnemyTier[6], min = 140, value = 70, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
+        { name = C.EnemyTier[7], min = 160, value = 140, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
     }
 
     if GameMode.IsHardMode() then
@@ -48,8 +48,8 @@ function GameMode.GetTiers(cow, score)
             { name = C.EnemyTier[3], min = 40, value = 15, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
             { name = C.EnemyTier[4], min = 60, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
             { name = C.EnemyTier[5], min = 80, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
-            { name = C.EnemyTier[6], min = 120, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-            { name = C.EnemyTier[7], min = 200, value = 100, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[6], min = 100, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
+            { name = C.EnemyTier[7], min = 130, value = 118, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
         }
     end
 
@@ -190,7 +190,7 @@ function GameMode.GenerateScenario(score, tiers)
                     end
                     if tier.name == C.EnemyTier[6] or tier.name == C.EnemyTier[7] then
                         table.insert(timeline, {})
-                        numRounds = numRounds + 1
+                        numRounds = numRounds + 2
 
                         if not timeline[roundIndex + 1] then
                             table.insert(timeline, roundIndex + 1, {})
@@ -332,6 +332,11 @@ function GameMode.ApplyDifficulty(enemy, score)
         return
     end
 
+-- Legendary Action summons like the Claws of Tu'narath become exponentially more dangerous if they're allowed to scale
+    if enemy.Name == "Temporary" then
+        return
+    end
+
     local partySizeMod = math.exp((Player.PartySize() - 4) * 0.2)
 
     local function scale(i, h)
@@ -348,7 +353,18 @@ function GameMode.ApplyDifficulty(enemy, score)
     end
 
     local mod = scale(score, GameMode.IsHardMode())
-    if mod == 0 then
+
+    if enemy.Tier == 4 or enemy.Tier == "ultra" then
+        mod = math.floor(mod / 1.2)
+    elseif enemy.Tier == 5 or enemy.Tier == "epic" then
+        mod = math.floor(mod / 1.5)
+    elseif enemy.Tier == 6 or enemy.Tier == "legendary" then
+        mod = math.floor(mod / 2)
+    elseif enemy.Tier == 7 or enemy.Tier == "mythical" then
+        mod = math.floor(mod / 3.3333)
+    end
+
+    if mod <= 0 then
         return
     end
 
@@ -576,7 +592,7 @@ Schedule(function()
 
             for i, tier in ipairs(tiers) do
                 local weight = tier.amount / 100 * 0.9 -- bias towards tiers with more enemies
-                tier.weight = weight + (1 / (i + 1) / 2) -- bias towards lower tiers
+                tier.weight = weight + (1 / (i + 1)) -- bias towards lower tiers
                 L.Debug("Tier", tier.name, tier.weight)
             end
 

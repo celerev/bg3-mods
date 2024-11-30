@@ -13,6 +13,114 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 10,
+			Pwr = 48.0,
+			Stats = 16,
+			Vit = 52,
+		},
+		Name = "MOD_Hollyphant",
+		TemplateId = "837aee98-23e1-49c3-9dea-cef2f42fe684",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 5,
+			Pwr = 67.0,
+			Stats = 14,
+			Vit = 85,
+		},
+		Name = "MOD_Displacer_Beast_Combat",
+		TemplateId = "399e7864-a949-4d2f-81ea-a2504eabe5d5",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 20,
+			Level = 23,
+			Pwr = 300.0,
+			Stats = 24,
+			Vit = 400,
+		},
+		Name = "MOD_Vlaakith_Combat",
+		TemplateId = "e0a624a2-55b3-4438-96b5-59de300940ac",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 20,
+			Pwr = 270.0,
+			Stats = 24,
+			Vit = 200,
+		},
+		Name = "MOD_Elminster_Combat",
+		TemplateId = "f7e56aa4-f824-4185-b62c-0ebb700d7169",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 12,
+			Pwr = 125.0,
+			Stats = 20,
+			Vit = 97,
+		},
+		Name = "MOD_Mizora_Combat",
+		TemplateId = "b1d45242-e99e-4760-80da-889b2ae6e7b4",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 20,
+			Pwr = 240.0,
+			Stats = 18,
+			Vit = 200,
+		},
+		Name = "MOD_Minsc_Combat",
+		TemplateId = "555cafcf-999c-4435-a72a-c6373270b22b",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 16,
+			Pwr = 150,
+			Stats = 19,
+			Vit = 666,
+		},
+		Name = "MOD_Raphael_Combat",
+		TemplateId = "cecb3b64-77b9-4eb4-b99f-8029ac168cd7",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 20,
+			Level = 18,
+			Pwr = 220,
+			Stats = 22,
+			Vit = 245,
+		},
+		Name = "MOD_Myrkul_Combat",
+		TemplateId = "30d6a794-fbf1-453d-9e3f-35b51058cd15",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 20,
+			Level = 12,
+			Pwr = 285.0,
+			Stats = 20,
+			Vit = 145,
+		},
+		Name = "MOD_Orin_Combat",
+		TemplateId = "6cd71603-354c-4c35-a2d9-199958a4beb3",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 17,
 			Level = 9,
 			Pwr = 92.0,
@@ -141,7 +249,7 @@ return {
 		},
 		Name = "TOT_Dwarves_Female_Hill_FlamingFist_Cleric",
 		TemplateId = "374535ec-df6a-49f0-8212-9e42dc6fa112",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -179,19 +287,19 @@ return {
 		TemplateId = "e2a53f2c-2e2b-4fa2-a9b2-cee2c5e0578c",
 		Tier = "low",
 	},
-	-- ppl don't like this one
-	-- {
-	-- 	Info = {
-	-- 		AC = 15,
-	-- 		Level = 11,
-	-- 		Pwr = 99.0,
-	-- 		Stats = 16,
-	-- 		Vit = 84,
-	-- 	},
-	-- 	Name = "TOT_LOW_OskarsBeloved_MonstrousSpirit",
-	-- 	TemplateId = "08fe6015-a6e6-4370-9944-6f8ca8fe6f7b",
-	-- 	Tier = "legendary",
-	-- },
+--	 ppl don't like this one
+	 {
+	 	Info = {
+	 		AC = 15,
+	 		Level = 11,
+	 		Pwr = 99.0,
+	 		Stats = 16,
+	 		Vit = 84,
+	 	},
+	 	Name = "TOT_LOW_OskarsBeloved_MonstrousSpirit",
+	 	TemplateId = "08fe6015-a6e6-4370-9944-6f8ca8fe6f7b",
+	 	Tier = "legendary",
+	 },
 	{
 		Info = {
 			AC = 12,
@@ -341,7 +449,7 @@ return {
 			AC = 16,
 			Level = 8,
 			Pwr = 94.0,
-			Stats = 21,
+			Stats = 19,
 			Vit = 76,
 		},
 		Name = "TOT_Tieflings_Male_Mephistopheles_Cultist_Bhaal_DeathsHead",
@@ -394,7 +502,7 @@ return {
 		},
 		Name = "TOT_Dwarves_Male_Hill_FlamingFist_Cleric",
 		TemplateId = "07e193b9-e9b2-4328-8427-e09d8389c9cc",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -510,7 +618,7 @@ return {
 			AC = 21,
 			Level = 10,
 			Pwr = 138.0,
-			Stats = 25,
+			Stats = 22,
 			Vit = 136,
 		},
 		Name = "TOT_Deva_Male_CursedTome",
@@ -702,7 +810,7 @@ return {
 			AC = 21,
 			Level = 10,
 			Pwr = 138.0,
-			Stats = 25,
+			Stats = 22,
 			Vit = 136,
 		},
 		Name = "TOT_Deva_Male_PlanarAlly_Banite",
@@ -959,7 +1067,7 @@ return {
 		},
 		Name = "TOT_Humans_Female_FlamingFist_Cleric",
 		TemplateId = "b6033940-18c9-4bdc-bfe1-4f90f13402d2",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -1193,8 +1301,8 @@ return {
 		Info = {
 			AC = 19,
 			Level = 17,
-			Pwr = 283.0,
-			Stats = 24,
+			Pwr = 270.0,
+			Stats = 20,
 			Vit = 400,
 		},
 		Name = "TOT_Dragon_Red",
@@ -1230,7 +1338,7 @@ return {
 			AC = 21,
 			Level = 10,
 			Pwr = 151.0,
-			Stats = 25,
+			Stats = 22,
 			Vit = 162,
 		},
 		Name = "TOT_LOW_Deva_Male_StormshoreTabernacle_Curse",
@@ -1247,7 +1355,7 @@ return {
 		},
 		Name = "TOT_Humans_Male_FlamingFist_Cleric",
 		TemplateId = "ac3228f8-93f5-4eb5-be40-61bdc71865ec",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -1374,7 +1482,7 @@ return {
 			AC = 16,
 			Level = 8,
 			Pwr = 94.0,
-			Stats = 21,
+			Stats = 19,
 			Vit = 76,
 		},
 		Name = "TOT_Humans_Male_Cultist_Bhaal_DeathsHead",
@@ -1434,7 +1542,7 @@ return {
 			AC = 21,
 			Level = 10,
 			Pwr = 138.0,
-			Stats = 25,
+			Stats = 22,
 			Vit = 136,
 		},
 		Name = "TOT_Deva_Male_PlanarAlly",
@@ -1494,7 +1602,7 @@ return {
 			AC = 20,
 			Level = 16,
 			Pwr = 210.0,
-			Stats = 22,
+			Stats = 20,
 			Vit = 262,
 		},
 		Name = "TOT_S_LOW_MurderTribunal_Sarevok",
@@ -1621,18 +1729,18 @@ return {
 		TemplateId = "1dd82bc3-8f1c-404a-b8c6-18126f094304",
 		Tier = "ultra",
 	},
-	{
-		Info = {
-			AC = 14,
-			Level = 20,
-			Pwr = 179.5,
-			Stats = 27,
-			Vit = 185,
-		},
-		Name = "TOT_S_GLO_Elminster",
-		TemplateId = "52eb0a9e-f706-4e2c-9174-4da6c77f789f",
-		Tier = "legendary",
-	},
+--	{
+--		Info = {
+--			AC = 14,
+--			Level = 20,
+--			Pwr = 179.5,
+--			Stats = 24,
+--			Vit = 185,
+--		},
+--		Name = "TOT_S_GLO_Elminster",
+--		TemplateId = "52eb0a9e-f706-4e2c-9174-4da6c77f789f",
+--		Tier = "legendary",
+--	},
 	{
 		Info = {
 			AC = 16,
@@ -1720,14 +1828,38 @@ return {
 	{
 		Info = {
 			AC = 22,
-			Level = 10,
-			Pwr = 137.5,
+			Level = 11,
+			Pwr = 300.0,
 			Stats = 19,
 			Vit = 145,
 		},
 		Name = "TOT_MOO_Ketheric",
 		TemplateId = "307d5a85-aa03-42ab-afba-2832300d3041",
-		Tier = "mythical",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 70,
+		},
+		Name = "MOD_Humans_Male_AbsoluteGuard_Melee",
+		TemplateId = "27ae82ef-42d4-484e-95fe-2b003bba9271",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 80.5,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_Humans_Female_AbsoluteGuard_Caster",
+		TemplateId = "f4e91bcf-43c4-4bc9-b692-0481a57ad276",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2261,8 +2393,8 @@ return {
 		Info = {
 			AC = 19,
 			Level = 17,
-			Pwr = 281.0,
-			Stats = 22,
+			Pwr = 300.0,
+			Stats = 20,
 			Vit = 400,
 		},
 		Name = "TOT_Dragon_Skeletal",
@@ -2814,11 +2946,11 @@ return {
 			AC = 17,
 			Level = 12,
 			Pwr = 171.0,
-			Stats = 22,
+			Stats = 20,
 			Vit = 208,
 		},
-		Name = "TOT_Cazador",
-		TemplateId = "ab48a81f-8b31-4d26-b96c-bc4520103619",
+		Name = "MOD_Cazador_Combat",
+		TemplateId = "9ef2ca78-cdfa-4439-ba54-b76f380256f3",
 		Tier = "legendary",
 	},
 	{

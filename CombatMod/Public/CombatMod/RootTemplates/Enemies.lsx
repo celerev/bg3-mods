@@ -4941,7 +4941,7 @@
 						value="d4456846-e6c5-c890-f126-2d18432c6934-MOO_Ketheric_(Icon_Ketheric)" />
 					<attribute id="Equipment" type="FixedString" value="MOO_Ketheric" />
 					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions" />
-					<attribute id="LevelOverride" type="int32" value="10" />
+					<attribute id="LevelOverride" type="int32" value="11" />
 					<children>
 						<node id="Treasures">
 							<children>
