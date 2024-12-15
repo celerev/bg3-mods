@@ -38,7 +38,8 @@ function GameMode.GetTiers(cow, score)
         { name = C.EnemyTier[4], min = 80, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
         { name = C.EnemyTier[5], min = 100, value = 48, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
         { name = C.EnemyTier[6], min = 140, value = 70, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-        { name = C.EnemyTier[7], min = 160, value = 140, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+        { name = C.EnemyTier[7], min = 160, value = 120, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+        { name = C.EnemyTier[8], min = 180, value = 140, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
     }
 
     if GameMode.IsHardMode() then
@@ -49,7 +50,8 @@ function GameMode.GetTiers(cow, score)
             { name = C.EnemyTier[4], min = 60, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
             { name = C.EnemyTier[5], min = 80, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
             { name = C.EnemyTier[6], min = 100, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-            { name = C.EnemyTier[7], min = 130, value = 118, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[7], min = 130, value = 92, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[8], min = 150, value = 108, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
         }
     end
 
@@ -354,6 +356,7 @@ function GameMode.ApplyDifficulty(enemy, score)
 
     local mod = scale(score, GameMode.IsHardMode())
 
+-- Elminster's Intelligence should not be scaling at the same rate as a cow's Strength. One gains the ability to hit you, the other's already-devastating spells become irresistible.
     if enemy.Tier == 4 or enemy.Tier == "ultra" then
         mod = math.floor(mod / 1.2)
     elseif enemy.Tier == 5 or enemy.Tier == "epic" then
@@ -362,6 +365,8 @@ function GameMode.ApplyDifficulty(enemy, score)
         mod = math.floor(mod / 2)
     elseif enemy.Tier == 7 or enemy.Tier == "mythical" then
         mod = math.floor(mod / 3.3333)
+    elseif enemy.Tier == 8 or enemy.Tier == "divine" then
+        mod = math.floor(mod / 3.5)
     end
 
     if mod <= 0 then
@@ -567,7 +572,7 @@ Schedule(function()
             local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
-                local weight = tier.amount / 100 * 0.7 -- bias towards tiers with more enemies
+                local weight = tier.amount / 100 * 0.9 -- bias towards tiers with more enemies
                 tier.weight = weight + (1 / (i + 1)) -- bias towards lower tiers
                 L.Debug("Tier", tier.name, tier.weight)
             end
@@ -591,8 +596,8 @@ Schedule(function()
             local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
-                local weight = tier.amount / 100 * 0.9 -- bias towards tiers with more enemies
-                tier.weight = weight + (1 / (i + 1)) -- bias towards lower tiers
+                local weight = tier.amount / 100 * 0.7 -- bias towards tiers with more enemies
+                tier.weight = weight + (1 / (i + 1) / 2) -- bias towards lower tiers
                 L.Debug("Tier", tier.name, tier.weight)
             end
 

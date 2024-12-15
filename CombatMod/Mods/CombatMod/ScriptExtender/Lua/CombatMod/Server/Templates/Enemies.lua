@@ -25,6 +25,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 13,
+			Level = 3,
+			Pwr = 18.0,
+			Stats = 14,
+			Vit = 24,
+		},
+		Name = "MOD_Harpy_Combat",
+		TemplateId = "cc35a307-014c-460d-8b38-1ff8682aca33",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 3,
+			Pwr = 18.0,
+			Stats = 14,
+			Vit = 24,
+		},
+		Name = "MOD_Harpy_CombatB",
+		TemplateId = "34aeab13-5298-4c66-a4c6-362c80813a4f",
+		Tier = "low",
+	},
+	{
+		Info = {
 			AC = 14,
 			Level = 5,
 			Pwr = 67.0,
@@ -46,6 +70,18 @@ return {
 		Name = "MOD_Vlaakith_Combat",
 		TemplateId = "e0a624a2-55b3-4438-96b5-59de300940ac",
 		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 26,
+			Pwr = 400.0,
+			Stats = 28,
+			Vit = 580,
+		},
+		Name = "MOD_Zariel_Combat",
+		TemplateId = "ab463c51-4f10-42ca-b7a0-7c0fb65019d0",
+		Tier = "divine",
 	},
 	{
 		Info = {
@@ -74,6 +110,18 @@ return {
 	{
 		Info = {
 			AC = 15,
+			Level = 8,
+			Pwr = 102.0,
+			Stats = 20,
+			Vit = 91,
+		},
+		Name = "MOD_Balthazar_Combat",
+		TemplateId = "b1d45242-e99e-4760-80da-889b2ae6e7b4",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 15,
 			Level = 20,
 			Pwr = 240.0,
 			Stats = 18,
@@ -81,6 +129,30 @@ return {
 		},
 		Name = "MOD_Minsc_Combat",
 		TemplateId = "555cafcf-999c-4435-a72a-c6373270b22b",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 20,
+			Level = 20,
+			Pwr = 240.0,
+			Stats = 18,
+			Vit = 162,
+		},
+		Name = "MOD_Jaheira_Combat",
+		TemplateId = "497653cc-3914-4765-9c21-d06e4d0c8ad4",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 13,
+			Pwr = 180.0,
+			Stats = 16,
+			Vit = 183,
+		},
+		Name = "MOD_Djinni_Combat",
+		TemplateId = "4908f5fd-82f9-4de2-bde2-7bdaf151736b",
 		Tier = "legendary",
 	},
 	{
@@ -121,6 +193,42 @@ return {
 	},
 	{
 		Info = {
+			AC = 19,
+			Level = 16,
+			Pwr = 285.0,
+			Stats = 24,
+			Vit = 200,
+		},
+		Name = "MOD_Planetar_EnemyAI",
+		TemplateId = "32c9c3ba-e726-47fc-a9bc-518343538e29",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 20,
+			Pwr = 265.0,
+			Stats = 22,
+			Vit = 337,
+		},
+		Name = "MOD_Nightwalker_EnemyAI",
+		TemplateId = "39819e74-f931-4a2c-83f7-3f3a58190260",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 16,
+			Pwr = 225.0,
+			Stats = 19,
+			Vit = 185,
+		},
+		Name = "MOD_Eladrin_EnemyAI",
+		TemplateId = "c1513294-3fb0-462d-9481-b86550069118",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 17,
 			Level = 9,
 			Pwr = 92.0,
@@ -131,6 +239,17 @@ return {
 		TemplateId = "4c6748c9-e362-46d7-9ba1-1461be83cbf8",
 		Tier = "ultra",
 	},
+	{
+		Info = {
+			AC = 14,
+			Level = 9,
+			Pwr = 122.0,
+			Stats = 17,
+			Vit = 90,
+		},
+		Name = "MOD_Zrell_Combat",
+		TemplateId = "690361a5-940b-4b85-ad96-ac9cb4cc2b19",
+		Tier = "ultra",
 	{
 		Info = {
 			AC = 14,
@@ -153,6 +272,42 @@ return {
 		},
 		Name = "TOT_HookHorror_A",
 		TemplateId = "f3b6500b-0053-47c0-b062-4b67228ec34a",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 5,
+			Pwr = 65.5,
+			Stats = 3,
+			Vit = 62,
+		},
+		Name = "MOD_Eagle_Combat",
+		TemplateId = "6dca68dc-3640-4022-bdee-cff4528684fe",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 10,
+			Pwr = 58.5,
+			Stats = 13,
+			Vit = 51,
+		},
+		Name = "MOD_Alioramus_Combat",
+		TemplateId = "e9f35f5e-b653-497c-916f-66af70444043",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 10,
+			Pwr = 65.5,
+			Stats = 15,
+			Vit = 84,
+		},
+		Name = "MOD_Alioramus_Big_Combat",
+		TemplateId = "31ad44c3-546a-4f03-8bde-2d4535864ab4",
 		Tier = "high",
 	},
 	{
@@ -225,7 +380,19 @@ return {
 		},
 		Name = "TOT_Elemental_Water_ConjureElemental",
 		TemplateId = "046e20d0-8775-40d5-a19b-a64d684d1f3c",
-		Tier = "epic",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 6,
+			Pwr = 72.0,
+			Stats = 16,
+			Vit = 57,
+		},
+		Name = "MOD_Roah_Combat",
+		TemplateId = "af055247-73f3-4eed-90b5-a7a9c714572e",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -253,6 +420,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 16,
+			Level = 5,
+			Pwr = 54.0,
+			Stats = 15,
+			Vit = 48,
+		},
+		Name = "MOD_Wulbren_Combat",
+		TemplateId = "cff686ae-dc74-4fe1-aa7b-59ca75127928",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 8,
+			Pwr = 74.0,
+			Stats = 13,
+			Vit = 52,
+		},
+		Name = "MOD_Oblodra_Combat",
+		TemplateId = "f03e47b1-9b7d-4bc7-ada5-d24fc950aaad",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 13,
 			Level = 5,
 			Pwr = 46.0,
@@ -273,7 +464,7 @@ return {
 		},
 		Name = "TOT_Myrmidon_Air",
 		TemplateId = "bd08bf83-7d6d-4953-875f-a14b37dfc6a6",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -310,6 +501,18 @@ return {
 		},
 		Name = "TOT_BIRD_BlueJay",
 		TemplateId = "7249b7f2-5d91-4bd3-9b45-04195ce3a69f",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 1,
+			Pwr = 10.5,
+			Stats = -8,
+			Vit = 7,
+		},
+		Name = "MOD_Quasit_Combat",
+		TemplateId = "8d1e1ba7-e2e5-4481-b435-dd6c4c9be768",
 		Tier = "low",
 	},
 	{
@@ -374,6 +577,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 10,
+			Level = 6,
+			Pwr = 50.0,
+			Stats = 14,
+			Vit = 42,
+		},
+		Name = "MOD_MysterySpawn_Combat",
+		TemplateId = "149ac284-e091-4ea4-b475-4fe9ce54d108",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 11,
 			Level = 3,
 			Pwr = 29.0,
@@ -418,7 +633,7 @@ return {
 		},
 		Name = "TOT_Githyanki_Female_Gish_Strong",
 		TemplateId = "efe33532-dfc1-407b-8948-2ca89cbfc405",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -514,7 +729,19 @@ return {
 		},
 		Name = "TOT_Myrmidon_Water",
 		TemplateId = "dbe13a26-b5fa-4d81-8cac-1615e8835cb1",
-		Tier = "epic",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 5,
+			Pwr = 115.5,
+			Stats = 16,
+			Vit = 125,
+		},
+		Name = "MOD_Phase_Spider_Queen_Combat",
+		TemplateId = "dad9ba2f-316b-4852-9ac2-07f17a197777",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -563,20 +790,20 @@ return {
 		},
 		Name = "TOT_Elemental_Earth_ConjureElemental",
 		TemplateId = "d7d00e85-41d7-43b8-927b-47cd536a4fdb",
-		Tier = "epic",
+		Tier = "high",
 	},
-	{
-		Info = {
-			AC = 10,
-			Level = 1,
-			Pwr = 23.0,
-			Stats = 5,
-			Vit = 8,
-		},
-		Name = "TOT_Necromancer_A",
-		TemplateId = "f7ffd336-3158-4a60-921f-2692664adf62",
-		Tier = "low",
-	},
+--	{
+--		Info = {
+--			AC = 10,
+--			Level = 1,
+--			Pwr = 23.0,
+--			Stats = 5,
+--			Vit = 8,
+--		},
+--		Name = "TOT_Necromancer_A",
+--		TemplateId = "f7ffd336-3158-4a60-921f-2692664adf62",
+--		Tier = "low",
+--	},
 	{
 		Info = {
 			AC = 18,
@@ -599,7 +826,7 @@ return {
 		},
 		Name = "TOT_Undead_Mummy_CreateUndead",
 		TemplateId = "7a3c3f58-66b4-47de-9ef1-9335039c1ed1",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -661,18 +888,18 @@ return {
 		TemplateId = "cd9d7499-adcb-440b-b05f-7f6141862645",
 		Tier = "mid",
 	},
-	{
-		Info = {
-			AC = 18,
-			Level = 10,
-			Pwr = 107.0,
-			Stats = 15,
-			Vit = 100,
-		},
-		Name = "TOT_AdamantineGolem_A",
-		TemplateId = "21232d04-dd83-46ea-96f6-b5dc2428cb9c",
-		Tier = "legendary",
-	},
+--	{
+--		Info = {
+--			AC = 18,
+--			Level = 10,
+--			Pwr = 107.0,
+--			Stats = 15,
+--			Vit = 100,
+--		},
+--		Name = "TOT_AdamantineGolem_A",
+--		TemplateId = "21232d04-dd83-46ea-96f6-b5dc2428cb9c",
+--		Tier = "legendary",
+--	},
 	{
 		Info = {
 			AC = 18,
@@ -707,6 +934,18 @@ return {
 		},
 		Name = "TOT_SteelWatcher_Biped_B",
 		TemplateId = "3fde5190-6901-43ff-8740-1c1f1b445ed0",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 20,
+			Pwr = 212.0,
+			Stats = 14,
+			Vit = 100,
+		},
+		Name = "MOD_Shovel_Combat",
+		TemplateId = "46d25507-a5df-4e96-af6c-3654b93d454f",
 		Tier = "legendary",
 	},
 	{
@@ -767,7 +1006,7 @@ return {
 		},
 		Name = "TOT_Elemental_Air_ConjureElemental",
 		TemplateId = "ef0578b5-ac1e-460f-9dd2-a1d455a9e36d",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -791,6 +1030,18 @@ return {
 		},
 		Name = "TOT_Mindflayer",
 		TemplateId = "1667ae07-e4ca-44d4-8d82-5e2f26e08aeb",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 10,
+			Pwr = 81.5,
+			Stats = 16,
+			Vit = 92,
+		},
+		Name = "MOD_Allandra_Combat",
+		TemplateId = "525c30e9-6aba-4008-8173-4f5fbb15f050",
 		Tier = "ultra",
 	},
 	{
@@ -1163,7 +1414,7 @@ return {
 		},
 		Name = "TOT_Elemental_Fire_ConjureElemental",
 		TemplateId = "3084e5b8-e5a8-4b5a-bfbc-6603bff52176",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -1223,6 +1474,30 @@ return {
 		},
 		Name = "TOT_Boar_Devil",
 		TemplateId = "a93759f7-7413-40e4-ad53-be2c99052cb7",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 11,
+			Level = 3,
+			Pwr = 27.5,
+			Stats = -1,
+			Vit = 33,
+		},
+		Name = "MOD_Ettercap_Combat",
+		TemplateId = "a14c29a8-3624-4297-85c1-9fe533e145d7",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 3,
+			Pwr = 27.5,
+			Stats = -1,
+			Vit = 31,
+		},
+		Name = "MOD_Phaser_Combat",
+		TemplateId = "04da834b-c23f-45c2-a947-1a022a74e661",
 		Tier = "mid",
 	},
 	{
@@ -1301,13 +1576,13 @@ return {
 		Info = {
 			AC = 19,
 			Level = 17,
-			Pwr = 270.0,
+			Pwr = 230.0,
 			Stats = 20,
-			Vit = 400,
+			Vit = 256,
 		},
-		Name = "TOT_Dragon_Red",
-		TemplateId = "8c9216a1-c2e6-42ea-8fe5-2ce658706ad6",
-		Tier = "mythical",
+		Name = "Dragon_Red_Shape",
+		TemplateId = "54ffc40f-9bde-49bc-8221-72b2d21d2515",
+		Tier = "legendary",
 	},
 	{
 		Info = {
@@ -1391,7 +1666,7 @@ return {
 		},
 		Name = "TOT_Undead_Mummy",
 		TemplateId = "4256b8e0-8e15-4985-bae2-0f8408c69010",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -1491,6 +1766,150 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 124.0,
+			Stats = 19,
+			Vit = 149,
+		},
+		Name = "MOD_Thrall_Barbarian_Combat",
+		TemplateId = "5bac8974-129e-4a2b-8df6-4c7c84cc7570",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 104.0,
+			Stats = 19,
+			Vit = 87,
+		},
+		Name = "MOD_Thrall_Bard_Combat",
+		TemplateId = "2420dab7-e41e-4c2b-8bc1-bc2220297265",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 12,
+			Pwr = 134.0,
+			Stats = 19,
+			Vit = 87,
+		},
+		Name = "MOD_Thrall_Cleric_Combat",
+		TemplateId = "be019ba7-5d37-41de-8bd7-f48d026b8310",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 134.0,
+			Stats = 19,
+			Vit = 99,
+		},
+		Name = "MOD_Thrall_Druid_Combat",
+		TemplateId = "5c9d448f-c01c-4d51-b94b-298cb18e8098",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 12,
+			Pwr = 144.0,
+			Stats = 19,
+			Vit = 112,
+		},
+		Name = "MOD_Thrall_Fighter_Combat",
+		TemplateId = "5d7b1c43-185b-4c89-9541-a5cc0b822ed3",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 22,
+			Level = 12,
+			Pwr = 128.0,
+			Stats = 19,
+			Vit = 99,
+		},
+		Name = "MOD_Thrall_Monk_Combat",
+		TemplateId = "c02fd9d0-c7d2-4d05-8dae-2810fdaa1427",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 12,
+			Pwr = 144.0,
+			Stats = 19,
+			Vit = 100,
+		},
+		Name = "MOD_Thrall_Paladin_Combat",
+		TemplateId = "2a71a79d-7ddf-4e77-a7e2-cda939286a53",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 124.0,
+			Stats = 19,
+			Vit = 112,
+		},
+		Name = "MOD_Thrall_Ranger_Combat",
+		TemplateId = "46775265-0fd1-4a27-a8bd-b7777f185fea",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 124.0,
+			Stats = 19,
+			Vit = 87,
+		},
+		Name = "MOD_Thrall_Rogue_Combat",
+		TemplateId = "f208ed37-8f42-4b5d-b898-9e2fa6052e89",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 154.0,
+			Stats = 19,
+			Vit = 100,
+		},
+		Name = "MOD_Thrall_Sorcerer_Combat",
+		TemplateId = "a331b124-1fee-4c15-b2b7-158670395c87",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 12,
+			Pwr = 124.0,
+			Stats = 19,
+			Vit = 87,
+		},
+		Name = "MOD_Thrall_Warlock_Combat",
+		TemplateId = "bd0d0220-1869-48a2-9069-7f20398c7e70",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 144.0,
+			Stats = 19,
+			Vit = 87,
+		},
+		Name = "MOD_Thrall_Wizard_Combat",
+		TemplateId = "60f0a70d-2d33-43e9-909c-0c70188558ee",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 9,
 			Level = 5,
 			Pwr = 36.0,
@@ -1511,7 +1930,7 @@ return {
 		},
 		Name = "TOT_Ogres_Female_A",
 		TemplateId = "9f2869cb-936a-4830-8884-090d56b21beb",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -1587,6 +2006,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 15,
+			Level = 12,
+			Pwr = 99.5,
+			Stats = 12,
+			Vit = 120,
+		},
+		Name = "MOD_Alhoon_Combat",
+		TemplateId = "6aac845e-1f39-4a18-a940-43c0cfcba790",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 16,
 			Level = 8,
 			Pwr = 94.0,
@@ -1611,6 +2042,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 210.0,
+			Stats = 17,
+			Vit = 118,
+		},
+		Name = "MOD_Keene_Combat",
+		TemplateId = "26d18c80-cec7-453c-aaa4-e86f54d427f0",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 17,
 			Level = 9,
 			Pwr = 88.0,
@@ -1620,6 +2063,42 @@ return {
 		Name = "TOT_Githyanki_Male_Gishra_Caster",
 		TemplateId = "0cfbaf99-37c6-4a50-9709-ebe4c015b0fa",
 		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 12,
+			Pwr = 148.0,
+			Stats = 20,
+			Vit = 130,
+		},
+		Name = "MOD_Orpheus_Combat",
+		TemplateId = "20472972-2e75-4e98-9e08-99a286a6eb4e",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 6,
+			Pwr = 108.0,
+			Stats = 16,
+			Vit = 112,
+		},
+		Name = "MOD_GithInquisitor_Combat",
+		TemplateId = "2b343dfb-1530-4bea-b731-5b657e41404b",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 11,
+			Pwr = 108.0,
+			Stats = 20,
+			Vit = 146,
+		},
+		Name = "MOD_GithPaladin_Combat",
+		TemplateId = "cdb997b0-c2ef-40cd-ba47-e10f402c18fd",
+		Tier = "epic",
 	},
 	{
 		Info = {
@@ -1679,7 +2158,19 @@ return {
 		},
 		Name = "TOT_Githyanki_Male_Gish_Strong",
 		TemplateId = "543adbde-c8b7-48dd-962f-9faffa36da3c",
-		Tier = "epic",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 5,
+			Pwr = 87.5,
+			Stats = 15,
+			Vit = 70,
+		},
+		Name = "MOD_Bernard_Combat",
+		TemplateId = "0e4d6c80-f1a2-4757-9289-45ce7e209262",
+		Tier = "ultra",
 	},
 	-- {
 	-- 	Info = {
@@ -1839,6 +2330,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 16,
+			Level = 9,
+			Pwr = 300.0,
+			Stats = 20,
+			Vit = 275,
+		},
+		Name = "MOD_Gortash_Combat",
+		TemplateId = "048c03b6-05a4-4f4b-9510-13bfe9d71c60",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 18,
 			Level = 8,
 			Pwr = 90.5,
@@ -1847,6 +2350,18 @@ return {
 		},
 		Name = "MOD_Humans_Male_AbsoluteGuard_Melee",
 		TemplateId = "27ae82ef-42d4-484e-95fe-2b003bba9271",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 11,
+			Pwr = 120.5,
+			Stats = 17,
+			Vit = 104,
+		},
+		Name = "MOD_GuildBodyguard_Combat",
+		TemplateId = "d2775643-abe1-4a13-b32e-c3831f6dba12",
 		Tier = "ultra",
 	},
 	{
@@ -2075,7 +2590,7 @@ return {
 		},
 		Name = "TOT_Sharran_Cultist_Human_Male_Caster_A",
 		TemplateId = "4bed4a1d-6963-43e2-ae6d-0d14f7c39faa",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -2088,6 +2603,18 @@ return {
 		Name = "TOT_Ooze_Grease",
 		TemplateId = "3145d0d8-8a55-46e0-ba89-585e68aeb7d9",
 		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 9,
+			Pwr = 183.0,
+			Stats = 16,
+			Vit = 212,
+		},
+		Name = "MOD_StrangeOx_Combat",
+		TemplateId = "731ec423-2df9-459f-8b5d-7915191d3ada",
+		Tier = "epic",
 	},
 	{
 		Info = {
@@ -2196,18 +2723,6 @@ return {
 		Name = "TOT_LOW_RamazithsTower_Nightsong_Deva",
 		TemplateId = "c74a5a8d-97a6-41c5-ab95-a2e664fc9eda",
 		Tier = "legendary",
-	},
-	{
-		Info = {
-			AC = 14,
-			Level = 6,
-			Pwr = 46.5,
-			Stats = 1,
-			Vit = 33,
-		},
-		Name = "TOT_Shadow_Dog_DevilishOx",
-		TemplateId = "ed0d2bea-f5ed-4985-b13e-6f4105f49f44",
-		Tier = "high",
 	},
 	{
 		Info = {
@@ -2397,8 +2912,8 @@ return {
 			Stats = 20,
 			Vit = 400,
 		},
-		Name = "TOT_Dragon_Skeletal",
-		TemplateId = "a75d3784-2973-4440-917d-963ce49d9b1c",
+		Name = "MOD_Ansur_Combat",
+		TemplateId = "409a2cf7-64d4-4789-bf07-7e49dee9b015",
 		Tier = "mythical",
 	},
 	{
@@ -2559,6 +3074,54 @@ return {
 	},
 	{
 		Info = {
+			AC = 15,
+			Level = 6,
+			Pwr = 47.5,
+			Stats = 13,
+			Vit = 38,
+		},
+		Name = "MOD_Sahuagin_Ranger_Combat",
+		TemplateId = "259380b3-4bab-4a8f-ab10-9577adf89197",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 7,
+			Pwr = 52.5,
+			Stats = 14,
+			Vit = 71,
+		},
+		Name = "MOD_Sahuagin_Champion_Combat",
+		TemplateId = "96416e71-e78d-450e-8f89-f58597014e55",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 4,
+			Pwr = 23.5,
+			Stats = 15,
+			Vit = 20,
+		},
+		Name = "MOD_FangOfYeenoghu_Combat",
+		TemplateId = "2eda634d-c66e-4a3f-bb24-f14528bc828b",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 9,
+			Pwr = 97.5,
+			Stats = 17,
+			Vit = 99,
+		},
+		Name = "MOD_Sahuagin_DivineChampion_Combat",
+		TemplateId = "a5fa750c-7c0f-4d61-8a60-c1441c99edd8",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 14,
 			Level = 7,
 			Pwr = 112.0,
@@ -2567,6 +3130,30 @@ return {
 		},
 		Name = "TOT_Undead_DarkJusticiar_Boss",
 		TemplateId = "5beabcd8-d82c-4fc4-b131-d118dd032f75",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 5,
+			Pwr = 82.0,
+			Stats = 16,
+			Vit = 85,
+		},
+		Name = "MOD_Flind_Combat",
+		TemplateId = "f3de4821-6ad0-4b17-ab5e-2fe5827d3bfa",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 12,
+			Pwr = 142.0,
+			Stats = 15,
+			Vit = 96,
+		},
+		Name = "MOD_PlagueShip_Imp_Combat",
+		TemplateId = "ed0e7963-af92-41b1-bf3c-7951b2c44c81",
 		Tier = "epic",
 	},
 	{
@@ -2615,7 +3202,7 @@ return {
 		},
 		Name = "TOT_Sharran_Cultist_Elf_Female_Caster_A",
 		TemplateId = "f864facf-37ff-441d-b69e-507130ca97d0",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -2627,7 +3214,7 @@ return {
 		},
 		Name = "TOT_Myrmidon_Fire",
 		TemplateId = "0f8b7ae3-15e9-43bc-99a2-04837c629a27",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -2711,7 +3298,7 @@ return {
 		},
 		Name = "TOT_Myrmidon_Earth",
 		TemplateId = "01ac5949-4d57-4f13-b84d-5b008f3ffa49",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -2735,7 +3322,7 @@ return {
 		},
 		Name = "TOT_Ogres_Male_A",
 		TemplateId = "9bb85fbc-445c-415f-a761-94d81ead0b66",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2759,7 +3346,7 @@ return {
 		},
 		Name = "TOT_Elemental_Grease",
 		TemplateId = "8b597b49-d42e-45e5-8312-145ac5d68b3b",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2835,6 +3422,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 15,
+			Level = 6,
+			Pwr = 77.5,
+			Stats = 16,
+			Vit = 76,
+		},
+		Name = "MOD_ShadarKai_Combat",
+		TemplateId = "966ccbc8-1284-4996-b2a7-7cbf8cacb8a4",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 11,
+			Pwr = 137.5,
+			Stats = 18,
+			Vit = 164,
+		},
+		Name = "MOD_LiaraPortyr_Combat",
+		TemplateId = "52c9ee11-535e-401f-9d5d-eb04b7cfc046",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 16,
 			Level = 11,
 			Pwr = 157.0,
@@ -2843,6 +3454,18 @@ return {
 		},
 		Name = "TOT_SteelWatcher_Biped_B_Ranged",
 		TemplateId = "a6f89469-6e38-4374-82ca-6f97d46c7b38",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 12,
+			Pwr = 173.4,
+			Stats = 20,
+			Vit = 156,
+		},
+		Name = "MOD_Ptaris_Combat",
+		TemplateId = "b771e7eb-c0c9-4c5a-9c0b-ae5d12ea9c38",
 		Tier = "legendary",
 	},
 	{
@@ -2871,6 +3494,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 17,
+			Level = 12,
+			Pwr = 132.5,
+			Stats = 18,
+			Vit = 112,
+		},
+		Name = "MOD_Ethel_Combat",
+		TemplateId = "7cce4717-c4bd-48b5-93cb-216014e9d547",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 6,
+			Pwr = 132.5,
+			Stats = 18,
+			Vit = 184,
+		},
+		Name = "MOD_Karniss_Combat",
+		TemplateId = "d788657b-aacf-48ad-a580-6aa60705ce46",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 7,
 			Level = 1,
 			Pwr = 8.0,
@@ -2892,6 +3539,54 @@ return {
 		Name = "TOT_Meazel",
 		TemplateId = "339defbb-7f0c-412c-9113-f6eba8198275",
 		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 5,
+			Pwr = 71.0,
+			Stats = 16,
+			Vit = 78,
+		},
+		Name = "MOD_Nere_Combat",
+		TemplateId = "75e93d9c-f3df-4cf4-9621-67dd3fca51bd",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 5,
+			Pwr = 71.0,
+			Stats = 16,
+			Vit = 75,
+		},
+		Name = "MOD_DrorRagzlin_Combat",
+		TemplateId = "5ce17b17-3b36-4098-9ab8-39d808d8cd39",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 9,
+			Pwr = 124.5,
+			Stats = 16,
+			Vit = 156,
+		},
+		Name = "MOD_ShamblingMound_Combat",
+		TemplateId = "960b3b1a-f7d8-4480-a196-2faa14e3bc94",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 12,
+			Pwr = 142.5,
+			Stats = 16,
+			Vit = 96,
+		},
+		Name = "MOD_Helsik_Combat",
+		TemplateId = "a4cd1bd2-c019-410e-b9eb-740e9d129122",
+		Tier = "epic",
 	},
 	{
 		Info = {
@@ -3000,6 +3695,18 @@ return {
 		Name = "TOT_Myconid_Slender_Black",
 		TemplateId = "66d2e9e8-119b-4fe5-9969-5afe61fbf241",
 		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 1,
+			Pwr = 79.0,
+			Stats = 15,
+			Vit = 112,
+		},
+		Name = "MOD_Myconid_Sovereign_Combat",
+		TemplateId = "8cf290e2-5ad6-400c-8541-8180a7a60ae2",
+		Tier = "high",
 	},
 	{
 		Info = {
