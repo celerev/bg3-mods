@@ -86,6 +86,18 @@ return {
 	{
 		Info = {
 			AC = 21,
+			Level = 27,
+			Pwr = 450.0,
+			Stats = 28,
+			Vit = 513,
+		},
+		Name = "MOD_Mephisto_Combat",
+		TemplateId = "efd9208a-cfce-4420-9ec8-a2efac56724a",
+		Tier = "divine",
+	},
+	{
+		Info = {
+			AC = 21,
 			Level = 20,
 			Pwr = 270.0,
 			Stats = 24,
@@ -116,7 +128,7 @@ return {
 			Vit = 91,
 		},
 		Name = "MOD_Balthazar_Combat",
-		TemplateId = "b1d45242-e99e-4760-80da-889b2ae6e7b4",
+		TemplateId = "adf53f5a-8054-48bc-bff8-23b237b8ff86",
 		Tier = "epic",
 	},
 	{
@@ -250,6 +262,7 @@ return {
 		Name = "MOD_Zrell_Combat",
 		TemplateId = "690361a5-940b-4b85-ad96-ac9cb4cc2b19",
 		Tier = "ultra",
+	},
 	{
 		Info = {
 			AC = 14,
@@ -1766,6 +1779,42 @@ return {
 	},
 	{
 		Info = {
+			AC = 16,
+			Level = 6,
+			Pwr = 224.0,
+			Stats = 16,
+			Vit = 288,
+		},
+		Name = "MOD_Brewer_Combat",
+		TemplateId = "275169f0-8584-467e-a18a-787013592bfb",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 7,
+			Pwr = 224.0,
+			Stats = 16,
+			Vit = 276,
+		},
+		Name = "MOD_Surgeon_Combat",
+		TemplateId = "7d9ce9b8-b7ba-4c06-86d0-a493d642eb65",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 6,
+			Pwr = 224.0,
+			Stats = 16,
+			Vit = 606,
+		},
+		Name = "MOD_TollCollector_Combat",
+		TemplateId = "694fdd07-b517-4e35-95fa-8f299c936d5c",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 18,
 			Level = 12,
 			Pwr = 124.0,
@@ -1978,6 +2027,18 @@ return {
 		},
 		Name = "TOT_LOW_Ghost_A",
 		TemplateId = "d0927393-ae34-412e-bf74-4125e4834a39",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 7,
+			Pwr = 48.0,
+			Stats = 7,
+			Vit = 34,
+		},
+		Name = "MOD_GrimVisage_Combat",
+		TemplateId = "3a915f4a-dcc3-4b03-8901-f757a0e92c87",
 		Tier = "high",
 	},
 	{
@@ -3502,7 +3563,7 @@ return {
 		},
 		Name = "MOD_Ethel_Combat",
 		TemplateId = "7cce4717-c4bd-48b5-93cb-216014e9d547",
-		Tier = "epic",
+		Tier = "legendary",
 	},
 	{
 		Info = {
