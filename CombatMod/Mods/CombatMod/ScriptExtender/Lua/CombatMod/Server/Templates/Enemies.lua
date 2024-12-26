@@ -171,7 +171,7 @@ return {
 		Info = {
 			AC = 21,
 			Level = 16,
-			Pwr = 150,
+			Pwr = 150.0,
 			Stats = 19,
 			Vit = 666,
 		},
@@ -183,12 +183,24 @@ return {
 		Info = {
 			AC = 20,
 			Level = 18,
-			Pwr = 220,
+			Pwr = 220.0,
 			Stats = 22,
 			Vit = 245,
 		},
 		Name = "MOD_Myrkul_Combat",
 		TemplateId = "30d6a794-fbf1-453d-9e3f-35b51058cd15",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 10,
+			Pwr = 205.0,
+			Stats = 22,
+			Vit = 300,
+		},
+		Name = "MOD_AdamantineGolem_Combat",
+		TemplateId = "cd218575-49ea-4a97-b49f-3db8e21c88d8",
 		Tier = "mythical",
 	},
 	{
@@ -904,27 +916,15 @@ return {
 --	{
 --		Info = {
 --			AC = 18,
---			Level = 10,
---			Pwr = 107.0,
---			Stats = 15,
---			Vit = 100,
+--			Level = 11,
+--			Pwr = 103.5,
+--			Stats = 13,
+--			Vit = 93,
 --		},
---		Name = "TOT_AdamantineGolem_A",
---		TemplateId = "21232d04-dd83-46ea-96f6-b5dc2428cb9c",
---		Tier = "legendary",
+--		Name = "TOT_HalfElves_Female_Wood_Cultist_Bane_IronConsul",
+--		TemplateId = "8b79861d-7dd9-49dd-9e7f-9aa19f5f1322",
+--		Tier = "epic",
 --	},
-	{
-		Info = {
-			AC = 18,
-			Level = 11,
-			Pwr = 103.5,
-			Stats = 13,
-			Vit = 93,
-		},
-		Name = "TOT_HalfElves_Female_Wood_Cultist_Bane_IronConsul",
-		TemplateId = "8b79861d-7dd9-49dd-9e7f-9aa19f5f1322",
-		Tier = "epic",
-	},
 	{
 		Info = {
 			AC = 13,

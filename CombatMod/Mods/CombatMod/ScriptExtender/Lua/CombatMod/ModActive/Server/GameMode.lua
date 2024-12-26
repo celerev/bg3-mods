@@ -366,7 +366,7 @@ function GameMode.ApplyDifficulty(enemy, score)
     elseif enemy.Tier == 7 or enemy.Tier == "mythical" then
         mod = math.floor(mod / 3.3333)
     elseif enemy.Tier == 8 or enemy.Tier == "divine" then
-        mod = math.floor(mod / 3.5)
+        mod = math.floor(mod / 3.6666)
     end
 
     if mod <= 0 then
