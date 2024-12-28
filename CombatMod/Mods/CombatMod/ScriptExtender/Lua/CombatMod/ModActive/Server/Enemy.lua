@@ -687,15 +687,19 @@ function Enemy.CalcTier(enemy)
     local pwr = (vit / 2) + sum + prof + ac + level * 2
 
     local category
-    if pwr > 150 then
+    if pwr > 350 then
+        category = C.EnemyTier[8]
+    elseif pwr % 351 > 270 then
+        category = C.EnemyTier[7]
+    elseif pwr % 271 > 180 then
         category = C.EnemyTier[6]
-    elseif pwr % 151 > 90 then
+    elseif pwr % 181 > 125 then
         category = C.EnemyTier[5]
-    elseif pwr % 91 > 65 then
+    elseif pwr % 126 > 80 then
         category = C.EnemyTier[4]
-    elseif pwr % 66 > 45 then
+    elseif pwr % 81 > 50 then
         category = C.EnemyTier[3]
-    elseif pwr % 46 > 25 then
+    elseif pwr % 51 > 25 then
         category = C.EnemyTier[2]
     else
         category = C.EnemyTier[1]
