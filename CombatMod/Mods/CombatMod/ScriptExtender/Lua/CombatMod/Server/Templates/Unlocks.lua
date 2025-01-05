@@ -323,11 +323,11 @@ return table.extend({
         Name = __("Spawn Mindflayer Companion"),
         Description = __("Spawns the Emperor as controllable party follower."),
         Icon = "TadpoleSuperPower_IllithidExpertise",
-        Cost = 200,
-        Requirement = 50,
+        Cost = 350,
+        Requirement = 75,
         TemplateId = "1467fb3e-b769-41b1-8207-53e42b5b7aaf",
         Amount = 1,
-        Character = false,
+        Character = true,
         OnBuy = function(self, character)
             Osi.UseSpell(character, "TOT_Summon_Emperor", character)
             -- -- TODO fix HEALTHBOOST_HARDCODE
@@ -339,41 +339,44 @@ return table.extend({
             Defer(1000, function()
                 self:OnReapply()
             end)
-
-            self:OnInit()
         end,
-        OnReapply = function(self) ---@param self Unlock
-            for _, p in pairs(GE.GetParty()) do
-                if p.ServerCharacter.Template.Id == self.TemplateId and p.Uuid then
-                    self.OwnedBy[p.Uuid.EntityUuid] = GC.GetPlayer(p.Uuid.EntityUuid)
-                end
-            end
-        end,
-        Register = U.Once(function(self)
-            Ext.Osiris.RegisterListener("CastedSpell", 5, "after", function(caster, spell)
-                if spell ~= "Shout_Dismiss_Self" then
-                    return
-                end
-
-                self.OwnedBy[U.UUID.Extract(caster)] = nil
-            end)
+        OnReapply = U.Once(function(self) ---@param self Unlock
             Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
-                for uuid, player in pairs(self.OwnedBy) do
-                    if not GC.IsValid(uuid) then
-                        if Player.IsPlayer(player) and Player.InCamp(player) then
-                            self:OnBuy(player)
-                            self.OwnedBy[uuid] = nil
-                        end
-                    end
+                for uuid, _ in pairs(self.BoughtBy) do
+                    self:OnBuy(uuid)
                 end
             end)
         end),
-        OnInit = function(self)
-            self.OwnedBy = self.OwnedBy or {}
-            if self.Bought > 0 then
-                self:Register()
-            end
+    },
+    {
+        Id = "BuyNightsong",
+        Name = __("Sword of the Silverlight"),
+        Description = __("Spawns Dame Aylin as controllable party follower."),
+        Icon = "Action_EndGameAlly_NightsongSummon",
+        Cost = 350,
+        Requirement = 75,
+        TemplateId = "4b1ea015-1c6c-4bd4-aff7-ff1b118ca459",
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            Osi.UseSpell(character, "TOT_Summon_Aylin", character)
+            -- -- TODO fix HEALTHBOOST_HARDCODE
+            -- local guid = Osi.CreateAtObject("6efb2704-a025-49e0-ba9f-2b4f62dd2195", character, 0, 1, "", 1)
+            -- Osi.SetFaction(guid, C.CompanionFaction)
+            -- Osi.SetTag(guid, "26c78224-a4c1-43e4-b943-75e7fa1bfa41") -- SUMMON
+            -- Osi.AddPassive(guid, "ShortResting")
+            -- Osi.AddPartyFollower(guid, character)
+            Defer(1000, function()
+                self:OnReapply()
+            end)
         end,
+        OnReapply = U.Once(function(self) ---@param self Unlock
+            Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
+                for uuid, _ in pairs(self.BoughtBy) do
+                    self:OnBuy(uuid)
+                end
+            end)
+        end),
     },
     {
         Id = "Tadpole",
@@ -598,6 +601,32 @@ return table.extend({
         end,
     },
     {
+        Id = "BuyScratch",
+        Name = Localization.Get("h56b9e3ffg35a9g4593g90fbg44163f03152a"),
+        Icon = "Spell_Conjuration_FindFamiliar_Dog",
+        Description = Localization.Get("h30de9810g42e4g472bga451g7c5a5fc65c8e"),
+        Cost = 40,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            Osi.AddSpell(character, "Target_FindFamiliar_Dog", 1, 0);
+            Osi.SetFlag("FOR_Courier_State_CanSummonDog_dded6f0a-25ea-a278-30e1-37d79e4e63c7", character);
+        end,
+    },
+    {
+        Id = "BuyIntellectDevourerCompanion",
+        Name = Localization.Get("h71c08839ga8ccg45e7g825ag5b57ac274b1e"),
+        Icon = "Spell_ConjureUs",
+        Description = __("Gain ability to conjure an intellect devourer companion"),
+        Cost = 120,
+        Requirement = 50,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            Osi.AddSpell(character, "Target_ConjureIntellectDevour", 1, 0);
+        end,
+    },
+    {
         Id = "BuyResonanceStone",
         Name = Localization.Get("h2d9eec26gb99cg4944g9b9bg339dda67c9e2"),
         Icon = "Item_TOOL_MF_Resonance_Crystal_A",
@@ -646,7 +675,7 @@ return table.extend({
         Name = Localization.Get("h232cc24ega0f9g4f4dgb5d3g46ab59579d4b"),
         Description = Localization.Get("h9d8550edg6d54g4113gbbdcge6d99b8b2a2f"),
         Icon = "Item_DEN_VoloOperation_ErsatzEye",
-        Cost = 10,
+        Cost = 25,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
@@ -734,6 +763,66 @@ return table.extend({
         OnBuy = function(self, character)
             if Osi.HasAppliedStatus(character, "END_ALLYABILITIES_BHAALBUFF") ~= 1 then
                 Osi.ApplyStatus(character, "END_ALLYABILITIES_BHAALBUFF", -1)
+            end
+        end,
+        OnReapply = Debounce(100, function(self) ---@param self Unlock
+            for uuid, _ in pairs(self.BoughtBy) do
+                self:OnBuy(uuid)
+            end
+        end),
+    },
+    {
+        Id = "BuyVolosGuide",
+        Name = Localization.Get("h397d3e3fgf2c3g4f5cg8974g7784ef35cc21"),
+        Icon = "PassiveFeature_PactOfTheTome",
+        Description = Localization.Get("h83b459c0g2c36g4fb7ga441g4baed5e5ef94"),
+        Cost = 350,
+        Requirement = 150,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            if Osi.HasAppliedStatus(character, "END_ALLYBUFF_VOLO") ~= 1 then
+                Osi.ApplyStatus(character, "END_ALLYBUFF_VOLO", -1)
+            end
+        end,
+        OnReapply = Debounce(100, function(self) ---@param self Unlock
+            for uuid, _ in pairs(self.BoughtBy) do
+                self:OnBuy(uuid)
+            end
+        end),
+    },
+    {
+        Id = "BuyThanielBuff",
+        Name = Localization.Get("h221a4b23g1fe7g4c43g834bg2863ae271223"),
+        Icon = "statIcons_Momentum",
+        Description = Localization.Get("hebd7fda4gb9d9g42e1g9706g7d74fc30432e"),
+        Cost = 275,
+        Requirement = 150,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            if Osi.HasAppliedStatus(character, "END_ALLYBUFF_HALSIN") ~= 1 then
+                Osi.ApplyStatus(character, "END_ALLYBUFF_HALSIN", -1)
+            end
+        end,
+        OnReapply = Debounce(100, function(self) ---@param self Unlock
+            for uuid, _ in pairs(self.BoughtBy) do
+                self:OnBuy(uuid)
+            end
+        end),
+    },
+    {
+        Id = "BuyMolBuff",
+        Name = Localization.Get("hd6eee16fgaf11g483bgb572g1923ad837611"),
+        Icon = "Action_Monster_Cambion_FireRay",
+        Description = Localization.Get("h76178f34g5ffcg4714g9876gdf90ba4a334b"),
+        Cost = 350,
+        Requirement = 150,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            if Osi.HasAppliedStatus(character, "END_ALLYABILITIES_MOLBUFF") ~= 1 then
+                Osi.ApplyStatus(character, "END_ALLYABILITIES_MOLBUFF", -1)
             end
         end,
         OnReapply = Debounce(100, function(self) ---@param self Unlock

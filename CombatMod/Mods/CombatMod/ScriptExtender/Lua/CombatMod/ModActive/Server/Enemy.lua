@@ -608,6 +608,13 @@ end
 
 ---@param object string GUID
 function Enemy.Combat(object, force)
+    for _, player in pairs(GU.DB.GetPlayers()) do
+        if object == player then
+            L.Error("Don't set a player's faction to enemy: ", object)
+            return
+        end
+    end
+
     Osi.ApplyStatus(object, "InitiateCombat", -1)
     Osi.ApplyStatus(object, "BringIntoCombat", -1)
 

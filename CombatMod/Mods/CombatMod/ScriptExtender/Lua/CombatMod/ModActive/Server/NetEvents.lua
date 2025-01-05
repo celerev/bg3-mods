@@ -248,10 +248,10 @@ Net.On("MarkSpawns", function(event)
         return
     end
 
-    map:VFXSpawns(table.keys(map.Spawns), 16)
+    map:VFXSpawns(table.keys(map.Spawns), 48)
 
     if Scenario.Current() then
-        Scenario.MarkSpawns(Scenario.Current().Round + 1, 16)
+        Scenario.MarkSpawns(Scenario.Current().Round + 1, 48)
     end
 
     Net.Respond(event, { true })
