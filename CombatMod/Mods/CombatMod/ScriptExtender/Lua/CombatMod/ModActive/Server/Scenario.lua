@@ -905,6 +905,10 @@ function Scenario.CloseEnemyDistance(specific, maxDistance)
     end
 
     local adjusting = table.map(enemies, function(enemy)
+        if enemy.Name == "MOD_Harpy_Combat" or enemy.Name == "MOD_Harpy_CombatB" then
+            return
+        end
+
         local x, y, z = Osi.GetPosition(enemy.GUID)
 
         local distance, x2, y2, z2 = Enemy.DistanceToParty(enemy.GUID)

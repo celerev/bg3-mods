@@ -51,6 +51,20 @@ GameState.OnLoad(function()
     if PersistentVars.Scenario ~= nil then
         Scenario.RestoreFromSave(PersistentVars.Scenario)
     end
+
+    Player.AskConfirmation([[
+Regenerate enemy, item, and map tables?
+If you've recently updated, this is recommended.
+Old data may need to be cleared, and new data may need to be pulled in]]):After(function(confirmed)
+                L.Debug("Regenerating tables", confirmed)
+                Templates.ExportScenarios()
+                Templates.ExportMaps()
+                Templates.ExportEnemies()
+                Templates.ExportLootRates()
+                Net.Send("GetTemplates")
+                Net.Send("GetSelection")
+                L.Debug("Tables regenerated", confirmed)
+        end)
 end, true)
 
 Require("CombatMod/ModActive/Server/Templates")

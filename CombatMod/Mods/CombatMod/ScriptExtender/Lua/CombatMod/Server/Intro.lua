@@ -116,6 +116,19 @@ Continuously create new battles.
 You will gain a higher score with every completed fight.
 Difficulty increases with the score.]]):After(function(confirmed)
         L.Debug("RogueMode", confirmed)
+        Player.AskConfirmation([[
+Regenerate enemy, item, and map tables?
+If you've recently updated, this is recommended.
+Old data may need to be cleared, and new data may need to be pulled in]]):After(function(confirmed)
+                L.Debug("Regenerating tables", confirmed)
+                Templates.ExportScenarios()
+                Templates.ExportMaps()
+                Templates.ExportEnemies()
+                Templates.ExportLootRates()
+                Net.Send("GetTemplates")
+                Net.Send("GetSelection")
+                L.Debug("Tables regenerated", confirmed)
+        end)
 
         PersistentVars.RogueModeActive = confirmed
 

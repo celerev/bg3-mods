@@ -51,6 +51,10 @@ function External.File.ExportIfNeeded(name, data)
     end
 end
 
+function External.File.ExportOnCommand(name, data)
+    External.File.Export(name, data)
+end
+
 -------------------------------------------------------------------------------------------------
 --                                                                                             --
 --                                          Validators                                         --
