@@ -251,7 +251,7 @@ return table.extend({
         Name = Localization.Get("h4232ff7cgcfb9g4a22g9443gf87f1019d70e"),
         Icon = "statIcons_GaleGod",
         Description = __("With unyielding ambition, grasp the Crown of Karsus and make its might yours."),
-        Requirement = 100,
+        Requirement = 150,
         Cost = 900,
         Amount = 1,
         Character = true,
@@ -278,7 +278,7 @@ return table.extend({
         Cost = 1200,
         Amount = 1,
         Character = true,
-        Requirement = 200,
+        Requirement = 225,
         OnBuy = function(self, character)
             Osi.ApplyStatus(character, "MIND_FLAYER_FORM", -1)
             -- takes a bit to transform
@@ -321,28 +321,22 @@ return table.extend({
     {
         Id = "BuyEmperor",
         Name = __("Spawn Mindflayer Companion"),
-        Description = __("Spawns the Emperor as controllable party follower."),
+        Description = __("Spawns the Emperor as controllable party follower. Note: Save and load once to enable respawn after long rest. Current technical limitation."),
         Icon = "TadpoleSuperPower_IllithidExpertise",
-        Cost = 350,
+        Cost = 300,
         Requirement = 75,
         TemplateId = "1467fb3e-b769-41b1-8207-53e42b5b7aaf",
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
             Osi.UseSpell(character, "TOT_Summon_Emperor", character)
-            -- -- TODO fix HEALTHBOOST_HARDCODE
-            -- local guid = Osi.CreateAtObject("6efb2704-a025-49e0-ba9f-2b4f62dd2195", character, 0, 1, "", 1)
-            -- Osi.SetFaction(guid, C.CompanionFaction)
-            -- Osi.SetTag(guid, "26c78224-a4c1-43e4-b943-75e7fa1bfa41") -- SUMMON
-            -- Osi.AddPassive(guid, "ShortResting")
-            -- Osi.AddPartyFollower(guid, character)
             Defer(1000, function()
                 self:OnReapply()
             end)
         end,
         OnReapply = U.Once(function(self) ---@param self Unlock
             Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
-                for uuid, _ in pairs(self.BoughtBy) do
+                for uuid, player in pairs(self.BoughtBy) do
                     self:OnBuy(uuid)
                 end
             end)
@@ -351,28 +345,22 @@ return table.extend({
     {
         Id = "BuyNightsong",
         Name = __("Sword of the Silverlight"),
-        Description = __("Spawns Dame Aylin as controllable party follower."),
+        Description = __("Spawns Dame Aylin as controllable party follower. Note: Save and load once to enable respawn after long rest. Current technical limitation."),
         Icon = "Action_EndGameAlly_NightsongSummon",
-        Cost = 350,
+        Cost = 300,
         Requirement = 75,
         TemplateId = "4b1ea015-1c6c-4bd4-aff7-ff1b118ca459",
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
             Osi.UseSpell(character, "TOT_Summon_Aylin", character)
-            -- -- TODO fix HEALTHBOOST_HARDCODE
-            -- local guid = Osi.CreateAtObject("6efb2704-a025-49e0-ba9f-2b4f62dd2195", character, 0, 1, "", 1)
-            -- Osi.SetFaction(guid, C.CompanionFaction)
-            -- Osi.SetTag(guid, "26c78224-a4c1-43e4-b943-75e7fa1bfa41") -- SUMMON
-            -- Osi.AddPassive(guid, "ShortResting")
-            -- Osi.AddPartyFollower(guid, character)
             Defer(1000, function()
                 self:OnReapply()
             end)
         end,
         OnReapply = U.Once(function(self) ---@param self Unlock
             Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
-                for uuid, _ in pairs(self.BoughtBy) do
+                for uuid, player in pairs(self.BoughtBy) do
                     self:OnBuy(uuid)
                 end
             end)
@@ -756,13 +744,33 @@ return table.extend({
         Name = Localization.Get("hc4d08908g6040g4e50g889cg0ef6e267b6e0"),
         Icon = "PassiveFeature_Generic_Blood",
         Description = Localization.Get("h473ffdccgc70fg4761gaa67gbf0fb07d475f"), --"Gain Stunning Gaze and Critical Hit requirement reduced by 2.",
-        Cost = 80,
+        Cost = 100,
         Requirement = 75,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
             if Osi.HasAppliedStatus(character, "END_ALLYABILITIES_BHAALBUFF") ~= 1 then
                 Osi.ApplyStatus(character, "END_ALLYABILITIES_BHAALBUFF", -1)
+            end
+        end,
+        OnReapply = Debounce(100, function(self) ---@param self Unlock
+            for uuid, _ in pairs(self.BoughtBy) do
+                self:OnBuy(uuid)
+            end
+        end),
+    },
+    {
+        Id = "BuySweetStoneFeatures",
+        Name = Localization.Get("h9d318df0g739eg4313gbc3cgc77a3afc702e"),
+        Icon = "Spell_Enchantment_Bless",
+        Description = Localization.Get("h0be556d1g0e1bg48ddg9ce4g86d3891c06e2"),
+        Cost = 150,
+        Requirement = 75,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            if Osi.HasAppliedStatus(character, "WYR_CIRCUS_STATUEBLESS") ~= 1 then
+                Osi.ApplyStatus(character, "WYR_CIRCUS_STATUEBLESS", -1)
             end
         end,
         OnReapply = Debounce(100, function(self) ---@param self Unlock

@@ -329,7 +329,7 @@ GameMode.DifficultyAppliedTo = {}
 
 ---@param enemy Enemy
 ---@param score integer
-function GameMode.ApplyDifficulty(enemy, score)
+function GameMode.ApplyDifficulty(enemy, score, baseDex)
     if GameMode.DifficultyAppliedTo[enemy.GUID] then
         return
     end
@@ -338,6 +338,7 @@ function GameMode.ApplyDifficulty(enemy, score)
     if enemy.Name == "Temporary" then
         return
     end
+    local originalDex = baseDex
 
     local partySizeMod = math.exp((Player.PartySize() - 4) * 0.2)
 
@@ -366,10 +367,11 @@ function GameMode.ApplyDifficulty(enemy, score)
     elseif enemy.Tier == 7 or enemy.Tier == "mythical" then
         mod = math.floor(mod / 3.3333)
     elseif enemy.Tier == 8 or enemy.Tier == "divine" then
-        mod = math.floor(mod / 3.75)
+        mod = math.floor(mod / 3.8333)
     end
 
     if mod <= 0 then
+        mod = 0
         return
     end
 
@@ -408,7 +410,6 @@ function GameMode.ApplyDifficulty(enemy, score)
     WaitTicks(6, function()
         local entity = Ext.Entity.Get(enemy.GUID)
         assert(entity, "ApplyDifficulty: entity not found")
-
         if mod2 > 0 then
             local maxLevel = 12
             if Player.Level() > 12 then
@@ -429,9 +430,9 @@ function GameMode.ApplyDifficulty(enemy, score)
         end
 
         if dexScaling then
-            local acMax = math.max(4, mod3)
+            local initialAcMax = math.max(4, mod3)
+            local acMax = math.max(initialAcMax, originalDex)
             local dexAc = entity.Stats.AbilityModifiers[3] - acMax
-
             if dexAc > 0 then
                 currentAc = currentAc - dexAc
                 Osi.AddBoosts(enemy.GUID, "AC(-" .. dexAc .. ")", Mod.TableKey, Mod.TableKey)
@@ -486,7 +487,12 @@ Event.On(
 Event.On(
     "ScenarioEnemySpawned",
     ifRogueLike(function(scenario, enemy)
-        GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore)
+        WaitTicks(6, function()
+            local entity = Ext.Entity.Get(enemy.GUID)
+            assert(entity, "ApplyDifficulty: entity not found")
+            local baseDex = entity.Stats.AbilityModifiers[3]
+            GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
+        end)
     end)
 )
 
@@ -494,7 +500,12 @@ Event.On(
     "ScenarioRestored",
     ifRogueLike(function(scenario)
         for _, enemy in pairs(scenario.SpawnedEnemies) do
-            GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore)
+            WaitTicks(6, function()
+                local entity = Ext.Entity.Get(enemy.GUID)
+                assert(entity, "ApplyDifficulty: entity not found")
+                local baseDex = entity.Stats.AbilityModifiers[3]
+                GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
+            end)
         end
     end)
 )

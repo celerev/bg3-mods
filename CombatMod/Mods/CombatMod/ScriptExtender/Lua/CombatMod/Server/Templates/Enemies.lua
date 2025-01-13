@@ -25,6 +25,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 10,
+			Level = 1,
+			Pwr = 11.0,
+			Stats = 3,
+			Vit = 13,
+		},
+		Name = "MOD_Rothe_Combat",
+		TemplateId = "bbbce2b8-9bdc-44c5-917f-f39af2ce6cd4",
+		Tier = "low",
+	},
+	{
+		Info = {
 			AC = 13,
 			Level = 3,
 			Pwr = 18.0,
@@ -121,6 +133,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 20,
+			Level = 24,
+			Pwr = 425.0,
+			Stats = 24,
+			Vit = 444,
+		},
+		Name = "MOD_Ravager_Combat",
+		TemplateId = "4407882e-d90f-43de-9748-b720a41ff125",
+		Tier = "divine",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 27,
 			Pwr = 450.0,
@@ -169,6 +193,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 192.0,
+			Stats = 20,
+			Vit = 153,
+		},
+		Name = "MOD_Erinyes_Summon",
+		TemplateId = "fe4d9494-c1f9-4f27-a71d-5b023d254f1c",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 15,
 			Level = 20,
 			Pwr = 240.0,
@@ -193,6 +229,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 20,
+			Pwr = 240.0,
+			Stats = 18,
+			Vit = 182,
+		},
+		Name = "MOD_Viconia_Combat",
+		TemplateId = "c5b8c5c2-aaf8-406a-a5a5-abb6db2bee17",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 17,
 			Level = 13,
 			Pwr = 180.0,
@@ -205,6 +253,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 20,
+			Level = 15,
+			Pwr = 240.0,
+			Stats = 11,
+			Vit = 243,
+		},
+		Name = "MOD_AntiMageGolem_Combat",
+		TemplateId = "d502deda-37cb-4488-b0d1-06ff503b362d",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 16,
 			Pwr = 150.0,
@@ -213,6 +273,18 @@ return {
 		},
 		Name = "MOD_Raphael_Combat",
 		TemplateId = "cecb3b64-77b9-4eb4-b99f-8029ac168cd7",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 22,
+			Pwr = 319.0,
+			Stats = 18,
+			Vit = 217,
+		},
+		Name = "MOD_JonIrenicus_Combat",
+		TemplateId = "ec938297-4740-4d28-97b1-18686ff02f87",
 		Tier = "mythical",
 	},
 	{
@@ -249,6 +321,18 @@ return {
 		},
 		Name = "MOD_Orin_Combat",
 		TemplateId = "6cd71603-354c-4c35-a2d9-199958a4beb3",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 15,
+			Pwr = 285.0,
+			Stats = 20,
+			Vit = 212,
+		},
+		Name = "MOD_Bodhi_Combat",
+		TemplateId = "af53a4b6-d8f9-455c-a148-e2c2c12681b0",
 		Tier = "legendary",
 	},
 	{
@@ -309,6 +393,18 @@ return {
 		},
 		Name = "MOD_Zrell_Combat",
 		TemplateId = "690361a5-940b-4b85-ad96-ac9cb4cc2b19",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 9,
+			Pwr = 82.0,
+			Stats = 17,
+			Vit = 96,
+		},
+		Name = "MOD_Warden_Combat",
+		TemplateId = "f4e72453-dd4e-4b66-a257-b201a58ffc38",
 		Tier = "ultra",
 	},
 	{
@@ -889,6 +985,30 @@ return {
 		TemplateId = "d7d00e85-41d7-43b8-927b-47cd536a4fdb",
 		Tier = "high",
 	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 55.0,
+			Stats = 8,
+			Vit = 60,
+		},
+		Name = "MOD_Smugger_Combat",
+		TemplateId = "5bf75a1b-9838-4826-9e56-966ca0322d68",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 55.0,
+			Stats = 8,
+			Vit = 60,
+		},
+		Name = "MOD_Smuggler2_Combat",
+		TemplateId = "ac4fd99b-f4f9-4b6f-bb9a-f5842616ee3f",
+		Tier = "high",
+	},
 --	{
 --		Info = {
 --			AC = 10,
@@ -1287,6 +1407,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 16,
+			Level = 3,
+			Pwr = 18.0,
+			Stats = 2,
+			Vit = 13,
+		},
+		Name = "MOD_DireRaven_Combat",
+		TemplateId = "4550d51b-ecd6-4c21-bda7-1bd876bb03dd",
+		Tier = "low",
+	},
+	{
+		Info = {
 			AC = 14,
 			Level = 7,
 			Pwr = 53.0,
@@ -1383,6 +1515,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 14,
+			Level = 4,
+			Pwr = 28.0,
+			Stats = 1,
+			Vit = 34,
+		},
+		Name = "MOD_Panther_Combat",
+		TemplateId = "b4f47390-f82a-484b-8e6b-4712a326902c",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 6,
+			Pwr = 42.0,
+			Stats = 2,
+			Vit = 62,
+		},
+		Name = "MOD_Sabretooth_Combat",
+		TemplateId = "aee51318-87ed-4336-936a-8d9a0eea8234",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 11,
 			Level = 8,
 			Pwr = 58.0,
@@ -1404,6 +1560,42 @@ return {
 		Name = "TOT_OX_A",
 		TemplateId = "1cdbd013-e977-4f8c-864c-630356da0772",
 		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 4,
+			Pwr = 20.5,
+			Stats = 3,
+			Vit = 16,
+		},
+		Name = "MOD_Dhourn_Combat",
+		TemplateId = "c7a03bdc-5a4a-4bec-9ad6-57921cc6ee19",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 3,
+			Pwr = 20.5,
+			Stats = 3,
+			Vit = 20,
+		},
+		Name = "MOD_Artimezt_Combat",
+		TemplateId = "deae1cdb-444f-4530-949e-9c5b7243ce26",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 4,
+			Pwr = 20.5,
+			Stats = 7,
+			Vit = 36,
+		},
+		Name = "MOD_Arcagh_Combat",
+		TemplateId = "a8dda10b-3ea7-44d5-a8c5-85c22f45ce11",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2187,6 +2379,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 23,
+			Level = 12,
+			Pwr = 85.3,
+			Stats = 14,
+			Vit = 99,
+		},
+		Name = "MOD_Leafsong_Combat",
+		TemplateId = "478add54-d4b5-4c66-a110-b76ff7a74056",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 16,
 			Level = 11,
 			Pwr = 88.0,
@@ -2231,6 +2435,18 @@ return {
 		},
 		Name = "TOT_LOW_Ghost_A",
 		TemplateId = "d0927393-ae34-412e-bf74-4125e4834a39",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 6,
+			Pwr = 58.0,
+			Stats = 3,
+			Vit = 42,
+		},
+		Name = "MOD_Branthos_Combat",
+		TemplateId = "df4dc086-de18-48a4-b7ec-eccba45b6f25",
 		Tier = "high",
 	},
 	{
@@ -2999,6 +3215,18 @@ return {
 		},
 		Name = "TOT_LOW_HouseOfGrief_Wolf_Viconia",
 		TemplateId = "f451bac0-1523-41fa-a811-5a617a3382bc",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 10,
+			Pwr = 94.5,
+			Stats = 11,
+			Vit = 84,
+		},
+		Name = "MOD_AncientGith_Combat",
+		TemplateId = "5288904b-78de-4f1f-aada-4cb5982df681",
 		Tier = "ultra",
 	},
 	{
@@ -3843,6 +4071,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 20,
+			Level = 18,
+			Pwr = 112.5,
+			Stats = 16,
+			Vit = 80,
+		},
+		Name = "MOD_Demilich_Combat",
+		TemplateId = "41f4d4c0-c8e4-48b2-8727-8c435f272b70",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 19,
 			Level = 6,
 			Pwr = 132.5,
@@ -4056,6 +4296,18 @@ return {
 		Name = "TOT_Myconid_Slender_Black",
 		TemplateId = "66d2e9e8-119b-4fe5-9969-5afe61fbf241",
 		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 20,
+			Level = 7,
+			Pwr = 39.0,
+			Stats = 6,
+			Vit = 39,
+		},
+		Name = "MOD_Azer_Combat",
+		TemplateId = "2a4446d8-433d-418c-8a5e-5cec8d3e1827",
+		Tier = "high",
 	},
 	{
 		Info = {

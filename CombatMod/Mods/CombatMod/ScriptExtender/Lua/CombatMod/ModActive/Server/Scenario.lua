@@ -719,7 +719,7 @@ function Scenario.MarkSpawns(round, duration)
         table.insert(spawns, posIndex)
     end
 
-    s.Map:VFXSpawns(spawns, duration or 6)
+    s.Map:VFXSpawns(spawns, duration or 24)
 end
 
 function Scenario.ForwardCombat()

@@ -324,6 +324,11 @@ local items = {
 	"MOD_Plantear_Greatsword_B",
 	"MOD_Meteor_Helper_Invisible_A",
 	"MOD_Eladrin_Longbow",
+	"MOD_Irenicus_Mace",
+	"MOD_Erinyes_Bow",
+	"MOD_Erinyes_Longsword",
+	"MOD_Runepowder_Time_Bomb",
+	"MOD_Runepowder_Vial_Thrown",
 }
 
 for _, name in ipairs(items) do
