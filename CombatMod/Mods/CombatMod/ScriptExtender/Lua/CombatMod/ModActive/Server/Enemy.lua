@@ -247,7 +247,7 @@ function Object:Modify(keepFaction)
     -- end
 
     -- undead enemies get shadow curse immunity
-    if Osi.IsTagged(self.GUID, "33c625aa-6982-4c27-904f-e47029a9b140") == 1 then -- UNDEAD
+    if Osi.IsTagged(self.GUID, "33c625aa-6982-4c27-904f-e47029a9b140") == 1 or Osi.IsTagged(self.GUID, "22e5209c-eaeb-40dc-b6ef-a371794110c2") == 1 then -- UNDEAD OR CONSTRUCT
         Osi.SetTag(self.GUID, C.ShadowCurseTag) -- ACT2_SHADOW_CURSE_IMMUNE
     end
 
