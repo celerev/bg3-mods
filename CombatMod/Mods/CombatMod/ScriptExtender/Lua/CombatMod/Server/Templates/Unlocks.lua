@@ -252,7 +252,7 @@ return table.extend({
         Icon = "statIcons_GaleGod",
         Description = __("With unyielding ambition, grasp the Crown of Karsus and make its might yours."),
         Requirement = 150,
-        Cost = 900,
+        Cost = 1200,
         Amount = 1,
         Character = true,
         OnBuy = function(self, character) -- Checks to see if recepient is Gale, if Gale Mind Flayer, or other, then gives visually appropriate version of the same buff
@@ -275,7 +275,7 @@ return table.extend({
         Id = "BuyMindflayerForm",
         Name = Localization.Get("hd58a2099g6c22g499fga7acgab8d6fda5615"),
         Icon = "TadpoleSuperPower_Ceremorphosis",
-        Cost = 1200,
+        Cost = 1500,
         Amount = 1,
         Character = true,
         Requirement = 225,
@@ -350,6 +350,30 @@ return table.extend({
         Cost = 300,
         Requirement = 75,
         TemplateId = "4b1ea015-1c6c-4bd4-aff7-ff1b118ca459",
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            Osi.UseSpell(character, "TOT_Summon_Aylin", character)
+            Defer(1000, function()
+                self:OnReapply()
+            end)
+        end,
+        OnReapply = U.Once(function(self) ---@param self Unlock
+            Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
+                for uuid, player in pairs(self.BoughtBy) do
+                    self:OnBuy(uuid)
+                end
+            end)
+        end),
+    },
+    {
+        Id = "BuyOwlbear",
+        Name = __("Battle-Ready Owlbear"),
+        Description = __("Your owlbear cub is all grown up and ready to rage. Spawns the Armoured Owlbear as controllable party follower. Note: Save and load once to enable respawn after long rest. Current technical limitation."),
+        Icon = "Action_EndGameAlly_OwlbearCubSummon",
+        Cost = 300,
+        Requirement = 75,
+        TemplateId = "f5d6b4e5-e0ea-44cb-b69b-a52d639cc4c9",
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)

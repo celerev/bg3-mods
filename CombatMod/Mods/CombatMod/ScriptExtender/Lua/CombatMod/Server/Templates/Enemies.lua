@@ -182,6 +182,30 @@ return {
 	{
 		Info = {
 			AC = 15,
+			Level = 15,
+			Pwr = 125.0,
+			Stats = 16,
+			Vit = 119,
+		},
+		Name = "MOD_Aelis_Combat",
+		TemplateId = "abedba73-0c1a-46f8-8c62-4b43b0606454",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 10,
+			Pwr = 105.0,
+			Stats = 15,
+			Vit = 98,
+		},
+		Name = "MOD_Lorroakan_Combat",
+		TemplateId = "efd0109c-6a16-4cfd-8692-eb6ec8bcdac2",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 15,
 			Level = 8,
 			Pwr = 102.0,
 			Stats = 20,
@@ -405,6 +429,30 @@ return {
 		},
 		Name = "MOD_Warden_Combat",
 		TemplateId = "f4e72453-dd4e-4b66-a257-b201a58ffc38",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 6,
+			Pwr = 82.0,
+			Stats = 12,
+			Vit = 59,
+		},
+		Name = "MOD_Baretha_Combat",
+		TemplateId = "91f3b85e-8cf1-4d29-bd1b-3f1efb684d27",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 8,
+			Pwr = 82.0,
+			Stats = 12,
+			Vit = 84,
+		},
+		Name = "MOD_Yeva_Combat",
+		TemplateId = "a2003215-bc48-43ba-ba71-311a34e99915",
 		Tier = "ultra",
 	},
 	{
@@ -758,6 +806,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 16,
+			Level = 6,
+			Pwr = 50.0,
+			Stats = 7,
+			Vit = 38,
+		},
+		Name = "MOD_Dain_Combat",
+		TemplateId = "b84be429-7470-4955-b5da-265e585fc122",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 11,
 			Level = 3,
 			Pwr = 29.0,
@@ -827,6 +887,66 @@ return {
 		Name = "TOT_WYR_Wyrmsway_Skeleton_Ranged",
 		TemplateId = "fd422aa6-6f22-4f82-8a2b-1a2beaea2562",
 		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 3,
+			Pwr = 22.5,
+			Stats = 2,
+			Vit = 30,
+		},
+		Name = "MOD_Abdirak_Combat",
+		TemplateId = "1fbe5706-ab86-4555-a7c9-5a773bb72204",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 4,
+			Pwr = 22.5,
+			Stats = 2,
+			Vit = 28,
+		},
+		Name = "MOD_Rugan_Combat",
+		TemplateId = "7f565ad1-bd6a-48f0-9a81-7393ee13c8cb",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 4,
+			Pwr = 22.5,
+			Stats = 4,
+			Vit = 24,
+		},
+		Name = "MOD_Cyrel_Combat",
+		TemplateId = "ef6bcc7d-2b0f-4bfc-a6dc-b97690497920",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 4,
+			Pwr = 22.5,
+			Stats = 6,
+			Vit = 32,
+		},
+		Name = "MOD_Trynn_Combat",
+		TemplateId = "852dde30-1581-481c-9921-daba5395663e",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 6,
+			Pwr = 59.5,
+			Stats = 12,
+			Vit = 44,
+		},
+		Name = "MOD_Anders_Combat",
+		TemplateId = "c7c4741a-9359-439a-8e46-d781085b21fe",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -1115,6 +1235,18 @@ return {
 		},
 		Name = "MOD_Zethino_Combat",
 		TemplateId = "688b09f2-39dd-4efb-a169-c0bf178869ab",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 4,
+			Pwr = 53.5,
+			Stats = 6,
+			Vit = 41,
+		},
+		Name = "MOD_PriestessGut_Combat",
+		TemplateId = "6f860ff6-15d7-4cd0-8b62-119e703b8ef0",
 		Tier = "high",
 	},
 	{
@@ -1463,6 +1595,18 @@ return {
 		},
 		Name = "TOT_Ogres_Female_A_NotMessingAround",
 		TemplateId = "52abf690-4823-46ff-b499-36a6436434e1",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 4,
+			Pwr = 58.5,
+			Stats = 8,
+			Vit = 67,
+		},
+		Name = "MOD_Lump_Combat",
+		TemplateId = "16038879-903c-4540-a647-f96f051640b8",
 		Tier = "high",
 	},
 	{
@@ -2883,6 +3027,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 17,
+			Level = 11,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 73,
+		},
+		Name = "MOD_Devella_Combat",
+		TemplateId = "bc8572b8-80e2-4b2f-82ef-b13c746fd45f",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 13,
 			Level = 11,
 			Pwr = 120.5,
@@ -3363,6 +3519,54 @@ return {
 	},
 	{
 		Info = {
+			AC = 14,
+			Level = 2,
+			Pwr = 24.0,
+			Stats = -1,
+			Vit = 20,
+		},
+		Name = "MOD_BanditFighter_Combat",
+		TemplateId = "e9d1eb4d-481e-4c8b-91c3-1a1a7b1964dd",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 2,
+			Pwr = 24.0,
+			Stats = -1,
+			Vit = 13,
+		},
+		Name = "MOD_BanditCaster_Combat",
+		TemplateId = "548f731c-b333-4d7e-a23b-b009e4f46e86",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 2,
+			Pwr = 24.0,
+			Stats = -1,
+			Vit = 17,
+		},
+		Name = "MOD_BanditRogue_Combat",
+		TemplateId = "246399ac-e73c-4f8e-83fd-b39fb3b9bb43",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 3,
+			Pwr = 24.0,
+			Stats = -1,
+			Vit = 25,
+		},
+		Name = "MOD_BanditBarbarian_Combat",
+		TemplateId = "f00975a8-3382-4fb3-a3bb-c0fb2e43057d",
+		Tier = "low",
+	},
+	{
+		Info = {
 			AC = 18,
 			Level = 10,
 			Pwr = 79.0,
@@ -3515,6 +3719,18 @@ return {
 		},
 		Name = "TOT_Githyanki_Male_Gishra_Melee",
 		TemplateId = "7c5151fa-8bb5-473f-a89d-fc48cf1a1eda",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 6,
+			Pwr = 82.0,
+			Stats = 15,
+			Vit = 80,
+		},
+		Name = "MOD_Therezzyn_Combat",
+		TemplateId = "bd5ddeba-8c16-4370-8bb0-918aacc9c2c2",
 		Tier = "ultra",
 	},
 	{
@@ -3699,6 +3915,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 14,
+			Level = 7,
+			Pwr = 112.0,
+			Stats = 6,
+			Vit = 150,
+		},
+		Name = "MOD_Justiciar_Combat",
+		TemplateId = "af40b756-82e1-4aae-a101-793743b013d3",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 19,
 			Level = 5,
 			Pwr = 82.0,
@@ -3827,6 +4055,18 @@ return {
 		},
 		Name = "TOT_Dwarves_Female_Hill_FlamingFist_Caster_B",
 		TemplateId = "1576feb8-ba00-4ca5-85dc-b65c86f17602",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 8,
+			Pwr = 72.5,
+			Stats = 9,
+			Vit = 59,
+		},
+		Name = "MOD_AbsoluteGuard_Warlock_Combat",
+		TemplateId = "d63d50f6-9abe-4882-ab24-80bf0a8ccccb",
 		Tier = "high",
 	},
 	{
@@ -4007,6 +4247,18 @@ return {
 		},
 		Name = "MOD_LiaraPortyr_Combat",
 		TemplateId = "52c9ee11-535e-401f-9d5d-eb04b7cfc046",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 92.5,
+			Stats = 18,
+			Vit = 150,
+		},
+		Name = "MOD_Zhalk_Combat",
+		TemplateId = "cae26831-df7f-496d-858f-c462a2552257",
 		Tier = "ultra",
 	},
 	{
