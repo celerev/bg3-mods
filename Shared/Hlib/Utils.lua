@@ -21,8 +21,6 @@ local iterFinal = iter % iterMod
 
 -- C's random library isn't very dynamic, but we can do our best to generate a random seed so Alea carries us the rest of the way
 
-local
-
 for i = 1, iterFinal do
     math.random()
 end
