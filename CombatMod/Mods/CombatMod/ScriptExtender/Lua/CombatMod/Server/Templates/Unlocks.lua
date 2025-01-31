@@ -72,7 +72,7 @@ local multis = {
         Cost = 1000,
         Amount = 1,
         Character = false,
-        Persistent = true,
+        Persistent = false,
         Requirement = 100,
     },
     {
@@ -125,8 +125,24 @@ local ngPlus = {
         Requirement = 300,
     },
     {
+        Id = "NG MOD_BOOSTS",
+        Name = __("New Game+ - Unlock Multipliers for Free"),
+        Icon = "PassiveFeature_Generic_Explosion",
+        Cost = 0,
+        Amount = 1,
+        Character = false,
+        Persistent = false,
+        Requirement = "NEWGAME_PLUS",
+        OnBuy = function(self, character)
+            local unlockBoosts = table.find(Unlock.Get(), function(u)
+                return u.Id == "MOD_BOOSTS"
+            end)
+        unlockBoosts:Buy(character)
+        end,
+    },
+    {
         Id = "BuyRogueScore",
-        Name = __("%s RogueScore", "+50"),
+        Name = __("New Game+ - %s RogueScore", "+50"),
         Icon = "GenericIcon_Intent_Buff",
         Cost = 20,
         Amount = nil,
@@ -138,7 +154,7 @@ local ngPlus = {
     },
     {
         Id = "ScoreMultiplier",
-        Name = __("Gain double RogueScore"),
+        Name = __("New Game+ - Gain double RogueScore"),
         Icon = "GenericIcon_Intent_Buff",
         Cost = 0,
         Amount = 1,
@@ -150,7 +166,7 @@ local ngPlus = {
     },
     {
         Id = "CurrencyPlus",
-        Name = "+100 Currency",
+        Name = "New Game+ - +100 Currency",
         Icon = "Item_CONT_GEN_Chest_Rich_B",
         Cost = 0,
         Amount = 1,
@@ -162,7 +178,7 @@ local ngPlus = {
     },
     {
         Id = "BuyExpPlus",
-        Name = "1000 EXP",
+        Name = "New Game+ - 1000 EXP",
         Icon = "Action_Dash",
         Cost = 0,
         Amount = 3,
@@ -174,7 +190,7 @@ local ngPlus = {
     },
     {
         Id = "BuyLootPlus",
-        Name = __("Roll Loot %dx", 10),
+        Name = __("New Game+ - Roll Loot %dx", 10),
         Icon = "Item_CONT_GEN_Chest_Jewel_A",
         Cost = 0,
         Amount = 10,
@@ -189,7 +205,7 @@ local ngPlus = {
     },
     {
         Id = "BuyStockPlus",
-        Name = __("Reset Stock"),
+        Name = __("New Game+ - Reset Stock"),
         Icon = "Item_BOOK_SignedTradeVisa",
         Description = __("Resets the stock of purchased standard unlocks."),
         Cost = 1000,
@@ -377,7 +393,7 @@ return table.extend({
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
-            Osi.UseSpell(character, "TOT_Summon_Aylin", character)
+            Osi.UseSpell(character, "TOT_Summon_Owlbear", character)
             Defer(1000, function()
                 self:OnReapply()
             end)
@@ -494,43 +510,50 @@ return table.extend({
             Osi.PROC_CAMP_GiveFreeSupplies()
         end,
     },
---   {
---       Id = "ShortRestRecovery",
---       Name = "Restore Resources on Short Rest",
---       Icon = "Action_EndGame_IsobelHeal",
---       Cost = 200,
---       Requirement = 100,
---       Amount = 1,
---       Character = false,
---       OnBuy = function(self, character)
---           self:OnInit()
---       end,
---       Register = U.Once(function(self)
---           Ext.Osiris.RegisterListener("ShortRested", 1, "after", function(character)
---               local entity = Ext.Entity.Get(character)
---               local resources = get(entity.ActionResources, "Resources", {})
---               for uuid, list in pairs(resources) do
---                   for _, resource in pairs(list) do
---                       L.Dump(
---                           "Restoring Resource",
---                          character,
---                           get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
---                       )
---
---                       local toRestore = math.max(1, resource.MaxAmount / 2)
---                       resource.Amount = math.min(resource.MaxAmount, math.floor(resource.Amount + toRestore))
---                   end
---               end
---
---               entity:Replicate("ActionResources")
---           end)
---       end),
---       OnInit = function(self)
---           if self.Bought > 0 then
---               self:Register()
---           end
---       end,
---   },
+    {
+       Id = "ShortRestRecovery",
+       Name = "Restore some extra resources on Short Rest",
+       Icon = "Action_EndGame_IsobelHeal",
+       Cost = 250,
+       Requirement = 100,
+       Amount = 1,
+       Character = false,
+       OnBuy = function(self, character)
+           self:OnInit()
+       end,
+       Register = U.Once(function(self)
+           Ext.Osiris.RegisterListener("ShortRested", 1, "after", function(character)
+               local entity = Ext.Entity.Get(character)
+               local resources = get(entity.ActionResources, "Resources", {})
+               for uuid, list in pairs(resources) do
+                   for _, resource in pairs(list) do
+                       L.Dump(
+                           "Restoring Resource",
+                           character,
+                           get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
+                       )
+                       if resource.ResourceUUID == "d136c5d9-0ff0-43da-acce-a74a07f8d6bf" and resource.Level > math.max(2, math.ceil(Player.Level()/3.3)) then
+                           L.Dump(
+                           "Spell slot too high level",
+                           character,
+                           get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
+                           )
+                       else
+                           local toRestore = math.max(1, math.ceil(resource.MaxAmount / 2.5))
+                           resource.Amount = math.min(resource.MaxAmount, math.floor(resource.Amount + toRestore))
+                       end
+                   
+                   end
+               end
+               entity:Replicate("ActionResources")
+           end)
+       end),
+       OnInit = function(self)
+           if self.Bought > 0 then
+               self:Register()
+           end
+       end,
+    },
 --    {
 --         Id = "BuyRestore",
 --         Name = __("Fully Restore Character"),

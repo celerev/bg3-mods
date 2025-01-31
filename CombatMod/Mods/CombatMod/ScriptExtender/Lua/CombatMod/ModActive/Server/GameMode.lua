@@ -95,7 +95,7 @@ function GameMode.GenerateScenario(score, tiers)
             weights[i] = weight
             totalWeight = totalWeight + weight
         end
-        local randomWeight = math.random() * totalWeight
+        local randomWeight = math.newRandom() * totalWeight
         for i = minRounds, maxRounds do
             randomWeight = randomWeight - weights[i]
             if randomWeight <= 0 then
@@ -122,7 +122,7 @@ function GameMode.GenerateScenario(score, tiers)
             end
         end
         if #validTiers > 0 then
-            local randomWeight = math.random() * totalWeight
+            local randomWeight = math.newRandom() * totalWeight
             for _, entry in ipairs(validTiers) do
                 randomWeight = randomWeight - entry.weight
                 if randomWeight <= 0 then
@@ -149,6 +149,8 @@ function GameMode.GenerateScenario(score, tiers)
         for i = 1, numRounds do
             table.insert(timeline, {})
         end
+		
+		
 
         local roundsSkipped = {}
         local function distribute()
@@ -189,16 +191,26 @@ function GameMode.GenerateScenario(score, tiers)
                             table.insert(timeline, roundIndex + 1, {})
                             numRounds = numRounds + 1
                         end
-                    end
-                    if tier.name == C.EnemyTier[6] or tier.name == C.EnemyTier[7] then
+                    elseif tier.name == C.EnemyTier[6] or tier.name == C.EnemyTier[7] then
                         table.insert(timeline, {})
-                        numRounds = numRounds + 2
-
+                        numRounds = numRounds + 1
                         if not timeline[roundIndex + 1] then
                             table.insert(timeline, roundIndex + 1, {})
                             numRounds = numRounds + 1
                         end
-                    end
+                    elseif tier.name == C.EnemyTier[8] then
+						table.insert(timeline, {})
+						table.insert(timeline, {})
+                        numRounds = numRounds + 2
+                        if not timeline[roundIndex + 1] then
+                            table.insert(timeline, roundIndex + 1, {})
+                            numRounds = numRounds + 1
+                        end
+						if not timeline[roundIndex + 2] then
+                            table.insert(timeline, roundIndex + 2, {})
+                            numRounds = numRounds + 1
+                        end
+					end
                 end
             end
         end
@@ -539,10 +551,10 @@ local function getMap(template)
 
     local map = nil
     if #maps > 0 then
-        local random = math.random(#maps)
+        local random = math.newRandom(#maps)
 
         if table.contains(PersistentVars.RandomLog.Maps, random) then
-            random = math.random(#maps)
+            random = math.newRandom(#maps)
         end
         LogRandom("Maps", random, 10)
 
@@ -553,7 +565,7 @@ local function getMap(template)
 end
 
 local function makeItCow()
-    local lolcow = math.random() < 0.001
+    local lolcow = math.newRandom() < 0.001
     if lolcow then
         local hasOX = Enemy.Find("TOT_OX_A")
         lolcow = hasOX and true or false

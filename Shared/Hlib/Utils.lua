@@ -1,8 +1,39 @@
 ---@type Mod
 local Mod = Require("Hlib/Mod")
+local RNG = Require("Hlib/RNG")
+local Log = Require("Hlib/Log")
 
 ---@class Utils
 local M = {}
+
+local rand_1 = math.random(1, 16777216)
+local rand_2 = math.random(1, 16777216)
+local rand_3 = math.random(1, 16777216)
+
+
+local seed = rand_1 + rand_2 + rand_3
+
+
+local iter = math.floor(tonumber(tostring(tonumber(tostring({}):gsub("table: ", ""), 16) / 0xFFFFFFF))+seed)
+local iterMod = math.random(1, 2500)
+
+local iterFinal = iter % iterMod
+
+-- C's random library isn't very dynamic, but we can do our best to generate a random seed so Alea carries us the rest of the way
+
+local
+
+for i = 1, iterFinal do
+    math.random()
+end
+
+local finalseed = math.random(1, 4294967296)
+
+RNG:init(finalseed)
+
+for i = 1, math.random(3,23) do
+    RNG:random()
+end
 
 -------------------------------------------------------------------------------------------------
 --                                                                                             --
@@ -68,11 +99,7 @@ function M.RandomId(prefix, input)
 end
 
 function M.Random(...)
-    local iter = math.floor(tostring(tonumber(tostring({}):gsub("table: ", ""), 16) / 0xFFFFFFF):sub(-3))
-    for i = 1, iter do
-        Ext.Math.Random()
-    end
-    return Ext.Math.Random(...)
+    return RNG:random(...)
 end
 
 ---@param code string x, y -> x + y

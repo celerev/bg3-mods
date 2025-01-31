@@ -560,7 +560,7 @@ function Scenario.Start(template, map)
     end
 
     if map == nil then
-        map = maps[math.random(#maps)]
+        map = maps[math.newRandom(#maps)]
     end
 
     local timeline = template.Timeline
@@ -588,7 +588,7 @@ function Scenario.Start(template, map)
         if table.contains(C.EnemyTier, definition) then
             local enemies = Enemy.GetByTier(definition, enemyTemplates)
 
-            return enemies[math.random(#enemies)]
+            return enemies[math.newRandom(#enemies)]
         end
 
         return Enemy.Find(definition, enemyTemplates)
@@ -618,7 +618,7 @@ function Scenario.Start(template, map)
 
     -- get spawn positions for every enemy
     while table.size(scenario.Positions) < enemyCount do
-        table.insert(scenario.Positions, math.random(#map.Spawns))
+        table.insert(scenario.Positions, math.newRandom(#map.Spawns))
     end
 
     Player.Notify(__("Scenario %s started.", template.Name))
@@ -768,7 +768,9 @@ function Scenario.TeleportHelper()
         local max = 0
         for _, enemy in ipairs(s.SpawnedEnemies) do
             local d = Osi.GetDistanceTo(enemy.GUID, s.CombatHelper)
-            if d > max then
+            if d == nil then
+                table.removevalue(s.SpawnedEnemies, enemy)
+            elseif d > max then
                 max = d
                 x3, y3, z3 = Osi.GetPosition(enemy.GUID)
             end

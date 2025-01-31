@@ -33,7 +33,8 @@ string.escape = Utils.String.Escape
 string.lcfirst = Utils.String.LowerFirst
 string.ucfirst = Utils.String.UpperFirst
 
-math.random = Utils.Random
+math.newRandom = Utils.Random
+
 math.round = Ext.Math.Round
 
 fn = Utils.Lambda

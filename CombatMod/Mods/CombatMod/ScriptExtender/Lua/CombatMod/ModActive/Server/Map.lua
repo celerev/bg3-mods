@@ -83,7 +83,7 @@ function Object:GetSpawn(spawn)
         pos = self.Enter
     end
     if not pos then
-        pos = self.Spawns[math.random(1, #self.Spawns)]
+        pos = self.Spawns[math.newRandom(1, #self.Spawns)]
     end
 
     return table.unpack(pos)
@@ -101,8 +101,8 @@ function Object:TeleportToSpawn(guid, spawn, withOffset)
 
             local offset = math.floor(offset)
             if offset > 0 then
-                x = x + math.random() * math.random(-offset, offset)
-                z = z + math.random() * math.random(-offset, offset)
+                x = x + math.newRandom() * math.newRandom(-offset, offset)
+                z = z + math.newRandom() * math.newRandom(-offset, offset)
             end
         end
 
@@ -132,8 +132,8 @@ function Object:SpawnIn(enemy, spawn, faceTowards)
     pcall(function()
         local offset = tonumber(Config.RandomizeSpawnOffset)
         if offset > 0 then
-            x = x + math.random() * math.random(-offset, offset)
-            z = z + math.random() * math.random(-offset, offset)
+            x = x + math.newRandom() * math.newRandom(-offset, offset)
+            z = z + math.newRandom() * math.newRandom(-offset, offset)
         end
     end)
 

@@ -197,6 +197,13 @@ function Player.ReturnToCamp()
     Event.Trigger("ReturnToCamp")
 
     if Player.Region() == "END_Main" then
+        -- If we just came from Netherbrain, we need to clear flags preventing Long Rest
+        Osi.ClearFlag("END_BrainBattle_Event_Started_3cd63c2e-7343-45dd-9137-4cabca2179a6", "NULL_00000000-0000-0000-0000-000000000000", 0)
+        Osi.ClearFlag("END_General_State_CurrentlyInBrainBattle_0d7205b2-0d55-4540-8737-543253873cd6", "NULL_00000000-0000-0000-0000-000000000000", 0)
+        Osi.PROC_END_BrainBattle_ClearBrainBattle()
+        Osi.ClearFlag("END_General_State_Started_a0fd5f91-e4b3-4d01-84d3-9ff484139e99", "NULL_00000000-0000-0000-0000-000000000000", 0)
+        Osi.DB_Camp_Unlocked(1)
+        Osi.SetLongRestAvailable(1)
         -- act 1 seems to load fastest
         return Player.TeleportToAct("act1"):After(function()
             Player.TeleportToCamp()

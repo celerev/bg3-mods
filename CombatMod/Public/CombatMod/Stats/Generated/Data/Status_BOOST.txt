@@ -1,0 +1,12 @@
+new entry "END_ALLYBUFF_VOLO"
+type "StatusData"
+data "StatusType" "BOOST"
+using "END_ALLYBUFF_VOLO"
+data "Boosts" "RollBonus(Attack,2);RollBonus(SavingThrow, 2);RollBonus(RawAbility, 2);"
+
+new entry "MF_PERILOUS_STAKES"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MF_PERILOUS_STAKES"
+data "StackId" "TOTPERILOUS"
+data "StackType" "Additive"

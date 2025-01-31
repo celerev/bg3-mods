@@ -519,6 +519,18 @@ Ext.Osiris.RegisterListener(
                 true
             )
         end
+        if object == "S_END_CrownProxy_b06e8326-a034-4480-8652-6a66b3bd7d0a" then
+            L.Debug("Removing story object ", object)
+            Osi.TurnBasedTimerCancel("S_END_CrownProxy_b06e8326-a034-4480-8652-6a66b3bd7d0a", "END_NautiloidCountdown")
+            Osi.DB_END_BrainBattle_TadpoleReminderActive:Delete(1)
+            Osi.LeaveCombat(object)
+            GU.Object.Remove(object)
+        elseif object == "S_END_Nautiloid_002_f50dc928-bb2d-48b6-a2dd-98fce0a47d28" then
+            L.Debug("Removing story object ", object)
+            Osi.RemoveStatus(object, "END_NAUTILOID_SPAWN_VFX", "NULL_00000000-0000-0000-0000-000000000000")
+            Osi.LeaveCombat(object)
+            GU.Object.Remove(object)
+        end
     end)
 )
 
@@ -572,6 +584,14 @@ Ext.Osiris.RegisterListener(
         --         -- Scenario.Teleport(character)
         --     end
         -- end)
+
+        -- If we just came from Netherbrain, we need to clear flags preventing Long Rest
+        Osi.ClearFlag("END_BrainBattle_Event_Started_3cd63c2e-7343-45dd-9137-4cabca2179a6", "NULL_00000000-0000-0000-0000-000000000000", 0)
+        Osi.ClearFlag("END_General_State_CurrentlyInBrainBattle_0d7205b2-0d55-4540-8737-543253873cd6", "NULL_00000000-0000-0000-0000-000000000000", 0)
+        Osi.PROC_END_BrainBattle_ClearBrainBattle()
+        Osi.ClearFlag("END_General_State_Started_a0fd5f91-e4b3-4d01-84d3-9ff484139e99", "NULL_00000000-0000-0000-0000-000000000000", 0)
+        Osi.DB_Camp_Unlocked(1)
+        Osi.SetLongRestAvailable(1)
 
         if not Ext.Entity.Get(character).CampPresence or not Scenario.Current() then
             L.Debug("ReturnToCamp", character)

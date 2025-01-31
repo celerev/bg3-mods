@@ -582,6 +582,9 @@ function Enemy.DistanceToParty(object)
     end)
 
     local x, y, z = Osi.GetPosition(object)
+    if x == nil or y == nil or z == nil then
+        return
+    end
 
     local distance = 999
     local partyXyz = {}

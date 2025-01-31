@@ -13,6 +13,7 @@ local M = {
         Minthara = "S_GOB_DrowCommander_25721313-0c15-4935-8176-9f134385451b",
         Jaheira = "S_Player_Jaheira_91b6b200-7d00-4d62-8dc9-99e8339dfa1a",
         Minsc = "S_Player_Minsc_0de603c5-42e2-4811-9dad-f652de080eba",
+        Alfira = "S_DEN_Bard_4a405fba-3000-4c63-97e5-a8001ebb883c",
     },
     NPCCharacters = {
         -- TODO: Add more NPCs
