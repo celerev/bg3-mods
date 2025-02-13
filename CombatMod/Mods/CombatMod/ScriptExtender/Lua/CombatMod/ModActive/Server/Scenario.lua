@@ -912,8 +912,14 @@ function Scenario.CloseEnemyDistance(specific, maxDistance)
         end
 
         local x, y, z = Osi.GetPosition(enemy.GUID)
+        if x == nil or y == nil or z == nil then
+            return
+        end
 
         local distance, x2, y2, z2 = Enemy.DistanceToParty(enemy.GUID)
+        if x2 == nil or y2 == nil or z2 == nil then
+            return
+        end
 
         if distance < maxDistance then
             return

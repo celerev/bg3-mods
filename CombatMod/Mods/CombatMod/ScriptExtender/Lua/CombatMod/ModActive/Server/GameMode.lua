@@ -33,8 +33,8 @@ function GameMode.GetTiers(cow, score)
     -- define tiers and their corresponding difficulty values
     local tiers = {
         { name = C.EnemyTier[1], min = 0, value = 4, amount = #Enemy.GetByTier(C.EnemyTier[1]) },
-        { name = C.EnemyTier[2], min = 40, value = 10, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
-        { name = C.EnemyTier[3], min = 60, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
+        { name = C.EnemyTier[2], min = 30, value = 10, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
+        { name = C.EnemyTier[3], min = 55, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
         { name = C.EnemyTier[4], min = 80, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
         { name = C.EnemyTier[5], min = 100, value = 46, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
         { name = C.EnemyTier[6], min = 140, value = 68, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
@@ -310,11 +310,25 @@ function GameMode.RewardRogueScore(scenario)
 
     if endRound <= scenario:TotalRounds() then
         Event.Trigger("ScenarioPerfectClear", scenario)
-
-        Player.AskConfirmation("Perfect Clear! Double your score from %d to %d?", baseScore, baseScore * 2)
+        Player.AskConfirmation("Perfect Clear! Gain bonus loot and EXP?")
             :After(function(confirmed)
                 if confirmed then
-                    GameMode.UpdateRogueScore(score + baseScore)
+                    local bonusMod = Player.Level()
+                    local bonusEXP = 100
+                    if bonusMod < 4 then
+                        bonusEXP = bonusMod * 100
+                    elseif bonusMod < 8 then
+                        bonusEXP = bonusMod * 280 
+                    elseif bonusMod < 13 then
+                        bonusEXP = bonusMod * 360
+                    else
+                        bonusEXP = bonusMod * 400
+                    end
+                    Player.GiveExperience(bonusEXP)
+                    local bonusRolls = math.max(math.floor(scenario:KillScore() * 0.25), 1)
+                    local loot = Item.GenerateLoot(bonusRolls, scenario.LootRates)
+                    local x, y, z = Osi.GetPosition(Player.Host())
+                    Item.SpawnLoot(loot, x, y, z)
                 end
             end)
     end

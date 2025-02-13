@@ -598,6 +598,12 @@ Ext.Osiris.RegisterListener(
         Osi.PROC_GLO_Jergal_SetDialog("CAMP_Jergal_7f4acd9b-15c0-81fe-9409-623634ec3ed3")
         Osi.SetJoinBlock(0)
 
+        for _, player in pairs(GU.DB.GetPlayers()) do
+            Osi.SetIsInDangerZone(player, 0)
+            Osi.PROC_SetBlockDismiss(player, 0)
+            Osi.DB_InDangerZone:Delete(player, "ENDGAME")
+        end
+
         if not Ext.Entity.Get(character).CampPresence or not Scenario.Current() then
             L.Debug("ReturnToCamp", character)
             -- need ~2 ticks for changing CampPresence

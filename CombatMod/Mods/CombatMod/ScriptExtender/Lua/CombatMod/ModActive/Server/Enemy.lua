@@ -183,7 +183,17 @@ function Object:ModifyExperience()
 
         local expMod = (Config.ExpMultiplier or 1) * 2
         if self.IsBoss then
-            expMod = expMod * 1.2
+            expMod = expMod * 1.25
+        end
+
+        if not PersistentVars.HardMode then
+            if Player.Level() < 5 then
+                expMod = expMod * 1.2
+            elseif Player.Level() < 10 then
+                expMod = expMod * 1.8
+            elseif Player.Level() < 15 then
+                expMod = expMod * 1.2
+            end
         end
 
         if PersistentVars.Unlocked.ExpMultiplier then
@@ -230,6 +240,13 @@ end
 function Object:Modify(keepFaction)
     if not self:IsSpawned() or Osi.IsDead(self.GUID) == 1 then
         return
+    end
+
+    for _, player in pairs(GU.DB.GetPlayers()) do
+        if self.GUID == player then
+            L.Error("Don't perform enemy modifications on players: ", self.GUID)
+            return
+        end
     end
 
     Osi.SetCharacterLootable(self.GUID, 0)
