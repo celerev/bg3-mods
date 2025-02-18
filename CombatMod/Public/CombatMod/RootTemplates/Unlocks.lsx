@@ -420,7 +420,7 @@
 				<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
 				<attribute id="AnubisConfigName" type="FixedString" value="SHA_Nightsong" />
 				<attribute id="Archetype" type="FixedString" value="Act2_GLO_Nightsong" />
-				<attribute id="CharacterVisualResourceID" type="FixedString" value="eccecbed-e6e4-fb38-f9ac-6b963d9f7721" />
+				<attribute id="CharacterVisualResourceID" type="FixedString" value="08de6f01-26d0-4ac6-5425-256d5b710d3b" />
 				<attribute id="DisplayName" type="TranslatedString" handle="hedbc8f37g1db0g4601gac71gd5abc2667ad9" version="2" />
 				<attribute id="Equipment" type="FixedString" value="SHA_Nightsong" />
 				<attribute id="Faction" type="guid" value="89d54194-f9fd-4a99-879a-e11971bfe3e4" />

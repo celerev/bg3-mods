@@ -182,6 +182,11 @@ function Object:ModifyExperience()
         local entity = self:Entity()
 
         local expMod = (Config.ExpMultiplier or 1) * 2
+
+        if self.Name == "Temporary" then
+            expMod = 0
+        end
+
         if self.IsBoss then
             expMod = expMod * 1.25
         end
@@ -371,9 +376,51 @@ function Object:Spawn(x, y, z, neutral)
         return false
     end
 
+    local asylumX, asylumY, asylumZ = 0,0,0
+
+    if Player.Region() == C.Regions.Act1 then
+        asylumX = -284.551
+        asylumY = 24.104
+        asylumZ = 116.642
+    elseif Player.Region() == C.Regions.Act1b then
+        asylumX = 736.06
+        asylumY = 0
+        asylumZ = -743.228
+    elseif Player.Region() == C.Regions.Act2 then
+        asylumX = 55.421
+        asylumY = 0
+        asylumZ = -1407.249
+    elseif Player.Region() == C.Regions.Act2b then
+        asylumX = 357.448
+        asylumY = 19.951
+        asylumZ = 29.953
+    elseif Player.Region() == C.Regions.Act3 then
+        asylumX = 605.245
+        asylumY = 0
+        asylumZ = -750.309
+    elseif Player.Region() == C.Regions.Act3b then
+        asylumX = -1565.942
+        asylumY = 0.853
+        asylumZ = 297.384
+    elseif Player.Region() == C.Regions.Act3c then
+        asylumX = -1909.747
+        asylumY = -0.232
+        asylumZ = 2675.996
+    elseif Player.Region() == C.Regions.Act3i then
+        asylumX = 169.889
+        asylumY = 0
+        asylumZ = 11.882
+    end
+
     x, y, z = Osi.FindValidPosition(x, y, z, 100, C.NPCCharacters.Volo, 1) -- avoiding dangerous surfaces
 
-    local success = self:CreateAt(x, y, z)
+    local success = self:CreateAt(asylumX, asylumY, asylumZ)
+
+    Osi.ApplyStatus(self.GUID, "TOTR_INVULNERABLE", -1)
+
+    WaitTicks(6, function()
+        Osi.TeleportToPosition(self.GUID, x, y, z, "", 1, 1, 1, 0, 1)
+    end)
 
     if not success then
         L.Error("Failed to spawn: ", self:GetTranslatedName(), self:GetId())

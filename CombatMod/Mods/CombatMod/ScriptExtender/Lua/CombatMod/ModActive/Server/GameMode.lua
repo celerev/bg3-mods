@@ -519,6 +519,10 @@ Event.On(
             local baseDex = entity.Stats.AbilityModifiers[3]
             GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
         end)
+        WaitTicks(36, function()
+            Osi.RemoveStatus(enemy.GUID, "TOTR_INVULNERABLE")
+            Osi.PROC_Foop(enemy.GUID)
+        end)
     end)
 )
 
@@ -531,6 +535,10 @@ Event.On(
                 assert(entity, "ApplyDifficulty: entity not found")
                 local baseDex = entity.Stats.AbilityModifiers[3]
                 GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
+            end)
+            WaitTicks(36, function()
+                Osi.RemoveStatus(enemy.GUID, "TOTR_INVULNERABLE")
+                Osi.PROC_Foop(enemy.GUID)
             end)
         end
     end)

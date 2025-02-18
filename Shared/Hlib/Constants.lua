@@ -35,6 +35,7 @@ local M = {
         Act3 = "BGO_Main_A",
         Act3b = "CTY_Main_A",
         Act3c = "END_Main",
+        Act3i = "IRN_Main_A",
     },
     Waypoints = { -- BG3-Community-Library-Team/BG3-Community-Library
         Act1 = { -- WLD_Main_A
