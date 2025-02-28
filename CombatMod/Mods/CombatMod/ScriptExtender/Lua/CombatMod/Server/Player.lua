@@ -212,6 +212,10 @@ function Player.ReturnToCamp()
         Osi.PROC_Foop("S_GLO_JergalAvatar_0133f2ad-e121-4590-b5f0-a79413919805")
         Osi.SetTag("S_GLO_JergalAvatar_0133f2ad-e121-4590-b5f0-a79413919805", "TRADER_91d5ebc6-91ea-44db-8a51-216860d69b5b")
         Osi.PROC_GLO_Jergal_SetDialog("CAMP_Jergal_7f4acd9b-15c0-81fe-9409-623634ec3ed3")
+
+        Osi.PROC_GLO_Jergal_MoveToCamp()
+        Osi.PROC_GLO_Jergal_Appear()
+
         Osi.SetJoinBlock(0)
 
         for _, player in pairs(GU.DB.GetPlayers()) do
@@ -225,6 +229,20 @@ function Player.ReturnToCamp()
             Player.TeleportToCamp()
             return true
         end)
+    end
+
+    Osi.DB_Camp_Unlocked(1)
+    Osi.SetLongRestAvailable(1)
+
+    Osi.PROC_GLO_Jergal_MoveToCamp()
+    Osi.PROC_GLO_Jergal_Appear()
+
+    Osi.SetJoinBlock(0)
+
+    for _, player in pairs(GU.DB.GetPlayers()) do
+        Osi.SetIsInDangerZone(player, 0)
+        Osi.PROC_SetBlockDismiss(player, 0)
+        Osi.DB_InDangerZone:Delete(player, "ENDGAME")
     end
 
     if Player.Region() == "IRN_Main_A" then

@@ -904,6 +904,18 @@ return {
 		Info = {
 			AC = 14,
 			Level = 4,
+			Pwr = 33.5,
+			Stats = 8,
+			Vit = 28,
+		},
+		Name = "MOD_Zarys_Combat",
+		TemplateId = "ee9ec3a2-b46f-4d73-ad7f-bb80b4e63f4b",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 4,
 			Pwr = 22.5,
 			Stats = 2,
 			Vit = 28,
@@ -934,6 +946,18 @@ return {
 		},
 		Name = "MOD_Trynn_Combat",
 		TemplateId = "852dde30-1581-481c-9921-daba5395663e",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 4,
+			Pwr = 22.5,
+			Stats = 6,
+			Vit = 34,
+		},
+		Name = "MOD_Rurik_Combat",
+		TemplateId = "ba0c9190-0abb-45c0-82ed-fe43bfd30b8b",
 		Tier = "mid",
 	},
 	{
@@ -1223,7 +1247,19 @@ return {
 		},
 		Name = "MOD_SoulMistress_Combat",
 		TemplateId = "e7566471-c14f-464f-a3a7-b0470ee61223",
-		Tier = "ultra",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 56.5,
+			Stats = 16,
+			Vit = 65,
+		},
+		Name = "MOD_SoulMistress2_Combat",
+		TemplateId = "bfbd40e0-660b-4a84-8e40-639949d6a74f",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2135,7 +2171,7 @@ return {
 		},
 		Name = "TOT_Redcap_Pirate_Caster",
 		TemplateId = "4d71b61c-595a-4309-b6f4-e8a510e7ba31",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -3159,6 +3195,66 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 70,
+		},
+		Name = "MOD_Dwarf_Male_AbsoluteGuard_Melee",
+		TemplateId = "41b6f981-928a-49d3-826b-e6e3f79fb2d3",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 70,
+		},
+		Name = "MOD_HalfOrc_Male_AbsoluteGuard_Melee",
+		TemplateId = "fd05c1b8-6f1f-461d-8869-8ef4d600fde2",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 70,
+		},
+		Name = "MOD_Drow_Female_AbsoluteGuard_Melee",
+		TemplateId = "cd25abf2-bf71-47fc-8664-ac3af6549ac3",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 70,
+		},
+		Name = "MOD_Halfing_Male_AbsoluteGuard_Melee",
+		TemplateId = "9aa81809-ec40-4f52-9305-a657bd313be8",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 8,
+			Pwr = 90.5,
+			Stats = 16,
+			Vit = 70,
+		},
+		Name = "MOD_HalfElf_Male_AbsoluteGuard_Melee",
+		TemplateId = "c5e0cdbc-f316-479c-8875-b8a32dfaf86c",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 17,
 			Level = 11,
 			Pwr = 90.5,
@@ -3191,6 +3287,66 @@ return {
 		},
 		Name = "MOD_Humans_Female_AbsoluteGuard_Caster",
 		TemplateId = "f4e91bcf-43c4-4bc9-b692-0481a57ad276",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 80.5,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_Drow_Female_AbsoluteGuard_Caster",
+		TemplateId = "fc22e41f-0581-4030-a6c0-74c414a55584",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 80.5,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_Halfling_Male_AbsoluteGuard_Caster",
+		TemplateId = "cfdad497-83d8-47e2-aead-06f8204af645",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 80.5,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_HalfElf_Male_AbsoluteGuard_Caster",
+		TemplateId = "056457be-8bfb-432f-adb3-7499c478b5c2",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 80.5,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_Drow_Male_AbsoluteGuard_Caster",
+		TemplateId = "f0039650-10d7-40dc-89ee-30b044495ec2",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 8,
+			Pwr = 80.5,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_HalfOrcs_Female_AbsoluteGuard_Caster",
+		TemplateId = "a0ec3eb5-8546-4ce8-ae54-18631a037eba",
 		Tier = "high",
 	},
 	{
@@ -3251,6 +3407,18 @@ return {
 		},
 		Name = "MOD_MephitIce_Combat",
 		TemplateId = "0b128451-d81d-4540-bfce-60bbfdd8dbd4",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 3,
+			Pwr = 21.5,
+			Stats = 0,
+			Vit = 17,
+		},
+		Name = "MOD_MephitDust_Combat",
+		TemplateId = "6f16b395-6d83-4465-98ba-be254f002f85",
 		Tier = "mid",
 	},
 	{
@@ -3419,7 +3587,7 @@ return {
 		},
 		Name = "TOT_Sharran_Cultist_Human_Male_Caster_A",
 		TemplateId = "4bed4a1d-6963-43e2-ae6d-0d14f7c39faa",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -3515,6 +3683,18 @@ return {
 		},
 		Name = "MOD_AncientGith_Combat",
 		TemplateId = "5288904b-78de-4f1f-aada-4cb5982df681",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 10,
+			Pwr = 94.5,
+			Stats = 11,
+			Vit = 84,
+		},
+		Name = "MOD_AncientGith2_Combat",
+		TemplateId = "d474f47b-cb0f-4a4e-a611-9d27078a88b0",
 		Tier = "ultra",
 	},
 	{
@@ -4127,7 +4307,7 @@ return {
 		},
 		Name = "TOT_Sharran_Cultist_Elf_Female_Caster_A",
 		TemplateId = "f864facf-37ff-441d-b69e-507130ca97d0",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {

@@ -538,6 +538,9 @@ return table.extend({
                            character,
                            get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
                            )
+                       elseif resource.ResourceUUID == "46886ba5-6505-4875-a747-ac14118e1e08" then
+                           local toRestore = math.max(1, math.ceil(resource.MaxAmount / 2.5))
+                           resource.Amount = math.min(Player.Level(), math.floor(resource.Amount + toRestore))
                        else
                            local toRestore = math.max(1, math.ceil(resource.MaxAmount / 2.5))
                            resource.Amount = math.min(resource.MaxAmount, math.floor(resource.Amount + toRestore))
