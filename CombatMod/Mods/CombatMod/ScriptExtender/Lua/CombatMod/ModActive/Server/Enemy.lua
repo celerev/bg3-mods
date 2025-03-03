@@ -420,6 +420,7 @@ function Object:Spawn(x, y, z, neutral)
 
     WaitTicks(6, function()
         Osi.TeleportToPosition(self.GUID, x, y, z, "", 1, 1, 1, 0, 1)
+        Osi.PROC_Foop(self.GUID)
     end)
 
     if not success then

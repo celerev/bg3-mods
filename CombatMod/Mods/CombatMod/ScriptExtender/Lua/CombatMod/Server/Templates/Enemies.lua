@@ -4047,6 +4047,54 @@ return {
 	},
 	{
 		Info = {
+			AC = 17,
+			Level = 9,
+			Pwr = 92.0,
+			Stats = 13,
+			Vit = 169,
+		},
+		Name = "MOD_Haarlep_Combat",
+		TemplateId = "480a4c86-e205-4265-81c2-16ba6c6cee58",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 9,
+			Pwr = 92.0,
+			Stats = 13,
+			Vit = 169,
+		},
+		Name = "MOD_Haarlep2_Combat",
+		TemplateId = "93f20655-b3c5-4c08-81ee-0bd2a879128e",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 12,
+			Pwr = 92.0,
+			Stats = 16,
+			Vit = 80,
+		},
+		Name = "MOD_Daisy_Combat",
+		TemplateId = "71b17bda-880c-4265-befe-a939cdc8763b",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 12,
+			Pwr = 92.0,
+			Stats = 16,
+			Vit = 80,
+		},
+		Name = "MOD_Daisy2_Combat",
+		TemplateId = "9f30435c-0362-431a-8ab3-e12d6734d630",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 14,
 			Level = 6,
 			Pwr = 46.5,
@@ -4727,7 +4775,7 @@ return {
 		},
 		Name = "TOT_Meazel",
 		TemplateId = "339defbb-7f0c-412c-9113-f6eba8198275",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {

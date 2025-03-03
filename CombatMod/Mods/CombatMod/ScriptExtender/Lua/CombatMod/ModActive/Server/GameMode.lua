@@ -39,7 +39,7 @@ function GameMode.GetTiers(cow, score)
         { name = C.EnemyTier[5], min = 100, value = 46, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
         { name = C.EnemyTier[6], min = 140, value = 68, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
         { name = C.EnemyTier[7], min = 170, value = 118, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
-        { name = C.EnemyTier[8], min = 200, value = 150, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+        { name = C.EnemyTier[8], min = 200, value = 146, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
     }
 
     if GameMode.IsHardMode() then
@@ -519,9 +519,8 @@ Event.On(
             local baseDex = entity.Stats.AbilityModifiers[3]
             GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
         end)
-        WaitTicks(36, function()
+        WaitTicks(48, function()
             Osi.RemoveStatus(enemy.GUID, "TOTR_INVULNERABLE")
-            Osi.PROC_Foop(enemy.GUID)
         end)
     end)
 )
@@ -536,9 +535,8 @@ Event.On(
                 local baseDex = entity.Stats.AbilityModifiers[3]
                 GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
             end)
-            WaitTicks(36, function()
+            WaitTicks(48, function()
                 Osi.RemoveStatus(enemy.GUID, "TOTR_INVULNERABLE")
-                Osi.PROC_Foop(enemy.GUID)
             end)
         end
     end)
