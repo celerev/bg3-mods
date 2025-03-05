@@ -4483,7 +4483,39 @@
 						value="032132d4-4bbb-bfa4-9205-e99a59661a9b" />
 					<attribute id="Icon" type="FixedString"
 						value="032132d4-4bbb-bfa4-9205-e99a59661a9b-_(Icon_Animated_Armor)" />
-					<attribute id="Equipment" type="FixedString" value="" />
+					<attribute id="Equipment" type="FixedString" value="EQP_Greatsword" />
+					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="LevelOverride" type="int32" value="4" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="MapKey" type="FixedString"
+						value="5e5e2205-5ea3-4b22-a60e-6fc64a9be2d3" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="2facfc7e-5fe9-4a8d-9fec-dcb5ce6c5ebf" />
+					<attribute id="Name" type="LSString" value="TOT_AnimatedArmorRanged" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="Archetype" type="FixedString" value="ranged_stupid" />
+					<attribute id="Stats" type="FixedString" value="AnimatedArmor" />
+					<attribute id="CharacterVisualResourceID" type="FixedString"
+						value="032132d4-4bbb-bfa4-9205-e99a59661a9b" />
+					<attribute id="Icon" type="FixedString"
+						value="032132d4-4bbb-bfa4-9205-e99a59661a9b-_(Icon_Animated_Armor)" />
+					<attribute id="Equipment" type="FixedString" value="EQP_HeavyCrossbow" />
 					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
@@ -5447,6 +5479,102 @@
 					<attribute id="IsEquipmentLootable" type="bool" value="False" />
 					<attribute id="IsLootable" type="bool" value="False" />
 					<attribute id="MapKey" type="FixedString"
+						value="582034b4-14b5-4472-8425-469b84393bf3" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="a42a8493-b701-4d71-bdc8-0857e718c247" />
+					<attribute id="Name" type="LSString" value="TOT_Zombie_A" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="Archetype" type="FixedString" value="zombie" />
+					<attribute id="Stats" type="FixedString" value="Zombie" />
+					<attribute id="CharacterVisualResourceID" type="FixedString"
+						value="0cbb8c47-b5b4-cef1-297b-de9485d39266" />
+					<attribute id="Icon" type="FixedString"
+						value="0cbb8c47-b5b4-cef1-297b-de9485d39266-_(Icon_Zombie)" />
+					<attribute id="Equipment" type="FixedString" value="" />
+					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="LevelOverride" type="int32" value="3" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="MapKey" type="FixedString"
+						value="582034b4-14b5-4472-8425-469b84393bf3" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="a42a8493-b701-4d71-bdc8-0857e718c247" />
+					<attribute id="Name" type="LSString" value="TOT_Zombie_A" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="Archetype" type="FixedString" value="zombie" />
+					<attribute id="Stats" type="FixedString" value="Zombie" />
+					<attribute id="CharacterVisualResourceID" type="FixedString"
+						value="0cbb8c47-b5b4-cef1-297b-de9485d39266" />
+					<attribute id="Icon" type="FixedString"
+						value="0cbb8c47-b5b4-cef1-297b-de9485d39266-_(Icon_Zombie)" />
+					<attribute id="Equipment" type="FixedString" value="" />
+					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="LevelOverride" type="int32" value="3" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="MapKey" type="FixedString"
+						value="94ed34fb-1e19-41dc-9c21-171967da9d3c" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="d07a6db8-462f-48ac-8286-8aad8282ba02" />
+					<attribute id="Name" type="LSString" value="TOT_GreaterZombie_A" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="Archetype" type="FixedString" value="zombie" />
+					<attribute id="Stats" type="FixedString" value="Zombie_Greater" />
+					<attribute id="CharacterVisualResourceID" type="FixedString"
+						value="48fb270c-f427-2811-9ecd-e4dd0d032572" />
+					<attribute id="Icon" type="FixedString"
+						value="48fb270c-f427-2811-9ecd-e4dd0d032572-_(Icon_Zombie)" />
+					<attribute id="Equipment" type="FixedString" value="" />
+					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="LevelOverride" type="int32" value="6" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="MapKey" type="FixedString"
 						value="85278bd9-b87a-4303-a285-7344e15cb450" />
 					<attribute id="ParentTemplateId" type="FixedString"
 						value="da1c7ba6-e01d-4a88-a7b1-0b0447b0c60a" />
@@ -5731,6 +5859,46 @@
 							<children>
 								<node id="TreasureItem">
 									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="MapKey" type="FixedString"
+						value="414917b2-47c3-487c-99d5-45e86ef698fc" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="1de5b868-e741-4a07-9ebe-7aad4bbb5869" />
+					<attribute id="Name" type="LSString" value="TOT_Ooze_Fetid" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="Archetype" type="FixedString" value="beast" />
+					<attribute id="Stats" type="FixedString" value="TWN_Ooze_Putrid" />
+					<attribute id="CharacterVisualResourceID" type="FixedString"
+						value="4302865f-ec50-014e-fd15-73a7956f827d" />
+					<attribute id="Icon" type="FixedString"
+						value="4302865f-ec50-014e-fd15-73a7956f827d-_(Icon_Ooze)" />
+					<attribute id="Equipment" type="FixedString" value="" />
+					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="LevelOverride" type="int32" value="6" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString"
+										value="TWN_OOZE_PUTRID_AURA" />
 								</node>
 							</children>
 						</node>
@@ -8439,6 +8607,35 @@
 						value="07d79901-9cb9-41e7-a289-e8b38432d24e" />
 					<attribute id="Name" type="LSString" value="TOT_Bipedal_Fey_Dryad" />
 					<attribute id="Stats" type="FixedString" value="Dryad" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+				
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString"
+						value="417cd993-e290-4e44-bc29-fa719a9630f8" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<attribute id="CharacterVisualResourceID" type="FixedString"
+						value="0ed6814b-f052-0420-9345-76659d2e3e0d" />
+					<attribute id="Equipment" type="FixedString" value="SHA_Justiciar_Scimitar_Shar_Shield_Shar" />
+					<attribute id="Icon" type="FixedString"
+						value="0ed6814b-f052-0420-9345-76659d2e3e0d-SHA_Justiciar_Scimitar_Shar_Shield_Shar_(Icon_Human_Male)" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="6a23cdcd-f10b-4e5f-b222-b23a12a57f24" />
+					<attribute id="Name" type="LSString" value="TOT_SHA_LastJusticiar" />
+					<attribute id="Stats" type="FixedString" value="SHA_LastJusticiar_Lyrthindor" />
 					<children>
 						<node id="Treasures">
 							<children>

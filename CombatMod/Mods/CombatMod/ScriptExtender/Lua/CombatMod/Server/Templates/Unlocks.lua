@@ -709,6 +709,18 @@ return table.extend({
         end,
     },
     {
+        Id = "BuyShadowEntangle",
+        Name = Localization.Get("hfb295254ga72fg43a6gbab7g14ba7f2fb0fa"),
+        Icon = "Spell_Conjuration_Entangled",
+        Description = Localization.Get("h9f29e2bbg9d6eg4910g8747ge04cc0468991"),
+        Cost = 50,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            Osi.AddSpell(character, "Target_TWN_ArabellaPowers_ShadowEnsnare", 1, 0);
+        end,
+    },
+    {
         Id = "BuyVoloErsatz",
         Name = Localization.Get("h232cc24ega0f9g4f4dgb5d3g46ab59579d4b"),
         Description = Localization.Get("h9d8550edg6d54g4113gbbdcge6d99b8b2a2f"),
@@ -881,6 +893,26 @@ return table.extend({
         OnBuy = function(self, character)
             if Osi.HasAppliedStatus(character, "END_ALLYABILITIES_MOLBUFF") ~= 1 then
                 Osi.ApplyStatus(character, "END_ALLYABILITIES_MOLBUFF", -1)
+            end
+        end,
+        OnReapply = Debounce(100, function(self) ---@param self Unlock
+            for uuid, _ in pairs(self.BoughtBy) do
+                self:OnBuy(uuid)
+            end
+        end),
+    },
+    {
+        Id = "BuyArabellaBuff",
+        Name = Localization.Get("hcec0f370geccfg445egaf70g1974159ff90b"),
+        Icon = "Spell_Abjuration_FreedomOfMovement",
+        Description = __("One must remove all obstacles to follow one's destiny - Arabella's favour grants affected entities the benefits of Freedom of Movement."),
+        Cost = 350,
+        Requirement = 150,
+        Amount = 1,
+        Character = true,
+        OnBuy = function(self, character)
+            if Osi.HasAppliedStatus(character, "END_ALLYABILITIES_ARABELLABUFF") ~= 1 then
+                Osi.ApplyStatus(character, "END_ALLYABILITIES_ARABELLABUFF", -1)
             end
         end,
         OnReapply = Debounce(100, function(self) ---@param self Unlock

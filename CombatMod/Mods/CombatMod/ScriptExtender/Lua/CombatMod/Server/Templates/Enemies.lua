@@ -61,6 +61,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 8,
+			Level = 3,
+			Pwr = 11.0,
+			Stats = -5,
+			Vit = 22,
+		},
+		Name = "TOT_Zombie_A",
+		TemplateId = "582034b4-14b5-4472-8425-469b84393bf3",
+		Tier = "low",
+	},
+	{
+		Info = {
 			AC = 14,
 			Level = 1,
 			Pwr = 11.0,
@@ -347,6 +359,18 @@ return {
 		TemplateId = "6cd71603-354c-4c35-a2d9-199958a4beb3",
 		Tier = "legendary",
 	},
+		{
+		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 285.0,
+			Stats = 23,
+			Vit = 175,
+		},
+		Name = "MOD_Slayer_Combat",
+		TemplateId = "7201d8fd-f4b2-40b3-8416-714b156e2088",
+		Tier = "legendary",
+	},
 	{
 		Info = {
 			AC = 17,
@@ -549,7 +573,7 @@ return {
 		},
 		Name = "TOT_Shadow_Wraith_A",
 		TemplateId = "9a5d6e4f-707e-4091-831c-8dc819550805",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -562,6 +586,30 @@ return {
 		Name = "TOT_Undead_Skeleton_Blood",
 		TemplateId = "95048801-bbad-429d-bf84-4ecb9e4b0d29",
 		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 8,
+			Level = 4,
+			Pwr = 33.5,
+			Stats = -5,
+			Vit = 42,
+		},
+		Name = "MOD_BarZombie_Combat",
+		TemplateId = "8beb4f0f-4c46-4862-bf56-565d2fd6a8ad",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 6,
+			Pwr = 38.5,
+			Stats = -1,
+			Vit = 74,
+		},
+		Name = "TOT_GreaterZombie_A",
+		TemplateId = "94ed34fb-1e19-41dc-9c21-171967da9d3c",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -1066,6 +1114,18 @@ return {
 		},
 		Name = "TOT_Redcap_Pirate_Melee",
 		TemplateId = "0fe83837-ee44-468c-aace-3f74830329a8",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 5,
+			Pwr = 79.5,
+			Stats = 9,
+			Vit = 65,
+		},
+		Name = "MOD_BOOAL_Combat",
+		TemplateId = "7dbc8a36-3ac0-46b3-9c29-86b2d5dd1c13",
 		Tier = "ultra",
 	},
 	{
@@ -2943,6 +3003,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 4,
+			Pwr = 34.5,
+			Stats = -10,
+			Vit = 33,
+		},
+		Name = "TOT_AnimatedArmorRanged",
+		TemplateId = "5e5e2205-5ea3-4b22-a60e-6fc64a9be2d3",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 6,
+			Pwr = 46.5,
+			Stats = 3,
+			Vit = 57,
+		},
+		Name = "MOD_HollowArmor_Combat",
+		TemplateId = "2152a1d6-2625-4293-99e0-5dd938983755",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 16,
 			Level = 3,
 			Pwr = 34.5,
@@ -3600,6 +3684,18 @@ return {
 		Name = "TOT_Ooze_Grease",
 		TemplateId = "3145d0d8-8a55-46e0-ba89-585e68aeb7d9",
 		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 8,
+			Level = 6,
+			Pwr = 33.0,
+			Stats = -7,
+			Vit = 52,
+		},
+		Name = "TOT_Ooze_Fetid",
+		TemplateId = "414917b2-47c3-487c-99d5-45e86ef698fc",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -4271,7 +4367,55 @@ return {
 		},
 		Name = "TOT_Undead_DarkJusticiar_Boss",
 		TemplateId = "5beabcd8-d82c-4fc4-b131-d118dd032f75",
-		Tier = "epic",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 7,
+			Pwr = 112.0,
+			Stats = 10,
+			Vit = 112,
+		},
+		Name = "TOT_SHA_LastJusticiar",
+		TemplateId = "417cd993-e290-4e44-bc29-fa719a9630f8",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 7,
+			Pwr = 112.0,
+			Stats = 8,
+			Vit = 120,
+		},
+		Name = "MOD_CHASentinel_Combat",
+		TemplateId = "36b219e7-9eb2-413b-9ada-6f1bfd2f1e50",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 7,
+			Pwr = 112.0,
+			Stats = 8,
+			Vit = 117,
+		},
+		Name = "MOD_WISSentinel_Combat",
+		TemplateId = "14b4c786-ce22-4834-a5b8-ed71beaa370a",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 7,
+			Pwr = 112.0,
+			Stats = 8,
+			Vit = 109,
+		},
+		Name = "MOD_INTSentinel_Combat",
+		TemplateId = "0727e766-ca52-45c2-98bd-07fc17a8bdf1",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -4900,6 +5044,18 @@ return {
 	{
 		Info = {
 			AC = 17,
+			Level = 12,
+			Pwr = 171.0,
+			Stats = 20,
+			Vit = 208,
+		},
+		Name = "MOD_CazadorAscend_Combat",
+		TemplateId = "22605146-e8a9-4018-9e68-59975aa76f86",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 17,
 			Level = 1,
 			Pwr = 51.5,
 			Stats = 6,
@@ -4920,18 +5076,6 @@ return {
 		Name = "TOT_Gremishka_Spawn",
 		TemplateId = "b71656d4-9039-4323-8308-52868ce7a672",
 		Tier = "mid",
-	},
-	{
-		Info = {
-			AC = 18,
-			Level = 12,
-			Pwr = 135.5,
-			Stats = 13,
-			Vit = 153,
-		},
-		Name = "TOT_Slayer",
-		TemplateId = "099e83cc-5a92-4738-9060-0020db4b0516",
-		Tier = "epic",
 	},
 	{
 		Info = {
