@@ -150,6 +150,10 @@ function M.DB.GetPlayers()
     return M.DB.TryGet("DB_Players", 1, nil, 1)
 end
 
+function M.DB.GetCharactersInCamp()
+    return M.DB.TryGet("DB_InCamp", 1, nil, 1)
+end
+
 M.Character = {}
 
 ---@param character string GUID

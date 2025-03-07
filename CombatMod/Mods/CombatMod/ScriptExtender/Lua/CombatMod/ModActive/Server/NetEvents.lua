@@ -371,6 +371,17 @@ Net.On("RecruitOrigin", function(event)
     end
 end)
 
+Net.On("FixFactions", function(event)
+    if Player.InCombat() then
+        Net.Respond(event, { false, __("Cannot change factions while in combat.") })
+    else
+        for _, player in pairs(GU.DB.GetPlayers()) do
+            Osi.SetFaction(player, C.CompanionFaction)
+        end
+        Net.Respond(event, { true })
+    end
+end)
+
 Net.On("CancelLongRest", function(event)
     StoryBypass.EndLongRest()
     Net.Respond(event, { true })

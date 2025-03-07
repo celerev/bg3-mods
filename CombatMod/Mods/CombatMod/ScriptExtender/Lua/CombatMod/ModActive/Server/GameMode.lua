@@ -71,13 +71,20 @@ function GameMode.GenerateScenario(score, tiers)
     local preferredRounds = 3
     local emptyRoundChance = 0.2 -- 20% chance for a round to be empty
     local scoreTolerance = tiers[1].value
-    if score > 1000 then
+    if score > 70 then
+       emptyRoundChance = 0.1
+    elseif score > 120 then
+        preferredRounds = 2
+        emptyRoundChance = 0.05
+    elseif score > 200 then
+        preferredRounds = 2
+        emptyRoundChance = 0
+    elseif score > 500 then
         maxRounds = 20
-        preferredRounds = 5
-        emptyRoundChance = 0.1
+        preferredRounds = 4
+        emptyRoundChance = 0
         scoreTolerance = 50
-    end
-    if score > 3000 then
+    elseif score > 3000 then
         maxRounds = math.ceil(score / 100)
         preferredRounds = math.ceil(score / 300)
         emptyRoundChance = 0
@@ -505,7 +512,7 @@ Event.On(
     "ScenarioStopped",
     ifRogueLike(function(scenario)
         if scenario.OnMap then
-            GameMode.UpdateRogueScore(PersistentVars.RogueScore - 10)
+            GameMode.UpdateRogueScore(PersistentVars.RogueScore - 5)
         end
     end)
 )
@@ -519,7 +526,7 @@ Event.On(
             local baseDex = entity.Stats.AbilityModifiers[3]
             GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
         end)
-        WaitTicks(48, function()
+        WaitTicks(54, function()
             Osi.RemoveStatus(enemy.GUID, "TOTR_INVULNERABLE")
         end)
     end)
@@ -535,7 +542,7 @@ Event.On(
                 local baseDex = entity.Stats.AbilityModifiers[3]
                 GameMode.ApplyDifficulty(enemy, PersistentVars.RogueScore, baseDex)
             end)
-            WaitTicks(48, function()
+            WaitTicks(54, function()
                 Osi.RemoveStatus(enemy.GUID, "TOTR_INVULNERABLE")
             end)
         end

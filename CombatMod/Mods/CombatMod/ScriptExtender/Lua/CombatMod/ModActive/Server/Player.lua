@@ -208,6 +208,7 @@ function Player.RecruitOrigin(id)
         end,
         Jaheira = function()
             recruit(uuid) -- "04443f0f-9c62-d474-a98a-3e13eec31c69")
+            Osi.ClearTag(uuid, "BLOCK_RESURRECTION_22a75dbb-1588-407e-b559-5aa4e6d4e6a6")
         end,
         Minsc = function()
             recruit(uuid) -- "630440f5-b71a-8764-94e8-b62544254cff")

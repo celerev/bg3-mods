@@ -8450,6 +8450,7 @@
 					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
 					<attribute id="Flag" type="int32" value="0" />
 					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="LevelOverride" type="int32" value="6" />
 					<attribute id="MapKey" type="FixedString"
 						value="a056e158-8ec0-4539-9e55-333866a0ff2c" />
 					<attribute id="Name" type="LSString" value="TOT_Meenlock" />
@@ -8635,6 +8636,7 @@
 					<attribute id="ParentTemplateId" type="FixedString"
 						value="6a23cdcd-f10b-4e5f-b222-b23a12a57f24" />
 					<attribute id="Name" type="LSString" value="TOT_SHA_LastJusticiar" />
+					<attribute id="LevelOverride" type="int32" value="7" />
 					<attribute id="Stats" type="FixedString" value="SHA_LastJusticiar_Lyrthindor" />
 					<children>
 						<node id="Treasures">

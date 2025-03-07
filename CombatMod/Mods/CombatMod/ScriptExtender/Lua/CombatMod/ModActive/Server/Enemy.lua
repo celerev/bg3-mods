@@ -429,6 +429,12 @@ function Object:Spawn(x, y, z, neutral)
         return false
     end
 
+    if success and not PersistentVars.RogueModeActive then
+        WaitTicks(72, function()
+            Osi.RemoveStatus(self.GUID, "TOTR_INVULNERABLE")
+        end)
+    end
+
     return true,
         RetryUntil(function(runner)
             return self:Entity().ServerReplicationDependencyOwner -- goal: a component that loads later and always exists

@@ -532,6 +532,17 @@ return table.extend({
                            character,
                            get(Ext.StaticData.Get(resource.ResourceUUID, "ActionResource"), "Name", "Unknown")
                        )
+-- Prevent Coffeelocking, otherwise Sorcerer is disproportionately more powerful than all other casters
+                       Osi.RemoveStatus(character, "SPELLSLOT_1")
+                       Osi.RemoveStatus(character, "SPELLSLOT_2")
+                       Osi.RemoveStatus(character, "SPELLSLOT_3")
+                       Osi.RemoveStatus(character, "SPELLSLOT_4")
+                       Osi.RemoveStatus(character, "SPELLSLOT_5")
+                       Osi.RemoveStatus(character, "SORCERYPOINT_1")
+                       Osi.RemoveStatus(character, "SORCERYPOINT_2")
+                       Osi.RemoveStatus(character, "SORCERYPOINT_3")
+                       Osi.RemoveStatus(character, "SORCERYPOINT_4")
+                       Osi.RemoveStatus(character, "SORCERYPOINT_5")
                        if resource.ResourceUUID == "d136c5d9-0ff0-43da-acce-a74a07f8d6bf" and resource.Level > math.max(2, math.ceil(Player.Level()/3.3)) then
                            L.Dump(
                            "Spell slot too high level",

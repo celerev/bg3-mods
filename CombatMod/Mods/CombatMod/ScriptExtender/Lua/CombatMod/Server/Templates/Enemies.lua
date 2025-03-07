@@ -5056,7 +5056,7 @@ return {
 	{
 		Info = {
 			AC = 17,
-			Level = 1,
+			Level = 6,
 			Pwr = 51.5,
 			Stats = 6,
 			Vit = 49,

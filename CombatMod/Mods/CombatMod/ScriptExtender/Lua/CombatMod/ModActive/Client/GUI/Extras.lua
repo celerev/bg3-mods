@@ -41,6 +41,11 @@ function Extras.Main(tab)
     root:AddText(__("Needs to be run multiple times in some cases. May not work in all cases."))
     root:AddText(__("Level will be reset. Inventory will be emptied."))
 
+    root:AddSeparator()
+    Extras.Button(root, __("Fix Factions"), __("Resets the faction all of current party members, in case scripting has caused someone to stop being considered an ally. Cannot be used during combat."), function(btn)
+        Net.Request("FixFactions"):After(DisplayResponse)
+    end)
+
     root:AddSeparatorText("Cheat")
     root:AddInputInt("RogueScore", State.RogueScore or 0).OnChange = Debounce(1000, function(input)
         Net.RCE("PersistentVars.RogueScore = %d", input.Value[1]):After(function()

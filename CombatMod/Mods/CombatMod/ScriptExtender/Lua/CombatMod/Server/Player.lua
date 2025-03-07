@@ -218,10 +218,39 @@ function Player.ReturnToCamp()
 
         Osi.SetJoinBlock(0)
 
+
         for _, player in pairs(GU.DB.GetPlayers()) do
             Osi.SetIsInDangerZone(player, 0)
             Osi.PROC_SetBlockDismiss(player, 0)
             Osi.DB_InDangerZone:Delete(player, "ENDGAME")
+
+           if player == C.OriginCharactersStarter.Karlach then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.Karlach, "Karlach_InParty_12459660-b66e-9b0b-9963-670e0993543d")
+           elseif player == C.OriginCharactersStarter.Gale then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.Gale, "Gale_InParty_6beb1b10-845f-49fa-6d6d-f425eaa42574")
+           elseif player == C.OriginCharactersStarter.Astarion then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.Astarion,"Astarion_InParty_53aba16e-55bb-a0fc-a444-522e237dbe46")
+           elseif player == C.OriginCharactersStarter.Laezel then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.Laezel, "Laezel_InParty_93bf58f5-5111-9730-1ee2-62dfb0b00c96")
+           elseif player == C.OriginCharactersStarter.Wyll then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.Wyll, "Wyll_InParty_6dff0a1f-1a51-725d-6e9a-52b5742ba9e6")
+           elseif player == C.OriginCharactersStarter.ShadowHeart then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.ShadowHeart, "ShadowHeart_InParty_95ca3833-09d0-5772-b16a-c7a5e9208fe5")
+           elseif player == C.OriginCharactersSpecial.Halsin then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Halsin, "Halsin_InParty_890c2586-6b71-ca01-5bd6-19d533181c71")
+           elseif player == C.OriginCharactersSpecial.Minthara then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Minthara, "Minthara_InParty_13d72d55-0d47-c280-9e9c-da076d8876d8")
+               Osi.SetFaction(C.OriginCharactersSpecial.Minthara, C.CompanionFaction)
+           elseif player == C.OriginCharactersSpecial.Jaheira then
+               Osi.DB_PermaDefeated:Delete(C.OriginCharactersSpecial.Jaheira)
+               Osi.ClearTag(C.OriginCharactersSpecial.Jaheira, "BLOCK_RESURRECTION_22a75dbb-1588-407e-b559-5aa4e6d4e6a6")
+               Osi.SetHasDialog(C.OriginCharactersSpecial.Jaheira, 1)
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Jaheira, "Jaheira_InParty_e97481ba-961c-50a7-c54f-d34d6b75044d")
+           elseif player == C.OriginCharactersSpecial.Minsc then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Minsc, "Minsc_InParty_d0554ced-ca60-938b-362c-07b0c77610d7")
+           elseif player == C.OriginCharactersSpecial.Alfira then
+               Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Alfira, "DEN_Bard_InParty_3c71c397-b378-340b-0da9-ef3d17d14423")
+           end
         end
 
         -- act 1 seems to load fastest
