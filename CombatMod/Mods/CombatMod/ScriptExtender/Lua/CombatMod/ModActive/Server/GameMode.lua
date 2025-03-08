@@ -508,14 +508,14 @@ Event.On("RogueModeChanged", function(bool)
     end
 end)
 
-Event.On(
-    "ScenarioStopped",
-    ifRogueLike(function(scenario)
-        if scenario.OnMap then
-            GameMode.UpdateRogueScore(PersistentVars.RogueScore - 5)
-        end
-    end)
-)
+--Event.On(
+--    "ScenarioStopped",
+--   ifRogueLike(function(scenario)
+--        if scenario.OnMap then
+--            GameMode.UpdateRogueScore(PersistentVars.RogueScore - 5)
+--        end
+--    end)
+--)
 
 Event.On(
     "ScenarioEnemySpawned",

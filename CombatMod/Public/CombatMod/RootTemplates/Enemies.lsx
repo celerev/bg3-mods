@@ -4969,6 +4969,7 @@
 					<attribute id="Stats" type="FixedString" value="SCL_Ketheric" />
 					<attribute id="CharacterVisualResourceID" type="FixedString"
 						value="d4456846-e6c5-c890-f126-2d18432c6934" />
+					<attribute id="Scale" type="float" value="1.1" />
 					<attribute id="Icon" type="FixedString"
 						value="d4456846-e6c5-c890-f126-2d18432c6934-MOO_Ketheric_(Icon_Ketheric)" />
 					<attribute id="Equipment" type="FixedString" value="MOO_Ketheric" />
@@ -4979,6 +4980,26 @@
 							<children>
 								<node id="TreasureItem">
 									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString"
+										value="MOO_KETHERIC_PHASE1" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString"
+										value="AURA_OF_PROTECTION" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString"
+										value="AURA_OF_COURAGE" />
+								</node>
+								<node id="Status">
+									<attribute id="Object" type="FixedString"
+										value="AURA_OF_HATE" />
 								</node>
 							</children>
 						</node>
