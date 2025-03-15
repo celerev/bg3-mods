@@ -55,7 +55,9 @@ Net.On("ResetTemplates", function(event)
     if event.Payload.Maps then
         Templates.ExportMaps()
     end
-    if event.Payload.Enemies then
+    if event.Payload.Enemies and PersistentVars.LoneWolfMode then
+        Templates.ExportSoloModeEnemies()
+    elseif event.Payload.Enemies then
         Templates.ExportEnemies()
     end
     if event.Payload.LootRates then
@@ -281,6 +283,7 @@ local function broadcastConfig()
         local c = table.deepclone(Config)
         c.RoguelikeMode = PersistentVars.RogueModeActive
         c.HardMode = PersistentVars.HardMode
+        c.LoneWolfMode = PersistentVars.LoneWolfMode
         c.Debug = Mod.Debug
 
         Net.Send("Config", c)
@@ -326,6 +329,11 @@ Net.On("Config", function(event)
 
             if config.HardMode ~= nil then
                 PersistentVars.HardMode = config.HardMode
+                broadcastState()
+            end
+
+            if config.LoneWolfMode ~= nil then
+                PersistentVars.LoneWolfMode = config.LoneWolfMode
                 broadcastState()
             end
         end

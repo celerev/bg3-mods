@@ -20,6 +20,10 @@ function GameMode.IsHardMode()
     return PersistentVars.HardMode
 end
 
+function GameMode.IsSoloMode()
+    return PersistentVars.LoneWolfMode
+end
+
 function GameMode.StartRoguelike(template)
     if not PersistentVars.RogueModeActive then
         PersistentVars.RogueModeActive = true
@@ -33,25 +37,25 @@ function GameMode.GetTiers(cow, score)
     -- define tiers and their corresponding difficulty values
     local tiers = {
         { name = C.EnemyTier[1], min = 0, value = 4, amount = #Enemy.GetByTier(C.EnemyTier[1]) },
-        { name = C.EnemyTier[2], min = 30, value = 10, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
-        { name = C.EnemyTier[3], min = 55, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
-        { name = C.EnemyTier[4], min = 80, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
-        { name = C.EnemyTier[5], min = 100, value = 46, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
-        { name = C.EnemyTier[6], min = 140, value = 68, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-        { name = C.EnemyTier[7], min = 170, value = 118, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+        { name = C.EnemyTier[2], min = 25, value = 10, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
+        { name = C.EnemyTier[3], min = 45, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
+        { name = C.EnemyTier[4], min = 70, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
+        { name = C.EnemyTier[5], min = 90, value = 46, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
+        { name = C.EnemyTier[6], min = 120, value = 68, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
+        { name = C.EnemyTier[7], min = 160, value = 118, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
         { name = C.EnemyTier[8], min = 200, value = 146, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
     }
 
     if GameMode.IsHardMode() then
         tiers = {
             { name = C.EnemyTier[1], min = 0, value = 4, amount = #Enemy.GetByTier(C.EnemyTier[1]) },
-            { name = C.EnemyTier[2], min = 20, value = 8, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
-            { name = C.EnemyTier[3], min = 40, value = 15, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
-            { name = C.EnemyTier[4], min = 60, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
-            { name = C.EnemyTier[5], min = 80, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
-            { name = C.EnemyTier[6], min = 100, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-            { name = C.EnemyTier[7], min = 130, value = 92, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
-            { name = C.EnemyTier[8], min = 150, value = 108, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+            { name = C.EnemyTier[2], min = 15, value = 8, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
+            { name = C.EnemyTier[3], min = 30, value = 15, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
+            { name = C.EnemyTier[4], min = 50, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
+            { name = C.EnemyTier[5], min = 70, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
+            { name = C.EnemyTier[6], min = 90, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
+            { name = C.EnemyTier[7], min = 110, value = 92, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[8], min = 140, value = 108, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
         }
     end
 
@@ -149,6 +153,25 @@ function GameMode.GenerateScenario(score, tiers)
             return {}
         end
 
+        local partySizeMod = Player.PartySize()
+        if partySizeMod == 4 then
+            L.Debug("Standard party size, standard scaling")
+        elseif partySizeMod == 1 then
+            maxValue = maxValue * 0.6
+        elseif partySizeMod == 2 then
+            maxValue = maxValue * 0.75
+        elseif partySizeMod == 3 then
+            maxValue = maxValue * 0.9
+        elseif partySizeMod == 5 then
+            maxValue = maxValue * 1.2
+        elseif partySizeMod == 6 then
+            maxValue = maxValue * 1.4
+        elseif partySizeMod == 7 then
+            maxValue = maxValue * 1.6
+        elseif partySizeMod >= 8 then
+            maxValue = maxValue * 2
+        end
+
         local timeline = {}
         local numRounds = weightedRandom()
         local remainingValue = maxValue
@@ -156,8 +179,7 @@ function GameMode.GenerateScenario(score, tiers)
         for i = 1, numRounds do
             table.insert(timeline, {})
         end
-		
-		
+
 
         local roundsSkipped = {}
         local function distribute()
@@ -373,8 +395,6 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
     end
     local originalDex = baseDex
 
-    local partySizeMod = math.exp((Player.PartySize() - 4) * 0.2)
-
     local function scale(i, h)
         local x = i / 200
         local max_value = Config.ScalingModifier
@@ -385,7 +405,7 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
         end
 
         local rate = i / 1000
-        return math.floor(max_value * (1 - math.exp(-rate * x)) * partySizeMod)
+        return math.floor(max_value * (1 - math.exp(-rate * x)))
     end
 
     local mod = scale(score, GameMode.IsHardMode())

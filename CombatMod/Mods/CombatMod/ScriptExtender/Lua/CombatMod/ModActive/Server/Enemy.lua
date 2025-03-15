@@ -194,8 +194,8 @@ function Object:ModifyExperience()
         if not PersistentVars.HardMode then
             if Player.Level() < 5 then
                 expMod = expMod * 1.2
-            elseif Player.Level() < 10 then
-                expMod = expMod * 1.8
+            elseif Player.Level() < 9 then
+                expMod = expMod * 1.65
             elseif Player.Level() < 15 then
                 expMod = expMod * 1.2
             end
@@ -209,7 +209,7 @@ function Object:ModifyExperience()
             * math.ceil(entity.EocLevel.Level / 2) -- ceil(1/2) = 1
             * expMod
 
-        entity.ServerExperienceGaveOut.Experience = math.floor(exp / Player.PartySize())
+        entity.ServerExperienceGaveOut.Experience = math.floor(exp / 4)
     end):Catch(function()
         L.Error("Failed to modify experience: ", self.GUID)
     end)

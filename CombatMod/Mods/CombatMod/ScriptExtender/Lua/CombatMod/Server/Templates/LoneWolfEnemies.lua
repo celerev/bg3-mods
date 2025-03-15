@@ -45,7 +45,7 @@ return {
 		},
 		Name = "MOD_Harpy_Combat",
 		TemplateId = "cc35a307-014c-460d-8b38-1ff8682aca33",
-		Tier = "low",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -57,7 +57,7 @@ return {
 		},
 		Name = "MOD_Harpy_CombatB",
 		TemplateId = "34aeab13-5298-4c66-a4c6-362c80813a4f",
-		Tier = "low",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -335,18 +335,18 @@ return {
 		TemplateId = "30d6a794-fbf1-453d-9e3f-35b51058cd15",
 		Tier = "mythical",
 	},
-	{
-		Info = {
-			AC = 18,
-			Level = 10,
-			Pwr = 205.0,
-			Stats = 22,
-			Vit = 300,
-		},
-		Name = "MOD_AdamantineGolem_Combat",
-		TemplateId = "cd218575-49ea-4a97-b49f-3db8e21c88d8",
-		Tier = "legendary",
-	},
+--	{
+--		Info = {
+--			AC = 18,
+--			Level = 10,
+--			Pwr = 205.0,
+--			Stats = 22,
+--			Vit = 300,
+--		},
+--		Name = "MOD_AdamantineGolem_Combat",
+--		TemplateId = "cd218575-49ea-4a97-b49f-3db8e21c88d8",
+--		Tier = "mythical",
+--	},
 	{
 		Info = {
 			AC = 20,
@@ -886,7 +886,7 @@ return {
 		},
 		Name = "TOT_SteelWatcher_Biped_A_Ranged",
 		TemplateId = "00a9c1d8-302f-452b-b444-bcffe3f6098b",
-		Tier = "ultra",
+		Tier = "epic",
 	},
 	-- {
 	-- 	Info = {
@@ -982,7 +982,7 @@ return {
 		},
 		Name = "MOD_Cyrel_Combat",
 		TemplateId = "ef6bcc7d-2b0f-4bfc-a6dc-b97690497920",
-		Tier = "mid",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -1307,7 +1307,7 @@ return {
 		},
 		Name = "MOD_SoulMistress_Combat",
 		TemplateId = "e7566471-c14f-464f-a3a7-b0470ee61223",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -1319,7 +1319,7 @@ return {
 		},
 		Name = "MOD_SoulMistress2_Combat",
 		TemplateId = "bfbd40e0-660b-4a84-8e40-639949d6a74f",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -1355,7 +1355,7 @@ return {
 		},
 		Name = "MOD_MephitMagma_Combat",
 		TemplateId = "97728d55-e048-497f-b73e-da22385e2409",
-		Tier = "low",
+		Tier = "mid",
 	},
 	{
 		Info = {
@@ -1475,7 +1475,7 @@ return {
 		},
 		Name = "TOT_SteelWatcher_Quadruped_A",
 		TemplateId = "011210c0-744d-413f-beaf-a0d31d9fcf99",
-		Tier = "legendary",
+		Tier = "mythical",
 	},
 	{
 		Info = {
@@ -1931,7 +1931,7 @@ return {
 		},
 		Name = "MOD_Dhourn_Combat",
 		TemplateId = "c7a03bdc-5a4a-4bec-9ad6-57921cc6ee19",
-		Tier = "low",
+		Tier = "mid",
 	},
 	{
 		Info = {
@@ -3107,7 +3107,7 @@ return {
 		},
 		Name = "TOT_SteelWatcher_Biped_A",
 		TemplateId = "fcbe353e-198c-4fa6-b45b-300ff0e8e3cf",
-		Tier = "ultra",
+		Tier = "epic",
 	},
 	{
 		Info = {
@@ -3503,7 +3503,7 @@ return {
 		},
 		Name = "MOD_MephitDust_Combat",
 		TemplateId = "6f16b395-6d83-4465-98ba-be254f002f85",
-		Tier = "mid",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -3947,7 +3947,7 @@ return {
 		},
 		Name = "MOD_BanditCaster_Combat",
 		TemplateId = "548f731c-b333-4d7e-a23b-b009e4f46e86",
-		Tier = "low",
+		Tier = "mid",
 	},
 	{
 		Info = {
@@ -5015,7 +5015,7 @@ return {
 		},
 		Name = "MOD_MindMaster_Combat",
 		TemplateId = "9a06db77-9d41-4c66-b9cb-674f56dbea83",
-		Tier = "high",
+		Tier = "ultra",
 	},
 	{
 		Info = {
@@ -5041,18 +5041,18 @@ return {
 		TemplateId = "9ef2ca78-cdfa-4439-ba54-b76f380256f3",
 		Tier = "legendary",
 	},
-	{
-		Info = {
-			AC = 17,
-			Level = 12,
-			Pwr = 171.0,
-			Stats = 20,
-			Vit = 208,
-		},
-		Name = "MOD_CazadorAscend_Combat",
-		TemplateId = "22605146-e8a9-4018-9e68-59975aa76f86",
-		Tier = "mythical",
-	},
+--	{
+--		Info = {
+--			AC = 17,
+--			Level = 12,
+--			Pwr = 171.0,
+--			Stats = 20,
+--			Vit = 208,
+--		},
+--		Name = "MOD_CazadorAscend_Combat",
+--		TemplateId = "22605146-e8a9-4018-9e68-59975aa76f86",
+--		Tier = "mythical",
+--	},
 	{
 		Info = {
 			AC = 17,

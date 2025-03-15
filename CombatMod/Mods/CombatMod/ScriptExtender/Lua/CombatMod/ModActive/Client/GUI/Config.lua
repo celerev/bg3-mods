@@ -16,6 +16,8 @@ function Config.Main(tab)
 
     Config.Checkbox(root, "Challenge Mode", "A brutal challenge. Increases Encounter Budget, increases rate of Enemy Scaling, and allows more powerful monsters to arrive sooner.", "HardMode")
 
+    Config.Checkbox(root, "Lone Wolf Mode", "BETA: A scenario rebalanced for solo players. Press ResetTemplates button at bottom of page after enabling.", "LoneWolfMode")
+
     Config.Checkbox(
         root,
         "Spawn Items At Player",

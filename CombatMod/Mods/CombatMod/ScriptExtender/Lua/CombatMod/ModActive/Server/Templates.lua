@@ -1,4 +1,5 @@
 local enemyTemplates = Require("CombatMod/Server/Templates/Enemies.lua")
+local soloModeEnemyTemplates = Require("CombatMod/Server/Templates/LoneWolfEnemies.lua")
 local mapTemplates = Require("CombatMod/Server/Templates/Maps.lua")
 local scenarioTemplates = Require("CombatMod/Server/Templates/Scenarios.lua")
 local unlockTemplates = Require("CombatMod/Server/Templates/Unlocks.lua")
@@ -13,6 +14,10 @@ External.File.ExportIfNeeded("ItemFilters", { Names = {}, Mods = {} })
 
 function Templates.ExportEnemies()
     External.File.Export("Enemies", enemyTemplates)
+end
+
+function Templates.ExportSoloModeEnemies()
+    External.File.Export("Enemies", soloModeEnemyTemplates)
 end
 
 function Templates.ExportMaps()
