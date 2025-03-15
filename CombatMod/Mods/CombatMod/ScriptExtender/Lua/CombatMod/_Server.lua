@@ -12,6 +12,7 @@ Mod.PersistentVarsTemplate = {
     LastScenario = nil,
     RogueScore = 0,
     HardMode = false, -- applies additional difficulty to the game
+    LoneWolfMode = false, --rebalanced enemy tiers and placement for solo players
     GUIOpen = false,
     History = {},
     RandomLog = { -- log last random values to prevent repeating the same

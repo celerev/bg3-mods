@@ -194,10 +194,10 @@ function Object:ModifyExperience()
         if not PersistentVars.HardMode then
             if Player.Level() < 5 then
                 expMod = expMod * 1.2
-            elseif Player.Level() < 9 then
+            elseif Player.Level() < 10 then
                 expMod = expMod * 1.65
             elseif Player.Level() < 15 then
-                expMod = expMod * 1.2
+                expMod = expMod * 1.25
             end
         end
 

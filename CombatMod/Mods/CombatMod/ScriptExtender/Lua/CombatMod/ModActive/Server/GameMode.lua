@@ -54,8 +54,8 @@ function GameMode.GetTiers(cow, score)
             { name = C.EnemyTier[4], min = 50, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
             { name = C.EnemyTier[5], min = 70, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
             { name = C.EnemyTier[6], min = 90, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-            { name = C.EnemyTier[7], min = 110, value = 92, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
-            { name = C.EnemyTier[8], min = 140, value = 108, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+            { name = C.EnemyTier[7], min = 120, value = 86, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[8], min = 150, value = 108, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
         }
     end
 
