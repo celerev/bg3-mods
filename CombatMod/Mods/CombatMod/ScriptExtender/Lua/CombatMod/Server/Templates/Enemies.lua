@@ -337,6 +337,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 21,
+			Level = 21,
+			Pwr = 320.0,
+			Stats = 46,
+			Vit = 297,
+		},
+		Name = "MOD_Solar_Combat",
+		TemplateId = "3d04f701-a890-48bb-8926-4717e9658ec0",
+		Tier = "mythical",
+	},
+	{
+		Info = {
 			AC = 18,
 			Level = 10,
 			Pwr = 205.0,
@@ -2423,7 +2435,19 @@ return {
 		},
 		Name = "TOT_Werewolf",
 		TemplateId = "2f2aac10-bc02-4d24-be43-2b43d402e4e4",
-		Tier = "ultra",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 5,
+			Pwr = 53.0,
+			Stats = 6,
+			Vit = 58,
+		},
+		Name = "MOD_WinterWolf_Combat",
+		TemplateId = "6d3258ac-66db-4045-8cb4-268e0a6e82f3",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2675,6 +2699,18 @@ return {
 		},
 		Name = "MOD_Bareki_Combat",
 		TemplateId = "9bb62834-7797-4eec-9597-285f19271adb",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
+			Level = 13,
+			Pwr = 114.0,
+			Stats = 16,
+			Vit = 170,
+		},
+		Name = "MOD_LoupGarou_Combat",
+		TemplateId = "b475017a-132c-4aae-8d25-b5bd46605fa0",
 		Tier = "epic",
 	},
 	{
@@ -2687,6 +2723,18 @@ return {
 		},
 		Name = "TOT_WYR_Wyrmsway_Skeleton_Mage",
 		TemplateId = "bc312ce8-1abb-49a8-8448-6b5a88c86a35",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 4,
+			Pwr = 36.0,
+			Stats = 4,
+			Vit = 14,
+		},
+		Name = "MOD_Pixie_Combat",
+		TemplateId = "9822f73b-815e-4dc8-a61b-456c59e29830",
 		Tier = "mid",
 	},
 	{
@@ -2724,6 +2772,30 @@ return {
 		Name = "MOD_NeedleBlight_Combat",
 		TemplateId = "9cdfd624-032c-4d9f-be23-4f4a8a768769",
 		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 1,
+			Pwr = 17.0,
+			Stats = -2,
+			Vit = 1,
+		},
+		Name = "MOD_Bat_Combat",
+		TemplateId = "b8dfad69-8219-4367-a806-dfcb6d73ab02",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 13,
+			Level = 2,
+			Pwr = 17.0,
+			Stats = -2,
+			Vit = 22,
+		},
+		Name = "MOD_GiantBat_Combat",
+		TemplateId = "d279ea72-252e-4620-b3cd-3f34516095e8",
+		Tier = "low",
 	},
 	{
 		Info = {
