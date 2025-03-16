@@ -153,25 +153,6 @@ function GameMode.GenerateScenario(score, tiers)
             return {}
         end
 
-        local partySizeMod = Player.PartySize()
-        if partySizeMod == 4 then
-            L.Debug("Standard party size, standard scaling")
-        elseif partySizeMod == 1 then
-            maxValue = maxValue * 0.6
-        elseif partySizeMod == 2 then
-            maxValue = maxValue * 0.75
-        elseif partySizeMod == 3 then
-            maxValue = maxValue * 0.9
-        elseif partySizeMod == 5 then
-            maxValue = maxValue * 1.2
-        elseif partySizeMod == 6 then
-            maxValue = maxValue * 1.4
-        elseif partySizeMod == 7 then
-            maxValue = maxValue * 1.6
-        elseif partySizeMod >= 8 then
-            maxValue = maxValue * 2
-        end
-
         local timeline = {}
         local numRounds = weightedRandom()
         local remainingValue = maxValue
@@ -292,7 +273,32 @@ function GameMode.GenerateScenario(score, tiers)
         return timeline
     end
 
-    return generateTimeline(score, 0)
+    local partySizeMod = Player.PartySize()
+    local spawnValue = score
+
+    if partySizeMod == 4 then
+        L.Debug("Standard party size, standard scaling")
+    elseif partySizeMod == 1 then
+        spawnValue = math.ceil(score * 0.6)
+    elseif partySizeMod == 2 then
+        spawnValue = math.ceil(score * 0.75)
+    elseif partySizeMod == 3 then
+        spawnValue = math.ceil(score * 0.9)
+    elseif partySizeMod == 5 then
+        spawnValue = math.ceil(score * 1.2)
+    elseif partySizeMod == 6 then
+        spawnValue = math.ceil(score * 1.4)
+    elseif partySizeMod == 7 then
+        spawnValue = math.ceil(score * 1.6)
+    elseif partySizeMod >= 8 then
+        spawnValue = math.ceil(score * 2)
+    end
+
+    if spawnValue < 4 then
+        spawnValue = 4
+    end
+
+    return generateTimeline(spawnValue, 0)
 end
 
 function GameMode.UpdateRogueScore(score)
