@@ -335,6 +335,8 @@ local items = {
 	"MOD_Helper_Spell_IncendiaryCloud",
 	"MOD_Helper_Spell_MaddeningDarkness",
 	"MOD_DelayedFireball_Helper_Invisible_A",
+	"MOD_Solar_Bow",
+	"MOD_Solar_Greatsword",
 }
 
 for _, name in ipairs(items) do

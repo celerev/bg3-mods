@@ -201,6 +201,10 @@ function Object:ModifyExperience()
             end
         end
 
+        if PersistentVars.LoneWolfMode then
+            expMod = expMod * 1.1
+        end
+
         if PersistentVars.Unlocked.ExpMultiplier then
             expMod = expMod * 2
         end
