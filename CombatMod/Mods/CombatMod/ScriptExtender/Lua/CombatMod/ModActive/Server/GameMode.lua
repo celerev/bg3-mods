@@ -67,7 +67,7 @@ function GameMode.GetTiers(cow, score)
 end
 
 function GameMode.GenerateScenario(score, tiers)
-    -- ChatGPT made this ................................ i made this
+
     L.Debug("Generate Scenario", score)
 
     local minRounds = 1
@@ -648,8 +648,8 @@ Schedule(function()
             local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
-                local weight = tier.amount / 100 * 0.9 -- bias towards tiers with more enemies
-                tier.weight = weight + (1 / (i + 1)) -- bias towards lower tiers
+                local weight = (tier.amount / 100) * 0.3 -- slight bias towards tiers with more enemies
+                tier.weight = weight + (1 / (i + 1)) -- strong bias towards lower tiers
                 L.Debug("Tier", tier.name, tier.weight)
             end
 
@@ -672,8 +672,8 @@ Schedule(function()
             local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
-                local weight = tier.amount / 100 * 0.7 -- bias towards tiers with more enemies
-                tier.weight = weight + (1 / (i + 1) / 2) -- bias towards lower tiers
+                local weight = tier.amount / 2000 -- slight bias towards tiers with more enemies
+                tier.weight = weight + 1 - ((i+1) * 0.062) -- slightly descending bias per tier
                 L.Debug("Tier", tier.name, tier.weight)
             end
 
@@ -696,8 +696,8 @@ Schedule(function()
             local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
-                local weight = tier.amount / 100 * 0.7 -- bias towards tiers with more enemies
-                tier.weight = weight + (1 / (#tiers + 1 - i)) -- bias towards higher tiers
+                local weight = tier.amount / 100 * 0.7 -- mild bias towards tiers with more enemies
+                tier.weight = weight + (1 / (#tiers + 1 - i)) -- strong bias towards higher tiers
                 L.Debug("Tier", tier.name, tier.weight)
             end
 

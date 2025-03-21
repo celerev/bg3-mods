@@ -201,8 +201,24 @@ function Object:ModifyExperience()
             end
         end
 
-        if PersistentVars.LoneWolfMode then
-            expMod = expMod * 1.1
+        local partySizeEXPMod = Player.PartySize()
+
+        if partySizeEXPMod == 4 then
+            L.Debug("Standard party size, standard scaling")
+        elseif partySizeEXPMod == 1 then
+            expMod = expMod * 1.12
+        elseif partySizeEXPMod == 2 then
+            expMod = expMod * 1.08
+        elseif partySizeEXPMod == 3 then
+            expMod = expMod * 1.04
+        elseif partySizeEXPMod == 5 then
+            expMod = expMod * 0.834
+        elseif partySizeEXPMod == 6 then
+            expMod = expMod * 0.715
+        elseif partySizeEXPMod == 7 then
+            expMod = expMod * 0.625
+        elseif partySizeEXPMod >= 8 then
+            expMod = expMod * 0.5
         end
 
         if PersistentVars.Unlocked.ExpMultiplier then
