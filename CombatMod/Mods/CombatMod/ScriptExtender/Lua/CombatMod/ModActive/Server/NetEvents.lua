@@ -390,6 +390,22 @@ Net.On("FixFactions", function(event)
     end
 end)
 
+Net.On("FixLongRest", function(event)
+    if Player.InCombat() then
+        Net.Respond(event, { false, __("Cannot use this function while in combat.") })
+    else
+        Osi.DB_Camp_Unlocked(1)
+        Osi.SetLongRestAvailable(1)
+        Osi.SetJoinBlock(0)
+        for _, player in pairs(GU.DB.GetPlayers()) do
+            Osi.SetIsInDangerZone(player, 0)
+            Osi.PROC_SetBlockDismiss(player, 0)
+            Osi.DB_InDangerZone:Delete(player, "ENDGAME")
+        end
+        Net.Respond(event, { true })
+    end
+end)
+
 Net.On("CancelLongRest", function(event)
     StoryBypass.EndLongRest()
     Net.Respond(event, { true })

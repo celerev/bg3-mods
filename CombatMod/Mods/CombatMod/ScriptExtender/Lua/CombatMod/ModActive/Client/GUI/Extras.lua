@@ -46,6 +46,11 @@ function Extras.Main(tab)
         Net.Request("FixFactions"):After(DisplayResponse)
     end)
 
+    root:AddSeparator()
+    Extras.Button(root, __("Fix Long Rest"), __("Reruns the scripting that applies each time you press the Camp button, fixing Long Rest. Cannot be used during combat."), function(btn)
+        Net.Request("FixLongRest"):After(DisplayResponse)
+    end)
+
     root:AddSeparatorText("Cheat")
     root:AddInputInt("RogueScore", State.RogueScore or 0).OnChange = Debounce(1000, function(input)
         Net.RCE("PersistentVars.RogueScore = %d", input.Value[1]):After(function()

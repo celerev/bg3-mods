@@ -3935,7 +3935,7 @@ return {
 		},
 		Name = "TOT_GLO_GithKnight_Act3",
 		TemplateId = "a7c21f62-2b3f-4ef5-9090-a89bc0dd987c",
-		Tier = "legendary",
+		Tier = "epic",
 	},
 	{
 		Info = {
