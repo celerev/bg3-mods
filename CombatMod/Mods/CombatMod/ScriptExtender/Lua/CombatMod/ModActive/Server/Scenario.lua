@@ -284,6 +284,7 @@ function Action.StartRound()
         Action.StartCombat()
     end
 
+
     s.Round = s.Round + 1
     Player.Notify(__("Round %d", s.Round))
 
@@ -352,16 +353,93 @@ function Action.MapEntered()
             return true
         end
 
-        for _, player in pairs(GU.DB.GetPlayers()) do
-            if Osi.HasActiveStatus(player, "SNEAKING") == 1 then
-                Osi.RemoveStatus(player, "SNEAKING")
+        for _, player in pairs(GE.GetParty()) do
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "SNEAKING") == 1 then
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "SNEAKING")
 
                 Defer(1000, function()
-                    Osi.ApplyStatus(player, "SNEAKING", -1)
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "SNEAKING", -1)
                 end)
             end
 
-            Osi.SetHostileAndEnterCombat(C.ScenarioHelper.Faction, Osi.GetFaction(player), S().CombatHelper, player)
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "INVISIBILITY") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "INVISIBILITY")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "INVISIBILITY")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "INVISIBILITY", turnCount)
+                end)
+            end
+
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "GREATER_INVISIBILITY") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "GREATER_INVISIBILITY")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "GREATER_INVISIBILITY")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "GREATER_INVISIBILITY", turnCount)
+                end)
+            end
+
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER", turnCount)
+                end)
+            end
+
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY", turnCount)
+                end)
+            end
+
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "SUPREME_SNEAK") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "SUPREME_SNEAK")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "SUPREME_SNEAK")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "SUPREME_SNEAK", turnCount)
+                end)
+            end
+
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT", turnCount)
+                end)
+            end
+
+            if Osi.HasActiveStatus(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS") == 1 then
+
+                local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS")
+
+                Osi.RemoveStatus(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS")
+
+                Defer(1000, function()
+                    Osi.ApplyStatus(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS", turnCount)
+                end)
+            end
+
+            Osi.SetHostileAndEnterCombat(C.ScenarioHelper.Faction, Osi.GetFaction(player.Uuid.EntityUuid), S().CombatHelper, player.Uuid.EntityUuid)
         end
 
         return Player.InCombat()
@@ -1185,10 +1263,12 @@ Ext.Osiris.RegisterListener(
             :After(function()
                 if Current().Round == 1 then
                     for _, p in pairs(GE.GetParty()) do
-                        Osi.LeaveCombat(p.Uuid.EntityUuid)
-                        Defer(1000, function()
-                            Osi.ForceTurnBasedMode(p.Uuid.EntityUuid, 1)
-                        end)
+--                        Osi.LeaveCombat(p.Uuid.EntityUuid)
+                        if Osi.IsInCombat(p.Uuid.EntityUuid) ~= 1 then
+                            Defer(1000, function()
+                                Osi.ForceTurnBasedMode(p.Uuid.EntityUuid, 1)
+                            end)
+                        end
                     end
 
                     Player.Notify(__("Combat started."))

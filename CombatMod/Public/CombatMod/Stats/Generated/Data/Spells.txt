@@ -57,3 +57,21 @@ data "SpellProperties" "SwitchDeathType(Explode);GROUND:Summon(f424693b-13f4-4cc
 data "TargetRadius" "3"
 data "RequirementConditions" ""
 data "TargetConditions" "CanStand('f424693b-13f4-4cce-987b-7d75748c87e0') and (IsTargetableCorpse() and TargetSizeEqualOrSmaller(Size.Medium) or HasStatus('ANIMATEDEAD_ZONE',context.Source))"
+
+new entry "Projectile_TOT_GaleLaser"
+type "SpellData"
+data "SpellType" "Projectile"
+using "Projectile_EPI_Disintegrate_GaleGod"
+data "SpellAnimation" "3ff87abf-1ea1-4c32-aadf-c822d74c7dc0,,;,,;1063ac71-be5e-435e-875d-78718d123a1f,,;d0b99285-a55a-44e6-9e46-b30daac9569c,,;d8925ce4-d6d9-400c-92f5-ad772ef7f178,,;,,;eadedcce-d01b-4fbb-a1ae-d218f13aa5d6,,;,,;,,"
+
+new entry "Target_TOT_GaleParty"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_EPI_PartyTime_GaleGod"
+data "SpellAnimation" "554a18f7-952e-494a-b301-7702a85d4bc9,,;,,;af94aac1-d8eb-4ccb-9520-694ade11b61c,,;f5db4001-b136-4c48-9aa4-026c4a7dd3b7,,;22dfbbf4-f417-4c84-b39e-2039315961e6,,;,,;5bfbe9f9-4fc3-4f26-b112-43d404db6a89,,;,,;,,"
+
+new entry "Target_TOT_GalePolymorph"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_EPI_Polymorph_GaleGod"
+data "SpellAnimation" "554a18f7-952e-494a-b301-7702a85d4bc9,,;,,;af94aac1-d8eb-4ccb-9520-694ade11b61c,,;f5db4001-b136-4c48-9aa4-026c4a7dd3b7,,;22dfbbf4-f417-4c84-b39e-2039315961e6,,;,,;5bfbe9f9-4fc3-4f26-b112-43d404db6a89,,;,,;,,"

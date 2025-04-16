@@ -124,7 +124,7 @@ function StoryBypass.ClearArea(character)
         Schedule(function()
             for _, b in pairs(batch) do
                 -- Osi.CreateSurface(b.Guid, "None", 10, -1)
-                if b.Guid == "40c79f34-a39d-4495-9145-08a16cde2159" then
+                if b.Guid == "40c79f34-a39d-4495-9145-08a16cde2159" or b.Guid == "8f766750-9d29-4170-b898-57b95e92e3c0" then
                     GU.Object.Remove(b.Guid)
                 end
                 if b.Entity.ServerItem then

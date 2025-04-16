@@ -205,6 +205,7 @@ function Player.RecruitOrigin(id)
         end,
         Karlach = function()
             recruit(uuid)
+            Osi.ApplyStatus(uuid, "TOTR_KARLACH", -1)
         end,
         Jaheira = function()
             recruit(uuid) -- "04443f0f-9c62-d474-a98a-3e13eec31c69")

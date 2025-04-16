@@ -87,7 +87,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="f3f5f27b-5340-1bd3-6186-9afe8cabdccb-_(Icon_Nightmare_Nurse)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="8" />
 					<children>
 						<node id="Treasures">
@@ -250,7 +250,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="79f559cc-dc97-9d62-40ee-cd495d58804d-_(Icon_Skeleton)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -282,7 +282,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="76e4d0ae-fcd7-091e-b81f-1431850db64a-EQP_Unarmed_(Icon_IntDev)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Unarmed" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="1" />
 					<children>
 						<node id="Treasures">
@@ -477,7 +477,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="3afc8338-972d-4aed-5056-8de28f52d476-_(Icon_Hyena)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="1" />
 					<children>
 						<node id="Treasures">
@@ -741,7 +741,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="a207953c-97a2-2459-db55-261d3a221ba2-_(Icon_Skeleton)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -871,7 +871,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="59212099-57b0-9a23-41e8-e15d6ab66c5f-_(Icon_Ghoul)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -935,7 +935,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="3efa34a4-f197-6894-d66c-deecbe488354-EQP_HeavyCrossbow_Leather_(Icon_Skeleton)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_HeavyCrossbow_Leather" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -1067,7 +1067,7 @@
 						value="3b51d08a-f1eb-2d0c-a5ed-37e514f10bf9-LOW_BlushingMermaid_Redcap_Melee_(Icon_Redcap)" />
 					<attribute id="Equipment" type="FixedString"
 						value="LOW_BlushingMermaid_Redcap_Melee" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -1365,7 +1365,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="4d18e847-a1ab-b48c-ea94-b9c4e7d80b77-_(Icon_Mummy)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="11" />
 					<children>
 						<node id="Treasures">
@@ -1397,7 +1397,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="8f60609d-73fc-b4df-c62d-41bb9e3809a9-_(Icon_Boar_Devil)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -1529,7 +1529,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="70451ccc-1d24-5933-a0f7-dfda5e4dc2be-EQP_WoodWoad_Conjure_(Icon_WoodWoad)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_WoodWoad_Club" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -1724,7 +1724,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="59212099-57b0-9a23-41e8-e15d6ab66c5f-_(Icon_Ghoul)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -1821,7 +1821,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="39c40e2e-3596-497e-e146-d998db4ceba0-EQP_Greatsword_HalfPlate_(Icon_Skeleton_Hero)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Greatsword_HalfPlate" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -2112,7 +2112,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="10fca4b2-9032-ae44-755b-11a2bff7d2ea-LOW_HouseOfHope_Cambion_(Icon_Cambion_Male)" />
 					<attribute id="Equipment" type="FixedString" value="LOW_HouseOfHope_Cambion" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="9" />
 					<children>
 						<node id="Treasures">
@@ -2177,7 +2177,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="4d18d751-2454-d83a-5465-0d67ef43e46d-_(Icon_Redcap)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -2241,7 +2241,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="36476f6f-c64d-79db-9c3b-1ebfca3b48fb-_(Icon_Hyena)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="1" />
 					<children>
 						<node id="Treasures">
@@ -2305,7 +2305,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="76e4d0ae-fcd7-091e-b81f-1431850db64a-EQP_Unarmed_(Icon_IntDev)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Unarmed" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -2372,7 +2372,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="4ac5b5d8-6e26-e59b-42e3-41ed51ad9481-EQP_Ogre_Club_(Icon_Ogre)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Ogre_Club" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -2533,7 +2533,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="0fd9c8b4-7ba5-8d90-e90c-e8ebc01da057-_(Icon_Mummy)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="8" />
 					<children>
 						<node id="Treasures">
@@ -2565,7 +2565,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="eed1f9b7-81c3-fb2c-4062-201ca0619b89-_(Icon_Ox)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="1" />
 					<children>
 						<node id="Treasures">
@@ -2729,7 +2729,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="c5bd6d35-1a3e-e34a-27d0-4f854b544aa6-_(Icon_Boar_Devil)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -3085,7 +3085,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="d6a069aa-5d3b-5b96-588e-8cee21ed0c6b-_(Icon_Boar_Devil)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -3218,7 +3218,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="b5a02520-949e-fedd-8f65-0587b09719c7-_(Icon_Redcap)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -3710,7 +3710,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="4d18e847-a1ab-b48c-ea94-b9c4e7d80b77-_(Icon_Mummy)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="8" />
 					<children>
 						<node id="Treasures">
@@ -4002,7 +4002,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="6331f95f-1e2e-783a-6711-3e758b88a37c-EQP_Staff_(Icon_Skeleton)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Staff" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -4034,7 +4034,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="73c18943-5300-6d3f-382a-969c7dd696c8-EQP_Ogre_Greatclub_(Icon_Ogre)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Ogre_Greatclub" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -4098,7 +4098,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="9ca4ff8a-ce5e-249b-5cf4-84edb2a60d0d-EQP_Kuotoa_Spear_(Icon_Kuotoa)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Kuotoa_Spear" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="2" />
 					<children>
 						<node id="Treasures">
@@ -4194,7 +4194,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="df9bc282-a830-241a-150c-35cde655606a-_(Icon_Owlbear)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -4226,7 +4226,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="8e0be4df-0e27-883c-01cc-de128882f941-EQP_Unarmed_(Icon_Owlbear)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -4387,7 +4387,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="428f2a68-a7f1-32cf-36e9-15d2a9adbb1f-EQP_Ogre_Club_(Icon_Ogre)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Ogre_Club" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -4484,7 +4484,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="032132d4-4bbb-bfa4-9205-e99a59661a9b-_(Icon_Animated_Armor)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Greatsword" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -4516,7 +4516,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="032132d4-4bbb-bfa4-9205-e99a59661a9b-_(Icon_Animated_Armor)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_HeavyCrossbow" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -5221,7 +5221,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="021c3422-9fa1-cf69-c239-b05c4d200b52-_(Icon_Ghoul_Ghast)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -5317,7 +5317,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="d7d3c6c3-ec2f-d81d-7afe-66be4d5cd09f-_(Icon_Mummy_FatherCarrion)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="12" />
 					<children>
 						<node id="Treasures">
@@ -5415,7 +5415,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="d2be2ebc-8b54-85dd-d4e3-6fc2ffbc00dc-EQP_Unarmed_(Icon_Worg_Male)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Unarmed" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="2" />
 					<children>
 						<node id="Treasures">
@@ -5480,7 +5480,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="b52e9a11-99b4-3602-8739-c46d2ff2a42e-_(Icon_Undead_Hound)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -5512,7 +5512,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="0cbb8c47-b5b4-cef1-297b-de9485d39266-_(Icon_Zombie)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -5544,7 +5544,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="0cbb8c47-b5b4-cef1-297b-de9485d39266-_(Icon_Zombie)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -5576,7 +5576,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="48fb270c-f427-2811-9ecd-e4dd0d032572-_(Icon_Zombie)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -5608,7 +5608,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="51b295f5-8ac7-ac65-8975-9ced4678212b-_(Icon_Dog)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -6044,7 +6044,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="4420cecf-032a-8d7f-8575-e69ac7fde192-EQP_Unarmed_(Icon_IntDev_Detonator)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Unarmed" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -6076,7 +6076,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="7c3766d2-a094-1076-e0dd-add7b8ca144a-_(Icon_Wolf)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="11" />
 					<children>
 						<node id="Treasures">
@@ -6109,7 +6109,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="26572c69-bcb0-eaaf-c1ec-a34841df3b50-LOW_HouseOfHope_Cambion_(Icon_Cambion_Female)" />
 					<attribute id="Equipment" type="FixedString" value="LOW_HouseOfHope_Cambion" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="9" />
 					<children>
 						<node id="Treasures">
@@ -6244,7 +6244,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="5ed40bd0-b338-7e5a-7cfc-b8e4137ee9b3-_(Icon_Shadow_Mastiff)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -6441,7 +6441,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="f4726955-187b-524d-c7e1-9c6d04d71413-_(Icon_Shadow_Mastiff)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -6571,7 +6571,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="5ed40bd0-b338-7e5a-7cfc-b8e4137ee9b3-_(Icon_Shadow_Mastiff)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -6699,7 +6699,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="59212099-57b0-9a23-41e8-e15d6ab66c5f-_(Icon_Ghoul)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="3" />
 					<children>
 						<node id="Treasures">
@@ -6822,7 +6822,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="51b295f5-8ac7-ac65-8975-9ced4678212b-_(Icon_Dog)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -6888,7 +6888,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="200cd367-8a8b-f286-5974-e3fbf648e6e9-EQP_WYR_SkeletonHero_(Icon_Skeleton_Hero)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_WYR_SkeletonHero" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="9" />
 					<children>
 						<node id="Treasures">
@@ -6952,7 +6952,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="5ed40bd0-b338-7e5a-7cfc-b8e4137ee9b3-_(Icon_Shadow_Mastiff)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="6" />
 					<children>
 						<node id="Treasures">
@@ -6984,7 +6984,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="26572c69-bcb0-eaaf-c1ec-a34841df3b50-LOW_HouseOfHope_Cambion_(Icon_Cambion_Female)" />
 					<attribute id="Equipment" type="FixedString" value="LOW_HouseOfHope_Cambion" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="9" />
 					<children>
 						<node id="Treasures">
@@ -7048,7 +7048,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="69823d16-f010-0b04-1587-8bf91db1d988-EQP_Unarmed_(Icon_Worg_Male)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Unarmed" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="2" />
 					<children>
 						<node id="Treasures">
@@ -7311,6 +7311,74 @@
 					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
+						<node id="SkillList">
+							<children>
+								<node id="Skill">
+									<attribute id="AIFlags" type="uint16" value="0" />
+									<attribute id="FallbackStartRound" type="int32" value="-1" />
+									<attribute id="LearningStrategy" type="uint8" value="0" />
+									<attribute id="MinimumImpact" type="int32" value="0" />
+									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
+									<attribute id="ScoreModifier" type="float" value="1" />
+									<attribute id="Skill" type="FixedString"
+										value="Target_Multiattack_FleshGolem" />
+									<attribute id="SpellCastingAbility" type="uint8" value="0" />
+									<attribute id="StartRound" type="int32" value="0" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MaximumHealthPercentage" type="int32"
+												value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32"
+												value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MaximumHealthPercentage" type="int32"
+												value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32"
+												value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+								<node id="Skill">
+									<attribute id="AIFlags" type="uint16" value="0" />
+									<attribute id="FallbackStartRound" type="int32" value="-1" />
+									<attribute id="LearningStrategy" type="uint8" value="0" />
+									<attribute id="MinimumImpact" type="int32" value="0" />
+									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
+									<attribute id="ScoreModifier" type="float" value="1" />
+									<attribute id="Skill" type="FixedString"
+										value="Target_Slam_FleshGolem" />
+									<attribute id="SpellCastingAbility" type="uint8" value="0" />
+									<attribute id="StartRound" type="int32" value="0" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MaximumHealthPercentage" type="int32"
+												value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32"
+												value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MaximumHealthPercentage" type="int32"
+												value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32"
+												value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
+								</node>
+							</children>
+						</node>
 						<node id="Treasures">
 							<children>
 								<node id="TreasureItem">
@@ -7700,7 +7768,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="30c80359-7a5c-11e6-c1ed-401d558a41d8-EQP_Ogre_Club_(Icon_Ogre)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Ogre_Club" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow" />
 					<attribute id="LevelOverride" type="int32" value="4" />
 					<children>
 						<node id="Treasures">
@@ -7732,7 +7800,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="0bf6a9b7-a037-9c46-4098-3b083090e534-_(Icon_Wolf)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="11" />
 					<children>
 						<node id="Treasures">
@@ -7796,7 +7864,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="872909df-24b8-5b23-b631-f5509daaa0ed-EQP_Greatclub_ScaleMail_(Icon_Skeleton)" />
 					<attribute id="Equipment" type="FixedString" value="EQP_Greatclub_ScaleMail" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -7893,7 +7961,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="10fca4b2-9032-ae44-755b-11a2bff7d2ea-LOW_HouseOfHope_Cambion_(Icon_Cambion_Male)" />
 					<attribute id="Equipment" type="FixedString" value="LOW_HouseOfHope_Cambion" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="9" />
 					<children>
 						<node id="Treasures">
@@ -7960,7 +8028,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="2b022bc4-448f-00c6-fc6d-18a4298f920c-_(Icon_Badger)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="1" />
 					<children>
 						<node id="Treasures">
@@ -8195,7 +8263,7 @@
 					<attribute id="Icon" type="FixedString"
 						value="eb3c6667-4836-e94c-9559-33bf1f9eefaf-_(Icon_Meazel)" />
 					<attribute id="Equipment" type="FixedString" value="" />
-					<attribute id="SpellSet" type="FixedString" value="CommonBeastActions" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="LevelOverride" type="int32" value="5" />
 					<children>
 						<node id="Treasures">
@@ -8475,6 +8543,7 @@
 					<attribute id="MapKey" type="FixedString"
 						value="a056e158-8ec0-4539-9e55-333866a0ff2c" />
 					<attribute id="Name" type="LSString" value="TOT_Meenlock" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="ParentTemplateId" type="FixedString"
 						value="cc1b177d-5053-4472-b1e2-8c3e42fc17da" />
 					<attribute id="Race" type="guid" value="c9479054-6a06-438b-9ab3-0467f70709de" />
@@ -8500,12 +8569,12 @@
 					<attribute id="Archetype" type="FixedString" value="melee" />
 					<attribute id="Flag" type="int32" value="0" />
 					<attribute id="LevelName" type="FixedString" value="" />
-
 					<attribute id="Icon" type="FixedString"
 						value="735a67d6-edd1-346b-206d-7df560cdb1b6-_(Icon_Cat_Gremishka)" />
 					<attribute id="ParentTemplateId" type="FixedString"
 						value="9f7bbeff-abf3-40d3-bbb2-beaa40546ddc" />
 					<attribute id="Name" type="LSString" value="TOT_Gremishka_Spawn" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="MapKey" type="FixedString"
 						value="b71656d4-9039-4323-8308-52868ce7a672" />
 					<attribute id="SwarmGroup" type="FixedString" value="" />
@@ -8555,6 +8624,7 @@
 					<attribute id="MapKey" type="FixedString"
 						value="66d2e9e8-119b-4fe5-9969-5afe61fbf241" />
 					<attribute id="Name" type="LSString" value="TOT_Myconid_Slender_Black" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="Type" type="FixedString" value="character" />
 					<children>
 						<node id="Treasures">
@@ -8577,6 +8647,7 @@
 					<attribute id="MapKey" type="FixedString"
 						value="29fb7fd0-de0e-4c2e-8299-6932bb6156c2" />
 					<attribute id="Name" type="LSString" value="TOT_Myconid_Slender_White" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="Type" type="FixedString" value="character" />
 					<children>
 						<node id="Treasures">
@@ -8599,6 +8670,127 @@
 					<attribute id="MapKey" type="FixedString"
 						value="c665134b-2ed9-49ca-b775-0b5eab6502ec" />
 					<attribute id="Name" type="LSString" value="TOT_Myconid_Slender_Green" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="6f5ca094-996b-48e3-9e8f-63c50fd1bf31" />
+					<attribute id="MapKey" type="FixedString"
+						value="162b7dc9-d4be-4e6e-970a-3c597498cbc3" />
+					<attribute id="Name" type="LSString" value="TOT_Sleep_Rat" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="f5bffed7-f4dc-4bad-b33d-37897d2b52a8" />
+					<attribute id="MapKey" type="FixedString"
+						value="03676e51-2c60-412a-8944-476557a3a5bb" />
+					<attribute id="Name" type="LSString" value="TOT_Necro_Rat" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="5015d1fa-326d-4e0e-bff7-408f249004b7" />
+					<attribute id="MapKey" type="FixedString"
+						value="5ff6a1b5-6c6d-447b-ab6c-f9a4bea20ff5" />
+					<attribute id="Name" type="LSString" value="TOT_Cranium_Rat" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="08f40fd3-a177-42f0-b9b8-c6221aa6214d" />
+					<attribute id="MapKey" type="FixedString"
+						value="47bf3b23-20b9-4f95-8e67-fbdd6ef2ecba" />
+					<attribute id="Name" type="LSString" value="TOT_Vampire_Rat" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="ParentTemplateId" type="FixedString"
+						value="aa60d129-8d11-4178-a22b-836062e86010" />
+					<attribute id="MapKey" type="FixedString"
+						value="47c8d717-ac85-4d30-9c76-b942ae588aef" />
+					<attribute id="Name" type="LSString" value="TOT_Regular_Rat" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions_NoThrow_NoShove" />
 					<attribute id="Type" type="FixedString" value="character" />
 					<children>
 						<node id="Treasures">
@@ -8657,6 +8849,7 @@
 					<attribute id="ParentTemplateId" type="FixedString"
 						value="6a23cdcd-f10b-4e5f-b222-b23a12a57f24" />
 					<attribute id="Name" type="LSString" value="TOT_SHA_LastJusticiar" />
+					<attribute id="SpellSet" type="FixedString" value="CommonNPCActions" />
 					<attribute id="LevelOverride" type="int32" value="7" />
 					<attribute id="Stats" type="FixedString" value="SHA_LastJusticiar_Lyrthindor" />
 					<children>

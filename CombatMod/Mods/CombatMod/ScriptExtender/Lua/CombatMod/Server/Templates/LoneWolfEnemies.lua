@@ -241,6 +241,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 19,
+			Level = 14,
+			Pwr = 172.0,
+			Stats = 7,
+			Vit = 21,
+		},
+		Name = "MOD_Retriever_Combat",
+		TemplateId = "ad4fd21a-0443-4116-ad58-9ef779c723da",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 15,
 			Level = 20,
 			Pwr = 240.0,
@@ -310,6 +322,66 @@ return {
 		Name = "MOD_Raphael_Combat",
 		TemplateId = "cecb3b64-77b9-4eb4-b99f-8029ac168cd7",
 		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 1,
+			Pwr = 11.0,
+			Stats = 3,
+			Vit = 13,
+		},
+		Name = "TOT_Regular_Rat",
+		TemplateId = "47c8d717-ac85-4d30-9c76-b942ae588aef",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 1,
+			Pwr = 11.0,
+			Stats = 3,
+			Vit = 13,
+		},
+		Name = "TOT_Vampire_Rat",
+		TemplateId = "47bf3b23-20b9-4f95-8e67-fbdd6ef2ecba",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 1,
+			Pwr = 11.0,
+			Stats = 3,
+			Vit = 13,
+		},
+		Name = "TOT_Cranium_Rat",
+		TemplateId = "5ff6a1b5-6c6d-447b-ab6c-f9a4bea20ff5",
+		Tier = "mid",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 1,
+			Pwr = 11.0,
+			Stats = 3,
+			Vit = 13,
+		},
+		Name = "TOT_Necro_Rat",
+		TemplateId = "03676e51-2c60-412a-8944-476557a3a5bb",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 10,
+			Level = 1,
+			Pwr = 11.0,
+			Stats = 3,
+			Vit = 13,
+		},
+		Name = "TOT_Sleep_Rat",
+		TemplateId = "162b7dc9-d4be-4e6e-970a-3c597498cbc3",
+		Tier = "mid",
 	},
 	{
 		Info = {
@@ -4415,6 +4487,30 @@ return {
 		},
 		Name = "MOD_FangOfYeenoghu_Combat",
 		TemplateId = "2eda634d-c66e-4a3f-bb24-f14528bc828b",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 14,
+			Level = 4,
+			Pwr = 23.5,
+			Stats = 15,
+			Vit = 20,
+		},
+		Name = "MOD_GnollRanger_Combat",
+		TemplateId = "2eb17e20-3b49-4f35-9995-da33f0bc7f9e",
+		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 4,
+			Pwr = 23.5,
+			Stats = 15,
+			Vit = 22,
+		},
+		Name = "MOD_GnollGnawer_Combat",
+		TemplateId = "8c711d54-1e4b-45ed-b360-5fc23196df0a",
 		Tier = "low",
 	},
 	{
