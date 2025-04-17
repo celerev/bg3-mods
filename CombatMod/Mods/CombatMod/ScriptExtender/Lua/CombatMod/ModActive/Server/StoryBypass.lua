@@ -684,7 +684,13 @@ Ext.Osiris.RegisterListener(
     0,
     "after",
     ifBypassStory(function()
-        StoryBypass.EndLongRest()
+        Defer(2000, function()
+            local dialog, instance = Osi.SpeakerGetDialog(Player.Host(), 1)
+            if dialog then
+                StoryBypass.CancelDialog(dialog, instance)
+            end
+            StoryBypass.EndLongRest()
+        end)
     end)
 )
 
@@ -700,6 +706,7 @@ Event.On(
         end
 
         Osi.RemoveStatus(character, "SURPRISED", C.NullGuid)
+        Osi.RemoveStatus(character, "END_NETHERBRAIN_SLOW", C.NullGuid)
     end)
 )
 Event.On(

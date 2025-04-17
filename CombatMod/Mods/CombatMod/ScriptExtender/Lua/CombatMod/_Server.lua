@@ -82,8 +82,8 @@ Require("CombatMod/Server/ModEvents")
 
 GameState.OnLoad(function()
     External.LoadConfig()
-
-    if PersistentVars.Asked == false then
+    local tutorialCC = GU.DB.TryGet("DB_TUT_CharacterCreation_Started", 1, nil, 1)[1]
+    if PersistentVars.Asked == false and not tutorialCC then
         Intro.AskOnboarding()
     end
     PersistentVars.Asked = PersistentVars.Active

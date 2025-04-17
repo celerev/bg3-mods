@@ -1,4 +1,5 @@
 IsHost = Ext.Net.IsHost()
+-- local Log = Require("Hlib/Log")
 
 Settings = UT.Proxy(
     table.merge({ AutoHide = false, ToggleKey = "U", AutoOpen = true }, IO.LoadJson("ClientConfig.json") or {}),
@@ -25,28 +26,76 @@ Net.On(
     end, true)
 )
 
-do
-    local subtitleWidget
-    RetryUntil(function()
-        for i = 1, 12 do
-            if get(Ext.UI.GetRoot():Child(1):Child(1):Child(i), "XAMLPath", ""):match("OverheadInfo") then
-                subtitleWidget = i
-                break
+-- Credit to atamg for this Patch 8 solution for notifications
+
+local FoundNotifRoot
+
+local function Call_Notif(root,data)
+    local context = root.DataContext
+    context.CurrentSubtitleDuration = data.Duration or 3
+    context.CurrentSubtitle = data.Text
+end
+
+local function FindUiNotifRoot(root, targetName, path)
+    local exportText = Ext.DumpExport(root)
+    if exportText:match(targetName) then
+        return path
+    end
+    local has_child = exportText:match("ChildrenCount") ~= nil
+--	Log.Debug("Notification Has Child:", has_child)
+    local childrenCount = has_child and root.ChildrenCount or 0
+--	Log.Debug("Notification Child Count:", childrenCount)
+    if childrenCount > 0 then
+        for i = 1, childrenCount do
+            local child = root:Child(i)
+--			Log.Debug("Notification Possible Root:",child)
+            local childPath = path .. ":Child(" .. tostring(i) .. ")"
+--			Log.Debug("Notification Possible Root Path:", childPath)
+            local foundPath = FindUiNotifRoot(child, targetName, childPath)
+            if foundPath then
+--			    Log.Debug("Notification Path Found:", foundPath)
+                return foundPath
             end
         end
+    end
+    return nil
+end
 
-        return subtitleWidget
-    end)
+local function LoadString(code)
+    local env = {}
+    setmetatable(env, { __index = _G })
+    local ok, res = pcall(Ext.Utils.LoadString(code, env))
+    if not ok then
+        error('\n[LoadString]: "' .. code .. '"\n' .. res)
+    end
+    return res
+end
 
-    Net.On("Notification", function(event)
-        if not subtitleWidget then
-            return
+-- No Lib variant
+local function Notification(data)
+    if not FoundNotifRoot then
+        FoundNotifRoot = FindUiNotifRoot(Ext.UI.GetRoot(), "OverheadInfo", "Ext.UI.GetRoot()")
+        if FoundNotifRoot then
+            Notification(data)
         end
+    else
+        local Root = LoadString("return " .. FoundNotifRoot)
+        if Ext.DumpExport(Root):match("OverheadInfo") then 
+--- Hlib variant if get(Root, "XAMLPath", ""):match("OverheadInfo")
+            Call_Notif(Root,data)
+        else
+            FoundNotifRoot = nil
+            Notification(data)
+        end
+    end
+end
+
+do
+    Net.On("Notification", function(event)
+
         local data = event.Payload
 
-        local context = Ext.UI.GetRoot():Child(1):Child(1):Child(subtitleWidget).DataContext
-        context.CurrentSubtitleDuration = data.Duration or 3
-        context.CurrentSubtitle = data.Text
+        Notification(data)
     end)
 end
 

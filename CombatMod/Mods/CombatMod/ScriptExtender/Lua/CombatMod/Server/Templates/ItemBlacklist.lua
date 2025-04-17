@@ -318,6 +318,8 @@ local items = {
 	"WYR_Circus_WetCloak",
 	"MAG_Zhentarim_BloodfeederBlade_Rapier",
 	"UNI_LOW_SzarrRing",
+	"UNI_WYR_ExplosiveToy",
+	"UNI_WYR_ExplosiveToy_Broken",
 	-- "ATT items",
 	"WPN_Zariel_Flail",
 	"WPN_Zariel_Hammer",
