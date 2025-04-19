@@ -354,86 +354,68 @@ function Action.MapEntered()
         end
 
         for _, player in pairs(GE.GetParty()) do
+            Osi.RemoveStatus(player.Uuid.EntityUuid, "DASH")
+            Osi.RemoveStatus(player.Uuid.EntityUuid, "DASH_STACKED")
+            Osi.RemoveStatus(player.Uuid.EntityUuid, "DASH_STACKED_2")
+
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "SNEAKING") == 1 then
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "SNEAKING")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "SNEAKING", -1)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "INVISIBILITY") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "INVISIBILITY")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "INVISIBILITY")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "INVISIBILITY", turnCount)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "GREATER_INVISIBILITY") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "GREATER_INVISIBILITY")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "GREATER_INVISIBILITY")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "GREATER_INVISIBILITY", turnCount)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "INVISIBILITY_PANTHER", turnCount)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "POTION_OF_INVISIBILITY", turnCount)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "SUPREME_SNEAK") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "SUPREME_SNEAK")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "SUPREME_SNEAK")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "SUPREME_SNEAK", turnCount)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "HIDE_IN_PLAIN_SIGHT", turnCount)
                 end)
             end
 
             if Osi.HasActiveStatus(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS") == 1 then
-
                 local turnCount = Osi.GetStatusCurrentLifetime(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS")
-
                 Osi.RemoveStatus(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS")
-
                 Defer(1000, function()
                     Osi.ApplyStatus(player.Uuid.EntityUuid, "ONE_WITH_SHADOWS", turnCount)
                 end)
@@ -1264,6 +1246,11 @@ Ext.Osiris.RegisterListener(
                 if Current().Round == 1 then
                     for _, p in pairs(GE.GetParty()) do
 --                        Osi.LeaveCombat(p.Uuid.EntityUuid)
+                        if Osi.HasPassive(p.Uuid.EntityUuid, "DreadAmbusher") == 1 then
+                            Defer(1000, function()
+                                Osi.ApplyStatus(p.Uuid.EntityUuid, "DREAD_AMBUSHER", 6.0)
+                            end)
+                        end
                         if Osi.IsInCombat(p.Uuid.EntityUuid) ~= 1 then
                             Defer(1000, function()
                                 Osi.ForceTurnBasedMode(p.Uuid.EntityUuid, 1)

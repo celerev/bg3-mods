@@ -2991,6 +2991,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 13,
+			Level = 7,
+			Pwr = 70.5,
+			Stats = 4,
+			Vit = 60,
+		},
+		Name = "TOT_ShadowOwlbear",
+		TemplateId = "4dba9d5d-3191-40d6-a18c-c2e3014c194c",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 15,
 			Level = 8,
 			Pwr = 73.5,

@@ -337,7 +337,7 @@ return table.extend({
     {
         Id = "BuyEmperor",
         Name = __("Spawn Mindflayer Companion"),
-        Description = __("Spawns the Emperor as controllable party follower. Note: Save and load once to enable respawn after long rest. Current technical limitation."),
+        Description = __("Spawns the Emperor as controllable party follower. After each Long Rest, you'll receive a spell to resummon them."),
         Icon = "TadpoleSuperPower_IllithidExpertise",
         Cost = 300,
         Requirement = 75,
@@ -345,23 +345,14 @@ return table.extend({
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
-            Osi.UseSpell(character, "TOT_Summon_Emperor", character)
-            Defer(1000, function()
-                self:OnReapply()
-            end)
+            Osi.UseSpell(character, "Target_TOT_Summon_Emperor", character)
+            Osi.AddPassive(character, "TOT_EmperorSummoner")
         end,
-        OnReapply = U.Once(function(self) ---@param self Unlock
-            Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
-                for uuid, player in pairs(self.BoughtBy) do
-                    self:OnBuy(uuid)
-                end
-            end)
-        end),
     },
     {
         Id = "BuyNightsong",
         Name = __("Sword of the Silverlight"),
-        Description = __("Spawns Dame Aylin as controllable party follower. Note: Save and load once to enable respawn after long rest. Current technical limitation."),
+        Description = __("Spawns Dame Aylin as controllable party follower. After each Long Rest, you'll receive a spell to resummon them."),
         Icon = "Action_EndGameAlly_NightsongSummon",
         Cost = 300,
         Requirement = 75,
@@ -369,23 +360,14 @@ return table.extend({
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
-            Osi.UseSpell(character, "TOT_Summon_Aylin", character)
-            Defer(1000, function()
-                self:OnReapply()
-            end)
+            Osi.UseSpell(character, "Target_TOT_Summon_Aylin", character)
+            Osi.AddPassive(character, "TOT_AylinSummoner")
         end,
-        OnReapply = U.Once(function(self) ---@param self Unlock
-            Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
-                for uuid, player in pairs(self.BoughtBy) do
-                    self:OnBuy(uuid)
-                end
-            end)
-        end),
     },
     {
         Id = "BuyOwlbear",
         Name = __("Battle-Ready Owlbear"),
-        Description = __("Your owlbear cub is all grown up and ready to rage. Spawns the Armoured Owlbear as controllable party follower. Note: Save and load once to enable respawn after long rest. Current technical limitation."),
+        Description = __("Your owlbear cub is all grown up and ready to rage. Spawns the Armoured Owlbear as controllable party follower. After each Long Rest, you'll receive a spell to resummon them."),
         Icon = "Action_EndGameAlly_OwlbearCubSummon",
         Cost = 300,
         Requirement = 75,
@@ -393,18 +375,9 @@ return table.extend({
         Amount = 1,
         Character = true,
         OnBuy = function(self, character)
-            Osi.UseSpell(character, "TOT_Summon_Owlbear", character)
-            Defer(1000, function()
-                self:OnReapply()
-            end)
+            Osi.UseSpell(character, "Target_TOT_Summon_Owlbear", character)
+            Osi.AddPassive(character, "TOT_OwlbearSummoner")
         end,
-        OnReapply = U.Once(function(self) ---@param self Unlock
-            Ext.Osiris.RegisterListener("LongRestFinished", 0, "after", function()
-                for uuid, player in pairs(self.BoughtBy) do
-                    self:OnBuy(uuid)
-                end
-            end)
-        end),
     },
     {
         Id = "Tadpole",

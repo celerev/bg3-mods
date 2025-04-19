@@ -1,0 +1,20 @@
+new entry "TOT_AylinSummoner"
+type "PassiveData"
+using Tranquility
+data "Properties" "Highlighted"
+data "StatsFunctorContext" "OnLongRest"
+data "StatsFunctors" "ApplyStatus(SELF,TOTR_AYLIN,100,-1)"
+
+new entry "TOT_EmperorSummoner"
+type "PassiveData"
+using Tranquility
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnLongRest"
+data "StatsFunctors" "ApplyStatus(SELF,TOTR_EMPY,100,-1)"
+
+new entry "TOT_OwlbearSummoner"
+type "PassiveData"
+using Tranquility
+data "Properties" "IsHidden"
+data "StatsFunctorContext" "OnLongRest"
+data "StatsFunctors" "ApplyStatus(SELF,TOTR_OWLBEAR,100,-1)"
