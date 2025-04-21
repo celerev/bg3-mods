@@ -58,6 +58,12 @@ data "TargetRadius" "3"
 data "RequirementConditions" ""
 data "TargetConditions" "CanStand('f424693b-13f4-4cce-987b-7d75748c87e0') and (IsTargetableCorpse() and TargetSizeEqualOrSmaller(Size.Medium) or HasStatus('ANIMATEDEAD_ZONE',context.Source))"
 
+new entry "Target_FindFamiliar_Dog"
+type "SpellData"
+data "SpellType" "Target"
+using "Target_FindFamiliar_Dog"
+data "RequirementConditions" ""
+
 new entry "Projectile_TOT_GaleLaser"
 type "SpellData"
 data "SpellType" "Projectile"
