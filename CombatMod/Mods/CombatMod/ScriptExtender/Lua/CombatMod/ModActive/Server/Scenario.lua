@@ -492,6 +492,10 @@ end
 function Action.EnemyFallback(enemy)
     local s = Current()
 
+    if enemy.Name == "MOD_Harpy_Combat" or enemy.Name == "MOD_Harpy_CombatB" then
+        return
+    end
+
     local uuid = enemy.GUID
 
     if Enemy.IsValid(uuid) and GC.IsValid(uuid) then
