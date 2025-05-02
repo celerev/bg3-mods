@@ -212,7 +212,9 @@ function Player.RecruitOrigin(id)
             Osi.ClearTag(uuid, "BLOCK_RESURRECTION_22a75dbb-1588-407e-b559-5aa4e6d4e6a6")
         end,
         Minsc = function()
-            recruit(uuid) -- "630440f5-b71a-8764-94e8-b62544254cff")
+            recruit(uuid, "630440f5-b71a-8764-94e8-b62544254cff") -- "630440f5-b71a-8764-94e8-b62544254cff")
+            Osi.ClearTag(uuid, "BLOCK_RESURRECTION_22a75dbb-1588-407e-b559-5aa4e6d4e6a6")
+            Osi.PROC_SaveGamePatch_GUS300074_ResetMinscDialog()
         end,
         Alfira = function()
             fixAlfira()

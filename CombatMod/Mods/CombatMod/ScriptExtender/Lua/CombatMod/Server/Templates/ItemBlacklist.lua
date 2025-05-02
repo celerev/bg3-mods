@@ -344,6 +344,7 @@ local items = {
 	"MOD_Erinyes_Longsword",
 	"MOD_Runepowder_Time_Bomb",
 	"MOD_Runepowder_Vial_Thrown",
+	"MOD_RuneVial",
 	"LOOT_Throwable_Spell_DelayedBlastFireball",
 	"MOD_Whirlwind_Helper",
 	"MOD_RevGrav_Helper_Invisible_A",
