@@ -245,10 +245,22 @@ return {
 			Level = 14,
 			Pwr = 172.0,
 			Stats = 7,
-			Vit = 21,
+			Vit = 210,
 		},
 		Name = "MOD_Retriever_Combat",
 		TemplateId = "ad4fd21a-0443-4116-ad58-9ef779c723da",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_Drizzt_Combat",
+		TemplateId = "01ad3895-a1fe-4895-a010-d179c7910d5a",
 		Tier = "epic",
 	},
 	{

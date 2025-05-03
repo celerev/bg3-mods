@@ -64,6 +64,10 @@ function Control.Main(tab)
         end):Exec()
     end)
 
+    root:AddSeparator()
+    root:AddText(__("'Bias' refers to the encounter builder's budget. High Bias leans toward selecting expensive monsters. Low Bias leans toward selecting many cheap monsters."))
+    root:AddSeparator()
+
     root:AddSeparatorText(__("Logs"))
 
     local scrollable = root:AddChildWindow(U.RandomId())
