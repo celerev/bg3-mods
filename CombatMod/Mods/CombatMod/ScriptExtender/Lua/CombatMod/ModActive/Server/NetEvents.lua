@@ -283,6 +283,7 @@ local function broadcastConfig()
         local c = table.deepclone(Config)
         c.RoguelikeMode = PersistentVars.RogueModeActive
         c.HardMode = PersistentVars.HardMode
+        c.SuperHardMode = PersistentVars.SuperHardMode
         c.LoneWolfMode = PersistentVars.LoneWolfMode
         c.Debug = Mod.Debug
 
@@ -329,6 +330,19 @@ Net.On("Config", function(event)
 
             if config.HardMode ~= nil then
                 PersistentVars.HardMode = config.HardMode
+                if PersistentVars.HardMode == true then
+                    config.SuperHardMode = false
+                    PersistentVars.SuperHardMode = config.SuperHardMode
+                end
+                broadcastState()
+            end
+
+            if config.SuperHardMode ~= nil then
+                PersistentVars.SuperHardMode = config.SuperHardMode
+                if PersistentVars.SuperHardMode == true then
+                    config.HardMode = false
+                    PersistentVars.HardMode = config.HardMode
+                end
                 broadcastState()
             end
 

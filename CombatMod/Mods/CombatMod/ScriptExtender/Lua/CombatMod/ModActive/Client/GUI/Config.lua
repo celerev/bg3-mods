@@ -14,7 +14,9 @@ function Config.Main(tab)
 
     Config.Checkbox(root, "Play Roguelike Mode", "Play continuously harder random battles", "RoguelikeMode")
 
-    Config.Checkbox(root, "Challenge Mode", "A brutal challenge. Increases Encounter Budget, increases rate of Enemy Scaling, and allows more powerful monsters to arrive sooner.", "HardMode")
+    Config.Checkbox(root, "Challenge Mode", "A challenge for experienced players. Increases Encounter Budget, increases rate of Enemy Scaling, and allows more powerful monsters to arrive sooner.", "HardMode")
+
+    Config.Checkbox(root, "Hell Mode", "An unfair challenge for players who want a punishing experience. Powerful monsters will swarm.", "SuperHardMode")
 
     Config.Checkbox(root, "Lone Wolf Mode", "BETA: A scenario rebalanced for solo players. Press ResetTemplates button at bottom of page after enabling or disabling.", "LoneWolfMode")
 
@@ -63,7 +65,7 @@ function Config.Main(tab)
 
     Config.Slider(
         root,
-        "Difficulty scaling modifier",
+        "Enemy Stat Scaling Modifier",
         "In roguelike, scale the stats of enemies based on this number.",
         "ScalingModifier",
         0,

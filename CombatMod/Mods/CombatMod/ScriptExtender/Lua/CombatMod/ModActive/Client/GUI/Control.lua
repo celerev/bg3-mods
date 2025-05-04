@@ -65,7 +65,13 @@ function Control.Main(tab)
     end)
 
     root:AddSeparator()
+    root:AddText(__(""))
+    root:AddText(__("Challenge Mode is recommended for experienced BG3 players. It can be enabled on the Config tab."))
+    root:AddText(__(""))
     root:AddText(__("'Bias' refers to the encounter builder's budget. High Bias leans toward selecting expensive monsters. Low Bias leans toward selecting many cheap monsters."))
+    root:AddText(__(""))
+    root:AddText(__("Lone Wolf Mode can be used in conjunction with Challenge Mode. Remember to ResetTemplates after enabling or disabling Lone Wolf Mode."))
+    root:AddText(__(""))
     root:AddSeparator()
 
     root:AddSeparatorText(__("Logs"))

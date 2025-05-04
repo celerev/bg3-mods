@@ -20,6 +20,10 @@ function GameMode.IsHardMode()
     return PersistentVars.HardMode
 end
 
+function GameMode.IsSuperHardMode()
+    return PersistentVars.SuperHardMode
+end
+
 function GameMode.IsSoloMode()
     return PersistentVars.LoneWolfMode
 end
@@ -33,7 +37,7 @@ function GameMode.StartRoguelike(template)
     PersistentVars.RogueScenario = template.Name
 end
 
-function GameMode.GetTiers(cow, score)
+function GameMode.GetTiers(cow, harvard, score)
     -- define tiers and their corresponding difficulty values
     local tiers = {
         { name = C.EnemyTier[1], min = 0, value = 4, amount = #Enemy.GetByTier(C.EnemyTier[1]) },
@@ -59,8 +63,26 @@ function GameMode.GetTiers(cow, score)
         }
     end
 
+
+    if GameMode.IsSuperHardMode() then
+        tiers = {
+            { name = C.EnemyTier[1], min = 0, value = 1, amount = #Enemy.GetByTier(C.EnemyTier[1]) },
+            { name = C.EnemyTier[2], min = 5, value = 4, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
+            { name = C.EnemyTier[3], min = 15, value = 8, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
+            { name = C.EnemyTier[4], min = 30, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
+            { name = C.EnemyTier[5], min = 45, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
+            { name = C.EnemyTier[6], min = 60, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
+            { name = C.EnemyTier[7], min = 80, value = 64, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[8], min = 100, value = 90, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+        }
+    end
+
     if cow then
         tiers = { { name = "TOT_OX_A", value = math.max(4, score / 100), amount = 100 } }
+    end
+
+    if harvard then
+        tiers = { { name = "MOD_MysterySpawn_Combat", value = math.max(4, score / 100), amount = 100 } }
     end
 
     return tiers
@@ -334,7 +356,7 @@ function GameMode.RewardRogueScore(scenario)
     local endRound = scenario.Round - 1
 
     -- If not hard mode, give a bonus for perfect clear
-    if not GameMode.IsHardMode() then
+    if not (GameMode.IsHardMode() or GameMode.IsSuperHardMode()) then
         endRound = endRound - 1
     end
 
@@ -401,12 +423,15 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
     end
     local originalDex = baseDex
 
-    local function scale(i, h)
+    local function scale(i)
         local x = i / 200
         local max_value = Config.ScalingModifier
 
-        if h then
+        if GameMode.IsHardMode() then
             x = x * 2
+            max_value = Config.ScalingModifier * 1.6666667
+        elseif GameMode.IsSuperHardModeHardMode() then
+            x = (x + 0.15) * 2
             max_value = Config.ScalingModifier * 1.6666667
         end
 
@@ -414,7 +439,7 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
         return math.floor(max_value * (1 - math.exp(-rate * x)))
     end
 
-    local mod = scale(score, GameMode.IsHardMode())
+    local mod = scale(score)
 
 -- Elminster's Intelligence should not be scaling at the same rate as a cow's Strength. One gains the ability to hit you, the other's already-devastating spells become irresistible.
     if enemy.Tier == 4 or enemy.Tier == "ultra" then
@@ -596,7 +621,7 @@ Event.On(
 )
 
 local function getMap(template)
-    local threshold = GameMode.IsHardMode() and 20 or 40
+    local threshold = (GameMode.IsSuperHardMode() and 5) or (GameMode.IsHardMode() and 20) or 40
 
     local maps = table.filter(Map.Get(), function(v)
         return PersistentVars.RogueScore > threshold or v.Region == C.Regions.Act1
@@ -633,6 +658,22 @@ local function makeItCow()
     return lolcow
 end
 
+local function makeItWilloughby()
+    local harvard = math.newRandom() < 0.0001
+    if harvard then
+        local hasWilloughby = Enemy.Find("MOD_MysterySpawn_Combat")
+        harvard = hasWilloughby and true or false
+    end
+
+    if harvard then
+        Defer(1000, function()
+            Player.Notify(__("You have incurred the wrath of Nature's Vengeance!"))
+        end)
+    end
+
+    return harvard
+end
+
 Schedule(function()
     External.Templates.AddScenario({
         RogueLike = true,
@@ -640,12 +681,12 @@ Schedule(function()
             GameMode.StartRoguelike(template)
         end,
 
-        Name = C.RoguelikeScenario .. " (bias lower tier)",
+        Name = C.RoguelikeScenario .. " (Bias Lower Tier)",
         Map = getMap,
 
         -- Spawns per Round
         Timeline = function(template)
-            local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
+            local tiers = GameMode.GetTiers(makeItCow(), makeItWilloughby(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
                 local weight = (tier.amount / 100) * 0.3 -- slight bias towards tiers with more enemies
@@ -664,12 +705,12 @@ Schedule(function()
             GameMode.StartRoguelike(template)
         end,
 
-        Name = C.RoguelikeScenario .. " (bias balanced)",
+        Name = C.RoguelikeScenario .. " (Bias Balanced)",
         Map = getMap,
 
         -- Spawns per Round
         Timeline = function(template)
-            local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
+            local tiers = GameMode.GetTiers(makeItCow(), makeItWilloughby(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
                 local weight = tier.amount / 2000 -- slight bias towards tiers with more enemies
@@ -688,12 +729,12 @@ Schedule(function()
             GameMode.StartRoguelike(template)
         end,
 
-        Name = C.RoguelikeScenario .. " (bias higher tier)",
+        Name = C.RoguelikeScenario .. " (Bias Higher Tier)",
         Map = getMap,
 
         -- Spawns per Round
         Timeline = function(template)
-            local tiers = GameMode.GetTiers(makeItCow(), PersistentVars.RogueScore)
+            local tiers = GameMode.GetTiers(makeItCow(), makeItWilloughby(), PersistentVars.RogueScore)
 
             for i, tier in ipairs(tiers) do
                 local weight = tier.amount / 100 * 0.7 -- mild bias towards tiers with more enemies
