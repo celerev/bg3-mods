@@ -430,7 +430,7 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
         if GameMode.IsHardMode() then
             x = x * 2
             max_value = Config.ScalingModifier * 1.6666667
-        elseif GameMode.IsSuperHardModeHardMode() then
+        elseif GameMode.IsSuperHardMode() then
             x = (x + 0.15) * 2
             max_value = Config.ScalingModifier * 1.6666667
         end

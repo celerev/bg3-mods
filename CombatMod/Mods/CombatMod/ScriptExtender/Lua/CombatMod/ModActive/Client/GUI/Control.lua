@@ -70,7 +70,7 @@ function Control.Main(tab)
     root:AddText(__(""))
     root:AddText(__("'Bias' refers to the encounter builder's budget. High Bias leans toward selecting expensive monsters. Low Bias leans toward selecting many cheap monsters."))
     root:AddText(__(""))
-    root:AddText(__("Lone Wolf Mode can be used in conjunction with Challenge Mode. Remember to ResetTemplates after enabling or disabling Lone Wolf Mode."))
+    root:AddText(__("Lone Wolf Mode can be used in conjunction with Challenge Mode. Remember to Reset Templates after enabling or disabling Lone Wolf Mode."))
     root:AddText(__(""))
     root:AddSeparator()
 
