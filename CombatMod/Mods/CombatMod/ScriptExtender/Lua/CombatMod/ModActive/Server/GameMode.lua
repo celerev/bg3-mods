@@ -70,10 +70,10 @@ function GameMode.GetTiers(cow, harvard, score)
             { name = C.EnemyTier[2], min = 5, value = 4, amount = #Enemy.GetByTier(C.EnemyTier[2]) },
             { name = C.EnemyTier[3], min = 15, value = 8, amount = #Enemy.GetByTier(C.EnemyTier[3]) },
             { name = C.EnemyTier[4], min = 30, value = 20, amount = #Enemy.GetByTier(C.EnemyTier[4]) },
-            { name = C.EnemyTier[5], min = 45, value = 27, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
-            { name = C.EnemyTier[6], min = 60, value = 35, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
-            { name = C.EnemyTier[7], min = 80, value = 64, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
-            { name = C.EnemyTier[8], min = 100, value = 90, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+            { name = C.EnemyTier[5], min = 45, value = 24, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
+            { name = C.EnemyTier[6], min = 60, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
+            { name = C.EnemyTier[7], min = 80, value = 60, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
+            { name = C.EnemyTier[8], min = 100, value = 86, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
         }
     end
 
