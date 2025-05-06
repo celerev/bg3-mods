@@ -1786,7 +1786,7 @@ return {
 			Vit = 30,
 		},
 		Name = "TOT_Lurgan",
-		TemplateId = "d00a6cdf-ae45-4fd0-8b58-61933dfe9cc28",
+		TemplateId = "93509c77-1fca-4758-9a39-4d9781418cd3",
 		Tier = "mid",
 	},
 	{
