@@ -77,6 +77,9 @@ function Intro.AskTutSkip()
                     Osi.PROC_GithChokepoint_Cancel("PLA")
                     Osi.PROC_PLA_GithChokepoint_CleanUp()
 
+                    -- fixing Gale's arcane hunger
+                    Osi.PROC_ORI_Gale_DisableDeathEffect()
+
                     Player.Notify(__("Starting items added. Hirelings unlocked."))
                     done = true
 

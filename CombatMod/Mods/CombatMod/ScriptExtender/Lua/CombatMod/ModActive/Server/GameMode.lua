@@ -355,15 +355,15 @@ function GameMode.RewardRogueScore(scenario)
     -- Always has 1 round more than the timeline because of CombatRoundStarted
     local endRound = scenario.Round - 1
 
-    -- If not hard mode, give a bonus for perfect clear
-    if not (GameMode.IsHardMode() or GameMode.IsSuperHardMode()) then
-        endRound = endRound - 1
-    end
-
     local diff = math.max(0, endRound - scenario:TotalRounds())
 
-    score = score + math.max(baseScore - diff, 1)
+    score = score + math.max(baseScore - diff, 2)
     GameMode.UpdateRogueScore(score)
+
+    -- If not hard mode, give an extra round for perfect clear
+    if (GameMode.IsHardMode() or GameMode.IsSuperHardMode()) then
+        endRound = endRound + 1
+    end
 
     if endRound <= scenario:TotalRounds() then
         Event.Trigger("ScenarioPerfectClear", scenario)
