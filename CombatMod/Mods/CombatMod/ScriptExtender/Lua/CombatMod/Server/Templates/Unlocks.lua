@@ -486,6 +486,7 @@ return table.extend({
     {
        Id = "ShortRestRecovery",
        Name = "Restore some extra resources on Short Rest",
+       Description = __("Causes a limited amount of Long Rest resources to be regained on each Short Rest. The amount scales with character level."),
        Icon = "Action_EndGame_IsobelHeal",
        Cost = 250,
        Requirement = 100,
@@ -653,7 +654,7 @@ return table.extend({
         Name = Localization.Get("h2d9eec26gb99cg4944g9b9bg339dda67c9e2"),
         Icon = "Item_TOOL_MF_Resonance_Crystal_A",
         Description = Localization.Get("hecfe4e23g8a90g4a74g8bc7g5eca34496309"),
-        Cost = 40,
+        Cost = 120,
         Amount = nil,
         Character = false,
         OnBuy = function(self, character)

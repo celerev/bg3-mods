@@ -514,10 +514,10 @@ function Action.EnemyFallback(enemy)
             s.Map:TeleportToSpawn(uuid, -1)
 
             s.EnemyFallback[uuid] = 1
-        elseif s.EnemyFallback[uuid] > 5 and PersistentVars.LoneWolfMode then
+        elseif s.EnemyFallback[uuid] > 4 and PersistentVars.LoneWolfMode then
             s.Map:TeleportToSpawn(uuid, -1)
 
-            s.EnemyFallback[uuid] = 3
+            s.EnemyFallback[uuid] = 2
         end
     end
 end

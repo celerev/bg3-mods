@@ -2559,7 +2559,7 @@
 					<attribute id="Name" type="LSString" value="TOT_OX_A" />
 					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
 					<attribute id="Archetype" type="FixedString" value="beast" />
-					<attribute id="Stats" type="FixedString" value="Ox" />
+					<attribute id="Stats" type="FixedString" value="TOT_Ox" />
 					<attribute id="CharacterVisualResourceID" type="FixedString"
 						value="eed1f9b7-81c3-fb2c-4062-201ca0619b89" />
 					<attribute id="Icon" type="FixedString"
@@ -2572,6 +2572,37 @@
 							<children>
 								<node id="TreasureItem">
 									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+						<node id="SkillList">
+							<children>
+								<node id="Skill">
+									<attribute id="AIFlags" type="uint16" value="0" />
+									<attribute id="FallbackStartRound" type="int32" value="-1" />
+									<attribute id="LearningStrategy" type="uint8" value="0" />
+									<attribute id="MinimumImpact" type="int32" value="0" />
+									<attribute id="OnlyCastOnSelf" type="bool" value="False" />
+									<attribute id="ScoreModifier" type="float" value="1" />
+									<attribute id="Skill" type="FixedString" value="Target_Gore_DeepRothe_NPC" />
+									<attribute id="SpellCastingAbility" type="uint8" value="0" />
+									<attribute id="StartRound" type="int32" value="0" />
+									<children>
+										<node id="SourceConditions">
+											<attribute id="MaximumHealthPercentage" type="int32" value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32" value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+										<node id="TargetConditions">
+											<attribute id="MaximumHealthPercentage" type="int32" value="100" />
+											<attribute id="MinimumHealthPercentage" type="int32" value="0" />
+											<children>
+												<node id="Tags" />
+											</children>
+										</node>
+									</children>
 								</node>
 							</children>
 						</node>
