@@ -80,6 +80,9 @@ function Intro.AskTutSkip()
                     -- fixing Gale's arcane hunger
                     Osi.PROC_ORI_Gale_DisableDeathEffect()
 
+                    -- maybe fixing a niche Orin interaction
+                    Osi.PROC_GEN_OrinsAbduction_DisableAllImpersonations()
+
                     Player.Notify(__("Starting items added. Hirelings unlocked."))
                     done = true
 

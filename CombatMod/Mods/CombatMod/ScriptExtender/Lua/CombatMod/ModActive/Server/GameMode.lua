@@ -301,9 +301,9 @@ function GameMode.GenerateScenario(score, tiers)
     if partySizeMod == 4 then
         L.Debug("Standard party size, standard scaling")
     elseif partySizeMod == 1 then
-        spawnValue = math.ceil(score * 0.6)
+        spawnValue = math.ceil(score * 0.7)
     elseif partySizeMod == 2 then
-        spawnValue = math.ceil(score * 0.75)
+        spawnValue = math.ceil(score * 0.8)
     elseif partySizeMod == 3 then
         spawnValue = math.ceil(score * 0.9)
     elseif partySizeMod == 5 then
