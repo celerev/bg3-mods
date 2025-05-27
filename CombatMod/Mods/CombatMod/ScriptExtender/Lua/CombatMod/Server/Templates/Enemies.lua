@@ -241,6 +241,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 192.0,
+			Stats = 20,
+			Vit = 220,
+		},
+		Name = "MOD_Marilith_Combat",
+		TemplateId = "7cfafb31-91ba-454e-8eea-16b85a46eee2",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 19,
 			Level = 14,
 			Pwr = 172.0,

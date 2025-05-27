@@ -765,7 +765,7 @@ return {
 		},
 		Name = "TOT_Dwarves_Female_Hill_FlamingFist_Cleric",
 		TemplateId = "374535ec-df6a-49f0-8212-9e42dc6fa112",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -851,6 +851,18 @@ return {
 		Name = "TOT_BIRD_BlueJay",
 		TemplateId = "7249b7f2-5d91-4bd3-9b45-04195ce3a69f",
 		Tier = "low",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 192.0,
+			Stats = 20,
+			Vit = 220,
+		},
+		Name = "MOD_Marilith_Combat",
+		TemplateId = "7cfafb31-91ba-454e-8eea-16b85a46eee2",
+		Tier = "legendary",
 	},
 	{
 		Info = {
@@ -1234,7 +1246,7 @@ return {
 		},
 		Name = "TOT_Dwarves_Male_Hill_FlamingFist_Cleric",
 		TemplateId = "07e193b9-e9b2-4328-8427-e09d8389c9cc",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2183,7 +2195,7 @@ return {
 		},
 		Name = "TOT_Humans_Female_FlamingFist_Cleric",
 		TemplateId = "b6033940-18c9-4bdc-bfe1-4f90f13402d2",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
@@ -2507,7 +2519,7 @@ return {
 		},
 		Name = "TOT_Humans_Male_FlamingFist_Cleric",
 		TemplateId = "ac3228f8-93f5-4eb5-be40-61bdc71865ec",
-		Tier = "ultra",
+		Tier = "high",
 	},
 	{
 		Info = {
