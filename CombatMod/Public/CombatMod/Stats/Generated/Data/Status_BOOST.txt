@@ -79,3 +79,10 @@ data "StatusType" "BOOST"
 using "TOTR_AYLIN"
 data "Boosts" "UnlockSpell(Target_TOT_Summon_Owlbear);UnlockSpellVariant(SpellId('Target_TOT_Summon_Owlbear'),ModifyIconGlow())"
 data "RemoveConditions" "SpellId('Target_TOT_Summon_Owlbear')"
+
+
+new entry "COL_RESONANCESTONE_BUFF"
+type "StatusData"
+data "StatusType" "BOOST"
+using "COL_RESONANCESTONE_BUFF"
+data "StatusGroups" "SG_Charmed"

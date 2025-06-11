@@ -56,14 +56,16 @@ GameState.OnLoad(function()
 Regenerate enemy, item, and map tables?
 If you've recently updated, this is recommended.
 Old data may need to be cleared, and new data may need to be pulled in]]):After(function(confirmed)
-                L.Debug("Regenerating tables", confirmed)
-                Templates.ExportScenarios()
-                Templates.ExportMaps()
-                Templates.ExportEnemies()
-                Templates.ExportLootRates()
-                Net.Send("GetTemplates")
-                Net.Send("GetSelection")
-                L.Debug("Tables regenerated", confirmed)
+                if confirmed then
+                    L.Debug("Regenerating tables", confirmed)
+                    Templates.ExportScenarios()
+                    Templates.ExportMaps()
+                    Templates.ExportEnemies()
+                    Templates.ExportLootRates()
+                    Net.Send("GetTemplates")
+                    Net.Send("GetSelection")
+                    L.Debug("Tables regenerated", confirmed)
+                end
         end)
 end, true)
 
