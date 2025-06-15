@@ -1,7 +1,7 @@
 local regex = {
 	"^DLC_",
 	"OBJ_BloodPotion_",
-	"GLO_",
+	"BOOK_",
 	"TWN_TollCollector_",
 	"_Destroyed$",
 	"_REF$",
@@ -331,6 +331,9 @@ local items = {
 	"QUEST_HAV_InfernalGrenade",
 	"OBJ_BallBearings",
 	"LOW_RegenerationPrevention_Grenade",
+	"GLO_CursedIronFlask",
+	"GLO_CursedIronFlask_Empty",
+	"GLO_DevilishOx_Fruit_Apple",
 	-- "ATT items",
 	"WPN_Zariel_Flail",
 	"WPN_Zariel_Hammer",
