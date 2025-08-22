@@ -1037,10 +1037,10 @@
 		"Text": "Unlock Multipliers",
 		"Version": 1
 	},
-	"Unlock New Game+;1": {
+	"Unlock Quick Start;1": {
 		"Handle": "h2d849b5cg78d1g4ce0g91ebg7a86f3c958a4",
 		"Stack": ["CombatMod/CombatMod/Server/Templates/Unlocks.lua"],
-		"Text": "Unlock New Game+",
+		"Text": "Unlock Quick Start",
 		"Version": 1
 	},
 	"Unlock Tadpole Power;1": {

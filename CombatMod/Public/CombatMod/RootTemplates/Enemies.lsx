@@ -6463,6 +6463,7 @@
 						value="7df2970a-a779-4009-8914-9955055359f7" />
 					<attribute id="ParentTemplateId" type="FixedString"
 						value="38d08e45-0e02-4d0f-b1ff-3f4f5d3365c4" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h89268b3fg9a95g4235gb945gc4eea538bb15" version="1" />
 					<attribute id="Name" type="LSString" value="TOT_Fey_Dog_A" />
 					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
 					<attribute id="Archetype" type="FixedString" value="fey_mastiff" />

@@ -34,6 +34,8 @@ Net.On("GetSelection", function(event)
             end
             return { Id = k, Name = v.Name }
         end),
+		
+		
         Maps = table.map(Map.GetTemplates(), function(v, k)
             return { Id = k, Name = v.Name, Author = v.Author }
         end),
@@ -96,6 +98,23 @@ end)
 Net.On("Start", function(event)
     local scenarioName = event.Payload.Scenario
     local mapName = event.Payload.Map
+	local difficultyValue = event.Payload.Difficulty
+	
+	if difficultyValue == 0 then
+        PersistentVars.HardMode = false
+        PersistentVars.SuperHardMode = false
+        Event.Trigger("difficultyModeChanged", true)
+	elseif difficultyValue == 1 then
+	    PersistentVars.HardMode = true
+		PersistentVars.SuperHardMode = false
+		Event.Trigger("difficultyModeChanged", true)
+	elseif difficultyValue == 2 then
+	    PersistentVars.HardMode = false
+		PersistentVars.SuperHardMode = true
+		Event.Trigger("difficultyModeChanged", true)
+	else
+	    Net.Respond(event, { false, "Scenario error" })
+	end
 
     local template = table.find(Scenario.GetTemplates(), function(v)
         return v.Name == scenarioName
@@ -292,8 +311,10 @@ local function broadcastConfig()
 end
 
 Event.On("RogueModeChanged", broadcastConfig)
+Event.On("difficultyModeChanged", broadcastConfig)
 
 Event.On("RogueModeChanged", broadcastState)
+Event.On("difficultyModeChanged", broadcastState)
 Event.On("ScenarioStarted", broadcastState)
 Event.On("ScenarioMapEntered", broadcastState)
 Event.On("ScenarioRoundStarted", broadcastState)

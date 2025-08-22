@@ -902,34 +902,35 @@ function Scenario.CombatSpawned(specific)
 end
 
 function Scenario.GroupDistantEnemies()
-    local s = Current()
-
-    if not Config.GroupDistantEnemies then
-        return
-    end
-
-    local enemies = table.filter(s.SpawnedEnemies, function(e)
-        return e:IsSpawned() and string.contains(e.Tier, { table.unpack(C.EnemyTier, 1, 3) })
-    end)
-
-    for _, enemy in ipairs(enemies) do
-        local uuid = enemy.GUID
-
-        local x, y, z = Osi.GetPosition(uuid)
-
-        local distance = Enemy.DistanceToParty(uuid)
-
-        local shouldSwarm = #s.SpawnedEnemies > 11 and distance > 20 or distance > 30
-
-        if shouldSwarm then
-            Osi.RequestSetSwarmGroup(uuid, "TOT_Swarm_Group")
-            L.Debug("Enemy added to swarm", uuid, distance, Osi.GetSwarmGroup(uuid))
-        else
-            if Osi.GetSwarmGroup(uuid) then
-                Osi.RequestSetSwarmGroup(uuid, "")
-            end
-        end
-    end
+    return
+    --    local s = Current()
+    --
+    --    if not Config.GroupDistantEnemies then
+    --        return
+    --    end
+    --
+    --    local enemies = table.filter(s.SpawnedEnemies, function(e)
+    --        return e:IsSpawned() and string.contains(e.Tier, { table.unpack(C.EnemyTier, 1, 3) })
+    --    end)
+    --
+    --    for _, enemy in ipairs(enemies) do
+    --        local uuid = enemy.GUID
+    --
+    --        local x, y, z = Osi.GetPosition(uuid)
+    --
+    --        local distance = Enemy.DistanceToParty(uuid)
+    --
+    --        local shouldSwarm = #s.SpawnedEnemies > 11 and distance > 20 or distance > 30
+    --
+    --        if shouldSwarm then
+    --            Osi.RequestSetSwarmGroup(uuid, "TOT_Swarm_Group")
+    --            L.Debug("Enemy added to swarm", uuid, distance, Osi.GetSwarmGroup(uuid))
+    --        else
+    --            if Osi.GetSwarmGroup(uuid) then
+    --                Osi.RequestSetSwarmGroup(uuid, "")
+    --            end
+    --        end
+    --    end
     -- local enemy = table.find(s.SpawnedEnemies, function(e)
     --     return U.UUID.Equals(e.GUID, uuid)
     -- end)
@@ -1213,9 +1214,9 @@ Ext.Osiris.RegisterListener(
     ifScenario(function(uuid)
         local s = Current()
 
-        if Player.IsPlayer(uuid) then
-            Scenario.GroupDistantEnemies()
-        end
+    --        if Player.IsPlayer(uuid) then
+    --            Scenario.GroupDistantEnemies()
+    --        end
 
         local enemy = table.find(s.SpawnedEnemies, function(e)
             return U.UUID.Equals(e.GUID, uuid)
@@ -1316,10 +1317,12 @@ Ext.Osiris.RegisterListener(
         Scenario.TeleportHelper()
 
         Scenario.CheckShouldStop()
+		
+		Scenario.CloseEnemyDistance()
 
-        Scenario.CloseEnemyDistance():After(function()
-            Scenario.GroupDistantEnemies()
-        end)
+    --        Scenario.CloseEnemyDistance():After(function()
+    --            Scenario.GroupDistantEnemies()
+    --        end)
 
         Scenario.CombatSpawned()
 

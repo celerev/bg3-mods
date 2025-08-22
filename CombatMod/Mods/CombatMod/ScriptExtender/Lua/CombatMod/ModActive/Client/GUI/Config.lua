@@ -52,8 +52,6 @@ function Config.Main(tab)
         "MulitplayerRestrictUnlocks"
     )
 
-    Config.Checkbox(root, "Enable Swarm AI", "Group distant enemies for faster turns.", "GroupDistantEnemies")
-
     Config.Slider(
         root,
         "To Camp After n Seconds",

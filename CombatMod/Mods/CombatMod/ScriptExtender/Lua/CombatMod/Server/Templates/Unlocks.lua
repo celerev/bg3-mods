@@ -115,8 +115,9 @@ local multis = {
 
 local ngPlus = {
     {
-        Id = "NEWGAME_PLUS",
-        Name = __("Unlock New Game+"),
+        Id = "QUICKSTART",
+        Name = __("Unlock Quick Start"),
+		Description = __("Unlock features for rapidly accelerating the beginning of your next run and making it more dangerous."),
         Icon = "Action_EndGame_NethereseOrbBlast",
         Cost = 2000,
         Amount = 1,
@@ -126,13 +127,13 @@ local ngPlus = {
     },
     {
         Id = "NG MOD_BOOSTS",
-        Name = __("New Game+ - Unlock Multipliers for Free"),
+        Name = __("Quick Start: - Unlock Multipliers for Free"),
         Icon = "PassiveFeature_Generic_Explosion",
         Cost = 0,
         Amount = 1,
         Character = false,
         Persistent = false,
-        Requirement = "NEWGAME_PLUS",
+        Requirement = "QUICKSTART",
         OnBuy = function(self, character)
             local unlockBoosts = table.find(Unlock.Get(), function(u)
                 return u.Id == "MOD_BOOSTS"
@@ -142,60 +143,61 @@ local ngPlus = {
     },
     {
         Id = "BuyRogueScore",
-        Name = __("New Game+ - %s RogueScore", "+50"),
+        Name = __("Quick Start: - %s RogueScore", "+50"),
+		Description = __("Accelerates the beginning of a run by capapulting you into more dangerous encounters."),
         Icon = "GenericIcon_Intent_Buff",
         Cost = 20,
         Amount = nil,
         Character = false,
-        Requirement = "NEWGAME_PLUS",
+        Requirement = "QUICKSTART",
         OnBuy = function(self, character)
             GameMode.UpdateRogueScore(PersistentVars.RogueScore + 50)
         end,
     },
     {
         Id = "ScoreMultiplier",
-        Name = __("New Game+ - Gain double RogueScore"),
+        Name = __("Quick Start: - Gain 2x RogueScore, doubling the rate difficulty increases"),
         Icon = "GenericIcon_Intent_Buff",
         Cost = 0,
         Amount = 1,
         Character = false,
-        Requirement = "NEWGAME_PLUS",
+        Requirement = "QUICKSTART",
         OnBuy = function(self, character)
             PersistentVars.Unlocked.RogueScoreMultiplier = true
         end,
     },
     {
         Id = "CurrencyPlus",
-        Name = "New Game+ - +100 Currency",
+        Name = "Quick Start: - +100 Currency",
         Icon = "Item_CONT_GEN_Chest_Rich_B",
         Cost = 0,
         Amount = 1,
         Character = false,
-        Requirement = { "NEWGAME_PLUS", "ScoreMultiplier" },
+        Requirement = { "QUICKSTART", "ScoreMultiplier" },
         OnBuy = function(self, character)
             PersistentVars.Currency = (PersistentVars.Currency or 0) + 100
         end,
     },
     {
         Id = "BuyExpPlus",
-        Name = "New Game+ - 1000 EXP",
+        Name = "Quick Start: - 1000 EXP",
         Icon = "Action_Dash",
         Cost = 0,
         Amount = 3,
         Character = false,
-        Requirement = { "NEWGAME_PLUS", "ScoreMultiplier" },
+        Requirement = { "QUICKSTART", "ScoreMultiplier" },
         OnBuy = function(self, character)
             Player.GiveExperience(1000)
         end,
     },
     {
         Id = "BuyLootPlus",
-        Name = __("New Game+ - Roll Loot %dx", 10),
+        Name = __("Quick Start: - Roll Loot %dx", 10),
         Icon = "Item_CONT_GEN_Chest_Jewel_A",
         Cost = 0,
         Amount = 10,
         Character = false,
-        Requirement = { "NEWGAME_PLUS", "ScoreMultiplier" },
+        Requirement = { "QUICKSTART", "ScoreMultiplier" },
         OnBuy = function(self, character)
             local loot = Item.GenerateLoot(10, C.LootRates)
 
@@ -205,12 +207,12 @@ local ngPlus = {
     },
     {
         Id = "BuyStockPlus",
-        Name = __("New Game+ - Reset Stock"),
+        Name = __("Reset Stock"),
         Icon = "Item_BOOK_SignedTradeVisa",
         Description = __("Resets the stock of purchased standard unlocks."),
         Cost = 1000,
         Amount = nil,
-        Requirement = { "NEWGAME_PLUS" },
+        Requirement = { "QUICKSTART" },
         Character = false,
         OnBuy = function(self, character)
             if self.Bought > 0 then

@@ -1,10 +1,11 @@
 Control = {}
 
 function Control.Events()
-    Event.On("Start", function(scenarioName, mapName)
+    Event.On("Start", function(scenarioName, mapName, difficultyName)
         Net.Request("Start", {
             Scenario = scenarioName,
             Map = mapName,
+			Difficulty = difficultyName,
         }):After(DisplayResponse)
     end)
 
@@ -66,9 +67,9 @@ function Control.Main(tab)
 
     root:AddSeparator()
     root:AddText(__(""))
-    root:AddText(__("Challenge Mode is recommended for experienced BG3 players. It can be enabled on the Config tab."))
+    root:AddText(__("The encounter budget increases as your RogueScore increases and scales faster with higher difficulties."))
     root:AddText(__(""))
-    root:AddText(__("'Bias' refers to the encounter builder's budget. High Bias leans toward selecting expensive monsters. Low Bias leans toward selecting many cheap monsters."))
+    root:AddText(__("'Bias' refers to the way that budget is spent. High Bias leans toward selecting expensive monsters. Low Bias leans toward selecting many cheap monsters."))
     root:AddText(__(""))
     root:AddText(__("Lone Wolf Mode is recommended for players who want to play solo. It can be enabled on the Config tab, and it can be used in conjunction with Challenge Mode or Hell Mode. Remember to Reset Templates after enabling or disabling Lone Wolf Mode."))
     root:AddText(__(""))
@@ -90,25 +91,34 @@ function Control.Main(tab)
 end
 
 function Control.StartPanel(root)
-    return Components.Layout(root, 2, 1, function(startLayout)
+    return Components.Layout(root, 3, 1, function(startLayout)
         startLayout.Cells[1][1]:AddText(__("Scenarios"))
-        startLayout.Cells[1][2]:AddText(__("Maps"))
+		startLayout.Cells[1][2]:AddText(__("Difficulty"))
+        startLayout.Cells[1][3]:AddText(__("Maps"))
         local listCols = startLayout.Cells[1]
 
         local scenarioSelection = Components.Selection(listCols[1])
         local scenarioSelPagination = Components.Pagination(scenarioSelection.Root, {}, 5)
-        local mapSelection = Components.Selection(listCols[2])
+		local difficultySelection = Components.Selection(listCols[2])
+        local difficultySelPagination = Components.Pagination(difficultySelection.Root, {}, 5)
+        local mapSelection = Components.Selection(listCols[3])
         local mapSelPagination = Components.Pagination(mapSelection.Root, {}, 5)
 
         Net.On("GetSelection", function(event)
             scenarioSelection.Reset()
             mapSelection.Reset()
+			difficultySelection.Reset()
 
             for i, item in ipairs(event.Payload.Scenarios) do
                 local label = item.Name
                 scenarioSelection.AddItem(label, item.Name)
             end
             scenarioSelPagination.UpdateItems(scenarioSelection.Selectables)
+
+			difficultySelection.AddItem("Regular Mode: Variety, power, and quantity of monsters scales gently.", 0)
+			difficultySelection.AddItem("Challenge Mode: A challenge for experienced players.", 1)
+			difficultySelection.AddItem("Hell Mode: For players who want a punishing, unfair experience.", 2)
+			difficultySelPagination.UpdateItems(difficultySelection.Selectables)
 
             mapSelection.AddItem("Random", nil)
             if not State.RogueModeActive then
@@ -141,10 +151,10 @@ function Control.StartPanel(root)
             end
             pressed = true
             startButton:SetStyle("Alpha", 0.5)
-            Event.Trigger("Start", scenarioSelection.Value, mapSelection.Value)
+            Event.Trigger("Start", scenarioSelection.Value, mapSelection.Value, difficultySelection.Value)
         end
 
-        Components.Conditional(listCols[2], function(cond)
+        Components.Conditional(listCols[3], function(cond)
             local grp = cond.Root:AddGroup(__("Debug"))
 
             grp:AddButton(__("Teleport")).OnClick = function(button)
@@ -172,9 +182,10 @@ function Control.StartPanel(root)
 end
 
 function Control.RunningPanel(root)
-    return Components.Layout(root, 2, 2, function(layout)
+    return Components.Layout(root, 3, 2, function(layout)
         local scenarioName = layout.Cells[1][1]:AddText("")
-        local mapName = layout.Cells[1][2]:AddText("")
+		local difficultyName = layout.Cells[1][2]:AddText("")
+        local mapName = layout.Cells[1][3]:AddText("")
 
         Components.Computed(scenarioName, function(box, state)
             if state.Scenario then
@@ -188,6 +199,20 @@ function Control.RunningPanel(root)
                 return table.concat(text, "\n")
             end
         end, "StateChange")
+		
+		
+		Components.Computed(difficultyName, function(box, state)
+            if state.Scenario then
+                if state.HardMode then
+				    return __("Difficulty: Challenge Mode")
+				elseif state.SuperHardMode then
+				    return __("Difficulty: Hell Mode")
+				else 
+				    return __("Difficulty: Regular Mode")
+				end
+            end
+        end, "StateChange")
+
 
         Components.Computed(mapName, function(box, state)
             if state.Scenario then
@@ -231,7 +256,7 @@ function Control.RunningPanel(root)
             return btn
         end, "StateChange")
 
-        layout.Cells[1][2]:AddButton(__("Teleport")).OnClick = function()
+        layout.Cells[1][3]:AddButton(__("Teleport")).OnClick = function()
             Event.Trigger("Teleport", { Map = State.Scenario.Map.Name, Restrict = true })
         end
 
@@ -239,11 +264,11 @@ function Control.RunningPanel(root)
         --     Event.Trigger("PingSpawns", { Map = State.Scenario.Map.Name })
         -- end
 
-        layout.Cells[1][2]:AddButton(__("Highlight Spawns")).OnClick = function()
+        layout.Cells[1][3]:AddButton(__("Highlight Spawns")).OnClick = function()
             Event.Trigger("MarkSpawns", { Map = State.Scenario.Map.Name })
         end
 
-        Components.Conditional(layout.Cells[1][2], function(cond)
+        Components.Conditional(layout.Cells[1][3], function(cond)
             local grp = cond.Root:AddGroup(__("Debug"))
 
             grp:AddButton(__("Kill spawned")).OnClick = function()
