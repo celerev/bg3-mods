@@ -335,11 +335,20 @@ function Commands.Reload()
     else
         Templates.ExportScenarios()
     end
+	
+	local exandriaCheck = Ext.Mod.IsModLoaded("a27fdbe3-4d1a-641d-d05f-1ba4ee529da8")
 
+	
     local e = External.Templates.GetEnemies()
+	if exandriaCheck then
+		e = External.Templates.GetExandriaEnemies()
+	end
+	
     if e then
         L.Info(#e, "Enemies loaded.")
-    else
+    elseif exandriaCheck then
+		Templates.ExportExandriaModeEnemies()
+	else
         Templates.ExportEnemies()
     end
 

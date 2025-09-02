@@ -57,10 +57,16 @@ Net.On("ResetTemplates", function(event)
     if event.Payload.Maps then
         Templates.ExportMaps()
     end
-    if event.Payload.Enemies and PersistentVars.LoneWolfMode then
-        Templates.ExportSoloModeEnemies()
-    elseif event.Payload.Enemies then
-        Templates.ExportEnemies()
+	local exandriaCheck = Ext.Mod.IsModLoaded("a27fdbe3-4d1a-641d-d05f-1ba4ee529da8")
+	
+    if event.Payload.Enemies and PersistentVars.LoneWolfMode and exandriaCheck then
+        Templates.ExportExandriaSoloModeEnemies()
+    elseif event.Payload.Enemies and exandriaCheck then
+        Templates.ExportExandriaModeEnemies()
+	elseif event.Payload.Enemies and PersistentVars.LoneWolfMode then
+		Templates.ExportSoloModeEnemies()
+	else
+		Templates.ExportEnemies()
     end
     if event.Payload.LootRates then
         Templates.ExportLootRates()

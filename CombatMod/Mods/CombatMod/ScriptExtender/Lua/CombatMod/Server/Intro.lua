@@ -122,6 +122,7 @@ function Intro.AskOnboarding()
 end
 
 function Intro.AskEnableRogueMode()
+	local exandriaCheck = Ext.Mod.IsModLoaded("a27fdbe3-4d1a-641d-d05f-1ba4ee529da8")
     return Player.AskConfirmation([[
 Play Roguelike mode?
 Continuously create new battles.
@@ -132,8 +133,17 @@ Difficulty increases with the score.]]):After(function(confirmed)
 Regenerate enemy, item, and map tables?
 If you've recently updated, this is recommended.
 Old data may need to be cleared, and new data may need to be pulled in]]):After(function(confirmed)
-                if confirmed then
+                if confirmed and exandriaCheck then
                     L.Debug("Regenerating tables", confirmed)
+                    Templates.ExportScenarios()
+                    Templates.ExportMaps()
+					Templates.ExportExandriaModeEnemies()
+                    Templates.ExportLootRates()
+                    Net.Send("GetTemplates")
+                    Net.Send("GetSelection")
+                    L.Debug("Tables regenerated", confirmed)
+				elseif confirmed then
+					L.Debug("Regenerating tables", confirmed)
                     Templates.ExportScenarios()
                     Templates.ExportMaps()
                     Templates.ExportEnemies()

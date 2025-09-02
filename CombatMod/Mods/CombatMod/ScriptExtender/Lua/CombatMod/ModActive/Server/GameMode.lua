@@ -326,7 +326,14 @@ end
 function GameMode.UpdateRogueScore(score)
     local prev = PersistentVars.RogueScore
 
-    local cap = math.min(100, (Player.Level() - 1) * 10) -- +10 per level, max 100
+    local cap = math.min(190, (Player.Level() - 1) * 10) -- +10 per level, max 100
+	
+	if (GameMode.IsHardMode() and cap > 0) then
+	    cap = cap - 5
+	elseif (GameMode.IsSuperHardMode() and cap > 0) then
+	    cap = cap - 10
+	end
+	
     if score < cap then
         score = cap
     end
