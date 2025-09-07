@@ -217,6 +217,66 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_Astrid_Combat",
+		TemplateId = "5eb397d6-1e72-4ea2-a0d9-ea5fb366b2b4",
+		Tier = "epic",
+	},
+--	{
+--		Info = {
+--			AC = 18,
+--			Level = 16,
+--			Pwr = 172.0,
+--			Stats = 17,
+--			Vit = 172,
+--		},
+--		Name = "MOD_Jourrael_Combat",
+--		TemplateId = "37c6c618-b07b-499f-8542-3f322a1339c3",
+--		Tier = "legendary",
+--	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_Kevdak_Combat",
+		TemplateId = "f7d4c47e-3223-481b-bbb2-2f40048ff902",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_Lorenzo_Combat",
+		TemplateId = "9ba470fa-059c-462b-8b71-7b9e3d821901",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_Gloomstalker_Combat",
+		TemplateId = "c35f0df8-c19d-48fc-85d5-3f562cd4919d",
+		Tier = "ultra",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 26,
 			Pwr = 400.0,
