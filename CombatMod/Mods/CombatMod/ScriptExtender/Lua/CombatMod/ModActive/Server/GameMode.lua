@@ -287,7 +287,7 @@ function GameMode.GenerateScenario(score, tiers)
         end
 
         -- ensure the last round does not exceed the previous round
-        if #timeline > 1 and #timeline[#timeline] > #timeline[#timeline - 1] then
+        if #timeline > 1 and #timeline[#timeline] > #timeline[#timeline - 1] and score < 1000 then
             L.Error("Last round is too big", #timeline[#timeline], #timeline[#timeline - 1])
             return generateTimeline(maxValue, failed)
         end

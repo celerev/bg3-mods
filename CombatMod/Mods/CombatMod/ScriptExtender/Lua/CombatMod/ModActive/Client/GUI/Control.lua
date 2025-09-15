@@ -73,6 +73,8 @@ function Control.Main(tab)
     root:AddText(__(""))
     root:AddText(__("Lone Wolf Mode is recommended for players who want to play solo. It can be enabled on the Config tab, and it can be used in conjunction with Challenge Mode or Hell Mode. Remember to Reset Templates after enabling or disabling Lone Wolf Mode."))
     root:AddText(__(""))
+	root:AddText(__("Want even more bosses? New complex legendary mechanics? Install Spells of Exandria to add Critical Role monsters to the pool!"))
+    root:AddText(__(""))
     root:AddSeparator()
 
     root:AddSeparatorText(__("Logs"))

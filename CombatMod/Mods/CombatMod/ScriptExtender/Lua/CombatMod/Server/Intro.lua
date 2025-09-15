@@ -157,7 +157,7 @@ Old data may need to be cleared, and new data may need to be pulled in]]):After(
         PersistentVars.RogueModeActive = confirmed
 
         if PersistentVars.RogueScore == 0 then
-            PersistentVars.RogueScore = math.min(100, (Player.Level() - 1) * 10) -- +10 per level, max 100
+            PersistentVars.RogueScore = math.min(190, (Player.Level() - 1) * 10) -- +10 per level, max 100
         end
 
         Event.Trigger("RogueModeChanged", PersistentVars.RogueModeActive)

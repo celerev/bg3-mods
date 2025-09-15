@@ -157,6 +157,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 20,
+			Level = 23,
+			Pwr = 300.0,
+			Stats = 24,
+			Vit = 400,
+		},
+		Name = "MOD_Vaxildan_Combat",
+		TemplateId = "c4a91261-06f8-444c-8444-97287e287e0c",
+		Tier = "mythical",
+	},
+	{
+		Info = {
+			AC = 20,
+			Level = 23,
+			Pwr = 300.0,
+			Stats = 24,
+			Vit = 400,
+		},
+		Name = "MOD_Groon_Combat",
+		TemplateId = "3e629445-9953-418e-9fc6-803188184dbc",
+		Tier = "mythical",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 26,
 			Pwr = 400.0,
@@ -227,6 +251,30 @@ return {
 		TemplateId = "5eb397d6-1e72-4ea2-a0d9-ea5fb366b2b4",
 		Tier = "epic",
 	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_KrynWizard_Combat",
+		TemplateId = "f7e06442-9b05-4796-84b9-4d0b780330c5",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_KrynWarrior_Combat",
+		TemplateId = "06b43605-6ecd-43ca-b1e3-d4f9d3430f63",
+		Tier = "ultra",
+	},
 --	{
 --		Info = {
 --			AC = 18,
@@ -273,6 +321,18 @@ return {
 		},
 		Name = "MOD_Gloomstalker_Combat",
 		TemplateId = "c35f0df8-c19d-48fc-85d5-3f562cd4919d",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 16,
+			Pwr = 172.0,
+			Stats = 17,
+			Vit = 172,
+		},
+		Name = "MOD_Gorgon_Combat",
+		TemplateId = "4b9ede4c-0d6f-49ab-bb43-2760da1a7790",
 		Tier = "ultra",
 	},
 	{
