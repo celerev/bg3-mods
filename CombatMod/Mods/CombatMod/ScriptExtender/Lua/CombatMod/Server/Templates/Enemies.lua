@@ -169,6 +169,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 19,
+			Level = 24,
+			Pwr = 450.0,
+			Stats = 28,
+			Vit = 360,
+		},
+		Name = "MOD_Iggwilv_Combat",
+		TemplateId = "e5d55bba-fcc4-4b07-a086-ac394a6ae0c8",
+		Tier = "divine",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 20,
 			Pwr = 270.0,
@@ -890,6 +902,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 12,
+			Pwr = 103.0,
+			Stats = 16,
+			Vit = 82,
+		},
+		Name = "MOD_Glabrezu_Combat",
+		TemplateId = "0bc83041-0cdf-46aa-8f20-ad35de3e7f82",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 11,
 			Pwr = 94.5,
@@ -898,7 +922,7 @@ return {
 		},
 		Name = "TOT_LOW_BasiliskGate_WolfCompanion_Summon_Final",
 		TemplateId = "91c18a76-bae6-4431-a7f4-c056252715dd",
-		Tier = "epic",
+		Tier = "ultra",
 	},
 	{
 		Info = {
