@@ -366,7 +366,9 @@ local items = {
 	"MOD_Drizzt_Scimitar1",
 	"MOD_Drizzt_Scimitar2",
 	"MOD_LorenzoGlaive",
-	"MOD_Whisper"
+	"MOD_Whisper",
+	"MOD_Helper_Spell_DarkStar",
+	"MOD_Helper_Spell_RavenousVoid"
 }
 
 for _, name in ipairs(items) do

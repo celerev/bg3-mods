@@ -914,6 +914,66 @@ return {
 	},
 	{
 		Info = {
+			AC = 22,
+			Level = 19,
+			Pwr = 103.0,
+			Stats = 16,
+			Vit = 255,
+		},
+		Name = "MOD_RedAbishai_Combat",
+		TemplateId = "c8af48b2-db43-41f0-957c-2d9ffee7f5e2",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 19,
+			Level = 17,
+			Pwr = 103.0,
+			Stats = 16,
+			Vit = 195,
+		},
+		Name = "MOD_BlueAbishai_Combat",
+		TemplateId = "ccb4eead-5836-4f5c-be2b-7dd700c0b3da",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 15,
+			Pwr = 103.0,
+			Stats = 16,
+			Vit = 195,
+		},
+		Name = "MOD_GreenAbishai_Combat",
+		TemplateId = "815008ce-cf47-4321-a7eb-02b7d766abd9",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 15,
+			Pwr = 103.0,
+			Stats = 16,
+			Vit = 58,
+		},
+		Name = "MOD_BlackAbishai_Combat",
+		TemplateId = "8b11e865-6af4-4bef-a37b-30be2ecfaf00",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 15,
+			Level = 15,
+			Pwr = 103.0,
+			Stats = 16,
+			Vit = 68,
+		},
+		Name = "MOD_WhiteAbishai_Combat",
+		TemplateId = "03a5be89-d7c3-420c-b7bd-02499dcd6a40",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 11,
 			Pwr = 94.5,
