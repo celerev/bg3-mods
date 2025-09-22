@@ -529,6 +529,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 14,
+			Level = 20,
+			Pwr = 265.0,
+			Stats = 22,
+			Vit = 262,
+		},
+		Name = "MOD_Balor_Combat",
+		TemplateId = "5a7697cc-cfa0-4a2a-89de-045d140ba815",
+		Tier = "legendary",
+	},
+	{
+		Info = {
 			AC = 19,
 			Level = 16,
 			Pwr = 225.0,
