@@ -127,7 +127,11 @@ function StoryBypass.ClearArea(character)
                 if b.Guid == "40c79f34-a39d-4495-9145-08a16cde2159" or b.Guid == "8f766750-9d29-4170-b898-57b95e92e3c0" then
                     GU.Object.Remove(b.Guid)
                 end
-                if b.Entity.ServerItem then
+				if b.Guid == "54437df4-227f-4bd3-a900-b20b399deaf8" then
+				    Osi.Close(b.Guid)
+					Osi.Lock(b.Guid, "NOKEY")
+				end
+                if b.Entity.ServerItem and b.Guid ~= "54437df4-227f-4bd3-a900-b20b399deaf8" then
                     if
                         b.Entity.ServerItem.IsLadder
                         or b.Entity.ServerItem.IsDoor
@@ -532,6 +536,15 @@ Ext.Osiris.RegisterListener(
             L.Debug("Removing story object ", object)
             Osi.RemoveStatus(object, "END_NAUTILOID_SPAWN_VFX", "NULL_00000000-0000-0000-0000-000000000000")
             Osi.LeaveCombat(object)
+            GU.Object.Remove(object)
+		elseif Osi.GetTemplate(object) == "QUEST_IRN_IronThrone_ReinforcementsMarker_9be48133-7a5d-4515-ad2d-fbbce695c25c" then
+			L.Debug("Removing story object ", object)
+			Osi.PROC_GLO_NarrativeCombat_EndCombat("IRN_IronThrone")
+			for _, player in pairs(GU.DB.GetPlayers()) do
+			    Osi.TurnBasedTimerCancel(player, "IRN_IronThrone_TurnBasedTimerDelay")
+                Osi.TurnBasedTimerCancel(player, "IRN_DestructionTimer")
+			end
+			Osi.LeaveCombat(object)
             GU.Object.Remove(object)
         end
     end)

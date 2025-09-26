@@ -247,7 +247,7 @@ return {
 			Stats = 20,
 			Vit = 153,
 		},
-		Name = "MOD_Erinyes_Summon",
+		Name = "MOD_Erinyes_Combat",
 		TemplateId = "fe4d9494-c1f9-4f27-a71d-5b023d254f1c",
 		Tier = "epic",
 	},

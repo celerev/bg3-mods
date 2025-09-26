@@ -201,7 +201,7 @@ return {
 		},
 		Name = "MOD_Mizora_Combat",
 		TemplateId = "b1d45242-e99e-4760-80da-889b2ae6e7b4",
-		Tier = "legendary",
+		Tier = "epic",
 	},
 	{
 		Info = {
@@ -247,7 +247,7 @@ return {
 			Stats = 20,
 			Vit = 153,
 		},
-		Name = "MOD_Erinyes_Summon",
+		Name = "MOD_Erinyes_Combat",
 		TemplateId = "fe4d9494-c1f9-4f27-a71d-5b023d254f1c",
 		Tier = "epic",
 	},
