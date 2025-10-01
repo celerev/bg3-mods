@@ -229,6 +229,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 18,
+			Level = 13,
+			Pwr = 125.0,
+			Stats = 17,
+			Vit = 180,
+		},
+		Name = "MOD_Beholder_Combat",
+		TemplateId = "1eda370c-2f53-4242-86ff-682968a7bf88",
+		Tier = "mythical",
+	},
+	{
+		Info = {
 			AC = 15,
 			Level = 8,
 			Pwr = 102.0,

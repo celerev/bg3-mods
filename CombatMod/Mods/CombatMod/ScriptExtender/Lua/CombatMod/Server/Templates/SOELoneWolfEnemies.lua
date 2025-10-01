@@ -157,6 +157,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 19,
+			Level = 20,
+			Pwr = 300.0,
+			Stats = 24,
+			Vit = 333,
+		},
+		Name = "MOD_Lucien_Combat",
+		TemplateId = "efb9861b-8214-4d66-be5f-4a87b53d5154",
+		Tier = "mythical",
+	},
+	{
+		Info = {
 			AC = 20,
 			Level = 23,
 			Pwr = 300.0,
@@ -490,6 +502,18 @@ return {
 		Name = "MOD_Lorroakan_Combat",
 		TemplateId = "efd0109c-6a16-4cfd-8692-eb6ec8bcdac2",
 		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 18,
+			Level = 13,
+			Pwr = 125.0,
+			Stats = 17,
+			Vit = 180,
+		},
+		Name = "MOD_Beholder_Combat",
+		TemplateId = "1eda370c-2f53-4242-86ff-682968a7bf88",
+		Tier = "mythical",
 	},
 	{
 		Info = {
