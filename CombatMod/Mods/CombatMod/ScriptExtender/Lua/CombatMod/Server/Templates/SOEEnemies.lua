@@ -457,6 +457,30 @@ return {
 	},
 	{
 		Info = {
+			AC = 19,
+			Level = 24,
+			Pwr = 450.0,
+			Stats = 28,
+			Vit = 360,
+		},
+		Name = "MOD_Tarrasque_Combat",
+		TemplateId = "724b540d-0b5e-4d8f-b8a0-fbab3b3d811e",
+		Tier = "divine",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 20,
+			Pwr = 270.0,
+			Stats = 24,
+			Vit = 200,
+		},
+		Name = "MOD_Netherbrain_Combat",
+		TemplateId = "e3adba3f-742b-4024-8375-ef33349aa915",
+		Tier = "mythical",
+	},
+	{
+		Info = {
 			AC = 21,
 			Level = 20,
 			Pwr = 270.0,
