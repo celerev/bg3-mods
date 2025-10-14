@@ -3531,6 +3531,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 16,
+			Level = 6,
+			Pwr = 58.0,
+			Stats = 3,
+			Vit = 42,
+		},
+		Name = "MOD_Blaird_Combat",
+		TemplateId = "cd871897-c0a6-4af2-a97e-1465e4cd9740",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 12,
 			Level = 7,
 			Pwr = 48.0,
@@ -5604,18 +5616,6 @@ return {
 		Name = "MOD_Marcus_Combat",
 		TemplateId = "e3e8dcdb-0950-42c0-ad61-01c2175bf898",
 		Tier = "ultra",
-	},
-	{
-		Info = {
-			AC = 7,
-			Level = 1,
-			Pwr = 8.0,
-			Stats = -6,
-			Vit = 6,
-		},
-		Name = "TOT_Imp_Weak",
-		TemplateId = "45e0ac63-42ce-453b-a731-191a640e71b7",
-		Tier = "low",
 	},
 	{
 		Info = {
