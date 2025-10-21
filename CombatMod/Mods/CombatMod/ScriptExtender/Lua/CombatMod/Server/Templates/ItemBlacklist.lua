@@ -365,11 +365,15 @@ local items = {
 	"MOD_Twinkle",
 	"MOD_Drizzt_Scimitar1",
 	"MOD_Drizzt_Scimitar2",
+	"MOD_BalorVorp",
+	"MOD_FireGiant_Sword",
+	"MOD_FrostGiant_Axe",
+	"MOD_StoneGiant_Club",
+	"MOD_StormGiant_Sword",
 	"MOD_LorenzoGlaive",
 	"MOD_Whisper",
 	"MOD_Helper_Spell_DarkStar",
 	"MOD_Helper_Spell_RavenousVoid",
-	"MOD_BalorVorp",
 	"MOD_LucienScimitar"
 }
 

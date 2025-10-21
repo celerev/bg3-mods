@@ -667,7 +667,7 @@ return {
 			Stats = 15,
 			Vit = 120,
 		},
-		Name = "MMOD_StoneGiant_Combat",
+		Name = "MOD_StoneGiant_Combat",
 		TemplateId = "763e4d27-0851-4c98-bd73-21b8e5a5547b",
 		Tier = "ultra",
 	},
