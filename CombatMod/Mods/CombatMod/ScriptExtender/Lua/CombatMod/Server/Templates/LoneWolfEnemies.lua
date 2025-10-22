@@ -677,6 +677,18 @@ return {
 			Level = 9,
 			Pwr = 92.0,
 			Stats = 15,
+			Vit = 120,
+		},
+		Name = "MOD_CloudGiant_Combat",
+		TemplateId = "57b24975-8eff-47c8-9bfe-d20dd763aa0e",
+		Tier = "epic",
+	},
+	{
+		Info = {
+			AC = 17,
+			Level = 9,
+			Pwr = 92.0,
+			Stats = 15,
 			Vit = 230,
 		},
 		Name = "MOD_StormGiant_Combat",
