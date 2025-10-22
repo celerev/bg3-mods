@@ -370,7 +370,7 @@ local items = {
 	"MOD_FrostGiant_Axe",
 	"MOD_StoneGiant_Club",
 	"MOD_StormGiant_Sword",
-	"MOD_CloudGiant_Mace""
+	"MOD_CloudGiant_Mace",
 	"MOD_LorenzoGlaive",
 	"MOD_Whisper",
 	"MOD_Helper_Spell_DarkStar",
