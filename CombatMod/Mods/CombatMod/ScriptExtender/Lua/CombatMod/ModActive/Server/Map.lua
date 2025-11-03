@@ -242,6 +242,30 @@ function Map.Get(region)
     return table.map(Map.GetTemplates(region), Object.New)
 end
 
+function Map.GetAsylum(region)
+	local asylum = {}
+
+    if region == C.Regions.Act1 then
+        asylum = C.Asylum.Act1
+    elseif region == C.Regions.Act1b then
+        asylum = C.Asylum.Act1b
+    elseif region == C.Regions.Act2 then
+        asylum = C.Asylum.Act2
+    elseif region == C.Regions.Act2b then
+        asylum = C.Asylum.Act2b
+    elseif region == C.Regions.Act3 then
+        asylum = C.Asylum.Act3
+    elseif region == C.Regions.Act3b then
+        asylum = C.Asylum.Act3b
+    elseif region == C.Regions.Act3c then
+        asylum = C.Asylum.Act3c
+    elseif region == C.Regions.Act3i then
+        asylum = C.Asylum.Act3i
+    end
+	
+	return asylum
+end
+
 ---@param map Map
 ---@return Map
 function Map.Restore(map)

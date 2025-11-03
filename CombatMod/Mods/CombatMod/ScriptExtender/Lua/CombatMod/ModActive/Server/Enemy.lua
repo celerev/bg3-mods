@@ -396,45 +396,13 @@ function Object:Spawn(x, y, z, neutral)
         return false
     end
 
-    local asylumX, asylumY, asylumZ = 0,0,0
+    local asylum = {}
 
-    if Player.Region() == C.Regions.Act1 then
-        asylumX = -284.551
-        asylumY = 24.104
-        asylumZ = 116.642
-    elseif Player.Region() == C.Regions.Act1b then
-        asylumX = 736.06
-        asylumY = 0
-        asylumZ = -743.228
-    elseif Player.Region() == C.Regions.Act2 then
-        asylumX = 55.421
-        asylumY = 0
-        asylumZ = -1407.249
-    elseif Player.Region() == C.Regions.Act2b then
-        asylumX = 357.448
-        asylumY = 19.951
-        asylumZ = 29.953
-    elseif Player.Region() == C.Regions.Act3 then
-        asylumX = 605.245
-        asylumY = 0
-        asylumZ = -750.309
-    elseif Player.Region() == C.Regions.Act3b then
-        asylumX = -1565.942
-        asylumY = 0.853
-        asylumZ = 297.384
-    elseif Player.Region() == C.Regions.Act3c then
-        asylumX = -1909.747
-        asylumY = -0.232
-        asylumZ = 2675.996
-    elseif Player.Region() == C.Regions.Act3i then
-        asylumX = 169.889
-        asylumY = 0
-        asylumZ = 11.882
-    end
+    asylum = Map.GetAsylum(Player.Region())
 
     x, y, z = Osi.FindValidPosition(x, y, z, 100, C.NPCCharacters.Volo, 1) -- avoiding dangerous surfaces
 
-    local success = self:CreateAt(asylumX, asylumY, asylumZ)
+    local success = self:CreateAt(asylum.asylumX, asylum.asylumY, asylum.asylumZ)
 
     Osi.ApplyStatus(self.GUID, "TOTR_INVULNERABLE", -1)
 
@@ -704,8 +672,13 @@ end
 function Enemy.Combat(object, force)
     for _, player in pairs(GU.DB.GetPlayers()) do
         if object == player then
-            L.Error("Don't set a player's faction to enemy: ", object)
-            return
+			if not PersistentVars.GMMode then
+				L.Error("Don't set a player's faction to enemy: ", object)
+				return
+			elseif object ~= PersistentVars.GameMaster then
+				L.Error("Don't set a player's faction to enemy: ", object)
+				return
+			end
         end
     end
 
@@ -716,10 +689,17 @@ function Enemy.Combat(object, force)
     Osi.SetCanJoinCombat(object, 1)
     Osi.SetCanFight(object, 1)
 
-    if force then
+    if force and not PersistentVars.GMMode then
         for _, player in pairs(GU.DB.GetPlayers()) do
             Osi.EnterCombat(player, object)
             Osi.EnterCombat(object, player)
+        end
+	elseif force then
+		for _, player in pairs(GU.DB.GetPlayers()) do
+			if player ~= PersistentVars.GameMaster then
+				Osi.EnterCombat(player, object)
+				Osi.EnterCombat(object, player)
+			end
         end
     end
 end

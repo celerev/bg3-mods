@@ -167,11 +167,64 @@ function Action.SpawnHelper()
     L.Debug("Combat helper spawned.", helper)
 end
 
+turnHelperCollection = {}
+
+function Action.GMTurnHelper()
+    local s = Current()
+	
+	local asylum = {}
+
+    asylum = Map.GetAsylum(Player.Region())
+	
+	local x, y, z = table.unpack(s.Map.Enter)
+
+    local turnhelper = Osi.CreateAt("3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0", x, y, z, 0, 1, "")
+    if not turnhelper then
+        L.Error("Failed to create turn helper.")
+        return
+    end
+
+    Osi.SetTag(turnhelper, "9787450d-f34d-43bd-be88-d2bac00bb8ee") -- AI_UNPREFERRED_TARGET
+    Osi.SetFaction(turnhelper, C.EnemyFaction)
+	
+	Osi.SetHostileAndEnterCombat(C.EnemyFaction, C.ScenarioHelper.Faction, turnhelper, s.CombatHelper)
+	
+	WaitTicks(64, function()
+        Osi.TeleportToPosition(turnhelper, asylum.asylumX, asylum.asylumY, asylum.asylumZ, "", 1, 1, 1, 0, 1)
+    end)
+
+    L.Debug("Turn helper spawned.", turnhelper)
+	return turnhelper
+end
+
 function Action.RemoveHelper()
     local s = Current()
     if s.CombatHelper then
         GU.Object.Remove(s.CombatHelper)
     end
+end
+
+function Action.RemoveTurnHelper()
+	for _, item in ipairs(turnHelperCollection) do
+		GU.Object.Remove(item)
+	end
+	turnHelperCollection = {}
+end
+
+function Action.RemoveDupeHelper()
+	for i, item in ipairs(turnHelperCollection) do
+		L.Info("I: ", i)
+		L.Info("Item: ", item)
+		L.Info(Ext.Entity.Get(item).CombatParticipant.InitiativeRoll)
+		if i > 1 then
+			for j, comparator in ipairs(turnHelperCollection) do
+				if (Ext.Entity.Get(item).CombatParticipant.InitiativeRoll == Ext.Entity.Get(comparator).CombatParticipant.InitiativeRoll) and (Ext.Entity.Get(item).Stats.Abilities[3] == Ext.Entity.Get(comparator).Stats.Abilities[3]) and item ~= comparator then
+					GU.Object.Remove(comparator)
+					table.removevalue(turnHelperCollection, comparator)
+				end
+			end
+		end
+	end
 end
 
 function Action.UpdateHelperName()
@@ -194,6 +247,20 @@ function Action.StartCombat()
     Scenario.DetectCombatId()
 
     -- s.Map:PingSpawns()
+
+	if PersistentVars.GMMode then
+		Osi.SetFaction(PersistentVars.GameMaster, C.EnemyFaction)
+		for _, player in pairs(GU.DB.GetPlayers()) do
+			if player ~= PersistentVars.GameMaster then
+				Osi.EnterCombat(player, PersistentVars.GameMaster)
+				Osi.EnterCombat(PersistentVars.GameMaster, player)
+			end
+        end
+		Defer(1000, function()
+            Osi.ApplyStatus(PersistentVars.GameMaster, "ATT_ETHEREALNESS", -1.0)
+			Osi.ApplyStatus(PersistentVars.GameMaster, "TOTR_TURNHELPER", -1.0)
+        end)
+	end
 
     Event.Trigger("ScenarioCombatStarted", s)
 end
@@ -702,7 +769,7 @@ end
 
 function Scenario.End()
     Action.RemoveHelper()
-
+	Action.RemoveTurnHelper()
     Player.Notify(__("Scenario ended."))
     Current().Map:Clear()
     Action.GiveReward()
@@ -715,6 +782,10 @@ end
 
 function Scenario.Stop()
     Action.RemoveHelper()
+	if PersistentVars.GMMode then
+		Osi.RemoveAllPartyFollowers(PersistentVars.GameMaster)
+		Action.RemoveTurnHelper()
+	end
     Event.Trigger("ScenarioStopped", Current())
     Enemy.Cleanup()
     Current().Map:Clear()
@@ -889,7 +960,32 @@ function Scenario.CombatSpawned(specific)
             if S().CombatId then -- TODO check if works
                 Osi.PROC_EnterCombatByID(enemy.GUID, S().CombatId)
             end
-
+	
+			if PersistentVars.GMMode then
+				if Osi.HasActiveStatus(enemy.GUID, "TOTR_TURNHELPER") == 0 and Osi.GetTemplate(enemy.GUID) ~= "TOT_Turn_Helper_3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" then
+					local turnhelper1 = Action.GMTurnHelper()
+					local turnhelper2 = Action.GMTurnHelper()
+					local turnhelper3 = Action.GMTurnHelper()
+					WaitTicks(2, function()
+						local stats = enemy:Entity().Stats.Abilities[3]
+						local init = enemy:Entity().CombatParticipant.InitiativeRoll
+						Ext.Entity.Get(turnhelper1).Stats.Abilities[3] = stats
+						Ext.Entity.Get(turnhelper1).CombatParticipant.InitiativeRoll = init
+						Ext.Entity.Get(turnhelper1):Replicate("CombatParticipant")
+						Ext.Entity.Get(turnhelper2).Stats.Abilities[3] = stats
+						Ext.Entity.Get(turnhelper2).CombatParticipant.InitiativeRoll = init + 1
+						Ext.Entity.Get(turnhelper2):Replicate("CombatParticipant")
+						Ext.Entity.Get(turnhelper3).Stats.Abilities[3] = stats
+						Ext.Entity.Get(turnhelper3).CombatParticipant.InitiativeRoll = init - 1
+						Ext.Entity.Get(turnhelper3):Replicate("CombatParticipant")
+						table.insert(turnHelperCollection, turnhelper1)
+						table.insert(turnHelperCollection, turnhelper2)
+						table.insert(turnHelperCollection, turnhelper3)
+					end)
+				end
+			Osi.ApplyStatus(enemy.GUID, "TOTR_TURNHELPER", -1.0)
+			--	Scenario.AssignToGM(enemy)
+			end
             return Osi.IsInCombat(enemy.GUID) == 1
         end, {
             immediate = true,
@@ -899,6 +995,13 @@ function Scenario.CombatSpawned(specific)
             Action.Failsafe(enemy)
         end))
     end
+end
+
+function Scenario.AssignToGM(enemy)
+    SetFaction(enemy.GUID, C.EnemyFaction)
+    AddPartyFollower(enemy.GUID, PersistentVars.GameMaster)
+	Osi.RemoveStatus(enemy.GUID, "TOTR_TURNHELPER")
+	return
 end
 
 function Scenario.GroupDistantEnemies()
@@ -1118,7 +1221,7 @@ Ext.Osiris.RegisterListener(
         Schedule(function()
             local e = Enemy.CreateTemporary(guid)
 
-            if Osi.IsAlly(Player.Host(), guid) == 0 then
+            if Osi.IsAlly(Player.Host(), guid) == 0 and Osi.GetTemplate(guid) ~= "TOT_Turn_Helper_3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" then
                 table.insert(s.SpawnedEnemies, e)
                 Player.Notify(__("Enemy %s joined.", e:GetTranslatedName()))
 
@@ -1202,6 +1305,10 @@ Ext.Osiris.RegisterListener(
             L.Debug("Non-spawned enemy killed.", uuid)
             return
         end
+		
+		if PersistentVars.GMMode then
+			Osi.RemovePartyFollower(uuid, PersistentVars.GameMaster)
+		end
 
         Action.EnemyRemoved()
     end)
@@ -1234,6 +1341,18 @@ Ext.Osiris.RegisterListener(
     "before",
     ifScenario(function(uuid)
         local s = Current()
+
+		if Osi.GetTemplate(uuid) == "TOT_Turn_Helper_3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" then
+			Osi.EndTurn(uuid)
+		end
+		
+		if PersistentVars.GMMode and U.UUID.Equals(uuid, PersistentVars.GameMaster) then
+			Osi.EndTurn(uuid)
+		end
+		
+		if PersistentVars.GMMode and not U.UUID.Equals(uuid, s.CombatHelper) then
+			Osi.SetEntityEventReal(uuid,"GLO_CombatWait",1.0)
+		end
 
         if not U.UUID.Equals(uuid, s.CombatHelper) then
             return
@@ -1323,9 +1442,39 @@ Ext.Osiris.RegisterListener(
     --        Scenario.CloseEnemyDistance():After(function()
     --            Scenario.GroupDistantEnemies()
     --        end)
+		if PersistentVars.GMMode then
+			Osi.RemoveAllPartyFollowers(PersistentVars.GameMaster)
+		end
 
         Scenario.CombatSpawned()
 
         Scenario.CheckEnded()
     end)
+)
+
+ Ext.Osiris.RegisterListener(
+	"CombatRoundStarted",
+	2,
+	"after",
+	ifScenario(function(combatGuid, round)
+		local s = Current()
+		
+		if not s:HasStarted() then
+            return
+        end
+
+		if PersistentVars.GMMode then
+			local enemies = table.filter(s.SpawnedEnemies, function(e)
+				return specific == nil or eq(e, specific)
+			end)
+			Defer(1000, function()
+				for _, enemy in ipairs(enemies) do
+					Scenario.AssignToGM(enemy)
+				end
+			end)
+			Defer(400, function()
+				Action.RemoveDupeHelper()
+			end)
+		end
+	end)
 )

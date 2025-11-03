@@ -8762,6 +8762,28 @@
 						</node>
 					</children>
 				</node>
+				
+				<node id="GameObjects">
+					<attribute id="MapKey" type="FixedString" value="5ec892d5-9929-4c22-a7a0-0cb6c8a83f20" />
+					<attribute id="Name" type="LSString" value="Helper_Netherbrain_ObliterationOrb" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Type" type="FixedString" value="item" />
+					<attribute id="ParentTemplateId" type="FixedString" value="b4f5635b-2382-4fb2-ad0d-5be8b363e847" />
+					<attribute id="ReadinessFlags" type="uint32" value="16" />
+					<attribute id="VisualTemplate" type="FixedString" value="b3358aac-d287-be09-b906-8a78a08f2b67" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="" />
+					<attribute id="DisplayName" type="TranslatedString" handle="hb7387af8g9102g4aabgb7d2g6ddb935e6f65" version="1" />
+					<attribute id="CanShootThrough" type="bool" value="True" />
+					<attribute id="CanClickThrough" type="bool" value="True" />
+					<attribute id="WalkThrough" type="bool" value="True" />
+					<attribute id="Icon" type="FixedString" value="Portrait_Obliteration_Orb" />
+					<attribute id="Stats" type="FixedString" value="OBJ_GenericImmutableObject" />
+					<attribute id="IsInteractionDisabled" type="bool" value="True" />
+					<attribute id="GravityType" type="uint8" value="1" />
+					<attribute id="Description" type="TranslatedString" handle="h20a0f716g8611g493cg95fag13f1cb5f3d4c" version="1" />
+					<attribute id="Faction" type="guid" value="64321d50-d516-b1b2-accf-b72ede73f61f" />
+					<attribute id="CanFight" type="bool" value="True" />
+				</node>
 
 				<node id="GameObjects">
 					<attribute id="Flag" type="int32" value="0" />
@@ -8785,6 +8807,37 @@
 							</children>
 						</node>
 					</children>
+				</node>
+				
+				<node id="GameObjects">
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="IsEquipmentLootable" type="bool" value="False" />
+					<attribute id="IsLootable" type="bool" value="False" />
+					<attribute id="AiHint" type="guid" value="00000000-0000-0000-0000-000000000000" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="Icon" type="FixedString" value="Portrait_Obliteration_Orb" />
+					<attribute id="ParentTemplateId" type="FixedString" value="80b1bc17-0f70-4ec5-a16a-19c117f07b0c" />
+					<attribute id="DisplayName" type="TranslatedString" handle="heb165bbdgbb0fg4b80gad51gf637bec9bfe9" version="1" />
+					<attribute id="MapKey" type="FixedString" value="3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" />
+					<attribute id="Name" type="LSString" value="TOT_Turn_Helper" />
+					<attribute id="Type" type="FixedString" value="character" />
+					<children>
+						<node id="Treasures">
+							<children>
+								<node id="TreasureItem">
+									<attribute id="Object" type="FixedString" value="Empty" />
+								</node>
+							</children>
+						</node>
+						<node id="StatusList">
+							<children>
+								<node id="Status">
+									<attribute id="Object" type="FixedString"
+										value="TOTR_TURNHELPER" />
+								</node>
+							</children>
+						</node>
+				    </children>
 				</node>
 
 				<node id="GameObjects">

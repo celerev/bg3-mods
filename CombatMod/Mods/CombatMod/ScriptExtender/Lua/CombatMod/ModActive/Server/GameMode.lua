@@ -28,6 +28,10 @@ function GameMode.IsSoloMode()
     return PersistentVars.LoneWolfMode
 end
 
+function GameMode.IsGMMode()
+    return PersistentVars.GMMode
+end
+
 function GameMode.StartRoguelike(template)
     if not PersistentVars.RogueModeActive then
         PersistentVars.RogueModeActive = true
@@ -82,7 +86,7 @@ function GameMode.GetTiers(cow, harvard, score)
     end
 
     if harvard then
-        tiers = { { name = "MOD_MysterySpawn_Combat", value = math.max(4, score / 100), amount = 100 } }
+        tiers = { { name = "MOD_MysterySpawn_Combat", value = math.max(4, score / 100), amount = 60 } }
     end
 
     return tiers
@@ -145,7 +149,7 @@ function GameMode.GenerateScenario(score, tiers)
         local validTiers = {}
         local totalWeight = 0
         for i, tier in ipairs(tiers) do
-            if i <= playerLevel and score >= (tier.min or tier.value) then -- handle min score
+            if (GameMode.IsGMMode() or i <= playerLevel) and score >= (tier.min or tier.value) then -- handle min score
                 if remainingValue >= tier.value then
                     local weight = tier.weight
 
@@ -296,6 +300,9 @@ function GameMode.GenerateScenario(score, tiers)
     end
 
     local partySizeMod = Player.PartySize()
+	if GameMode.IsGMMode() then
+		partySizeMod = math.max(1, partySizeMod - 1)
+	end
     local spawnValue = score
 
     if partySizeMod == 4 then
@@ -613,6 +620,12 @@ Event.On(
         GameMode.DifficultyAppliedTo = {}
 
         GameMode.RewardRogueScore(scenario)
+		
+		if GameMode.IsGMMode() then
+			Osi.RemoveStatus(PersistentVars.GameMaster, "ATT_ETHEREALNESS")
+			Osi.RemoveStatus(PersistentVars.GameMaster, "TOTR_TURNHELPER")
+			Osi.SetFaction(PersistentVars.GameMaster, C.CompanionFaction)
+		end
 
         if Config.AutoTeleport > 0 then
             Player.Notify(__("Teleporting back to camp in %d seconds.", Config.AutoTeleport), true)

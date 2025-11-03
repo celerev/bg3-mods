@@ -9,8 +9,8 @@ C = {
     ShadowCurseTag = "b47643e0-583c-4808-b108-f6d3b605b0a9", -- ACT2_SHADOW_CURSE_IMMUNE
     CompanionFaction = "4abec10d-c2d1-a505-a09a-719c83999847",
     ScenarioHelper = {
-        TemplateId = "b4f5635b-2382-4fb2-ad0d-5be8b363e847",
-        Handle = "h09f52fcdg7db3g44ddg91b1gb2b4d69ac32b",
+        TemplateId = "5ec892d5-9929-4c22-a7a0-0cb6c8a83f20",
+        Handle = "hb7387af8g9102g4aabgb7d2g6ddb935e6f65",
         Faction = "4be9261a-e481-8d9d-3528-f36956a19b17",
     },
     MapHelper = "c13a872b-7d9b-4c1d-8c65-f672333b0c11",
@@ -55,5 +55,47 @@ C = {
             Legendary = 2,
         },
     },
+	Asylum = {
+		Act1 = {
+        asylumX = -284.551,
+        asylumY = 24.104,
+        asylumZ = 116.642,
+		},
+		Act1b = {
+		asylumX = 736.06,
+        asylumY = 0,
+        asylumZ = -743.228,
+		},
+		Act2 = {
+		asylumX = 55.421,
+        asylumY = 0,
+        asylumZ = -1407.249,
+		},
+		Act2b = {
+		asylumX = 357.448,
+        asylumY = 19.951,
+        asylumZ = 29.953,
+		},
+		Act3 = {
+		asylumX = 605.245,
+        asylumY = 0,
+        asylumZ = -750.309,
+		},
+		Act3b = {
+		asylumX = -1565.942,
+        asylumY = 0.853,
+        asylumZ = 297.384,
+		},
+		Act3c = {
+		asylumX = -1909.747,
+        asylumY = -0.232,
+        asylumZ = 2675.996,
+		},
+		Act3i = {
+		asylumX = 169.889,
+        asylumY = 0,
+        asylumZ = 11.882,
+		},
+	},
 }
 C = table.merge(Constants, C)

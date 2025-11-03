@@ -96,6 +96,7 @@ Event.On("ScenarioEnded", function(scenario)
         HardMode = PersistentVars.HardMode,
         SuperHardMode = PersistentVars.SuperHardMode,
         LoneWolfMode = PersistentVars.LoneWolfMode,
+		GMMode = PersistentVars.GMMode,
         RogueScore = PersistentVars.RogueScore,
         Currency = PersistentVars.Currency,
         Scenario = {

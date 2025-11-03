@@ -817,14 +817,26 @@ return {
 	},
 	{
 		Info = {
-			AC = 14,
-			Level = 20,
+			AC = 19,
+			Level = 19,
 			Pwr = 265.0,
 			Stats = 22,
 			Vit = 262,
 		},
 		Name = "MOD_Balor_Combat",
 		TemplateId = "5a7697cc-cfa0-4a2a-89de-045d140ba815",
+		Tier = "legendary",
+	},
+	{
+		Info = {
+			AC = 21,
+			Level = 20,
+			Pwr = 265.0,
+			Stats = 22,
+			Vit = 300,
+		},
+		Name = "MOD_PitFiend_Combat",
+		TemplateId = "4729008e-2552-419a-a2f3-e70f4b980333",
 		Tier = "legendary",
 	},
 	{

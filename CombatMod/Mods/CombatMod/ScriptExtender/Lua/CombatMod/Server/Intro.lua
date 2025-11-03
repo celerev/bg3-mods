@@ -82,6 +82,9 @@ function Intro.AskTutSkip()
 
                     -- maybe fixing a niche Orin interaction
                     Osi.PROC_GEN_OrinsAbduction_DisableAllImpersonations()
+					
+					-- prevent colony teleport on load
+					Osi.DB_OnlyOnce("KethericShowdown_CrownController")
 
                     Player.Notify(__("Starting items added. Hirelings unlocked."))
                     done = true

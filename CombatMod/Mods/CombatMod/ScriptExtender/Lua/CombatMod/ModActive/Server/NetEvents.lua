@@ -310,6 +310,7 @@ local function broadcastConfig()
         c.HardMode = PersistentVars.HardMode
         c.SuperHardMode = PersistentVars.SuperHardMode
         c.LoneWolfMode = PersistentVars.LoneWolfMode
+		c.GMMode = PersistentVars.GMMode
         c.Debug = Mod.Debug
 
         Net.Send("Config", c)
@@ -375,6 +376,21 @@ Net.On("Config", function(event)
 
             if config.LoneWolfMode ~= nil then
                 PersistentVars.LoneWolfMode = config.LoneWolfMode
+				if PersistentVars.LoneWolfMode == true then
+                    config.GMMode = false
+                    PersistentVars.GMMode = config.GMMode
+                end
+                broadcastState()
+			end
+			
+			if config.GMMode ~= nil then
+				PersistentVars.GMMode = config.GMMode
+				PersistentVars.GameMaster = Player.Host()
+				Player.Notify(__("%s is now the game master.", Osi.ResolveTranslatedString(Osi.GetDisplayName(PersistentVars.GameMaster))))
+				if PersistentVars.GMMode == true then
+                    config.LoneWolfMode = false
+                    PersistentVars.LoneWolfMode = config.LoneWolfMode
+                end
                 broadcastState()
             end
         end
