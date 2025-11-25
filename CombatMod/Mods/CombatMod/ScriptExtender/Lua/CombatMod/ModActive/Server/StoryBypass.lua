@@ -510,6 +510,21 @@ Ext.Osiris.RegisterListener(
         end
     end)
 )
+
+Ext.Osiris.RegisterListener(
+    "ObjectTimerLaunch",
+    4,
+    "after",
+    ifBypassStory(function(character, name, timer, success)
+        if GC.IsNonPlayer(character, true) then
+            return
+        end
+        if name == "CRE_AstralPrison_ReviveAvatar" then
+			Osi.ObjectTimerCancel(character, name)
+		end
+    end)
+)
+
 Ext.Osiris.RegisterListener(
     "EnteredCombat",
     2,

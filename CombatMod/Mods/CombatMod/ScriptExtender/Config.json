@@ -1,5 +1,5 @@
 {
-    "RequiredVersion": 27,
+    "RequiredVersion": 29,
     "ModTable": "ToT",
     "FeatureFlags": ["Lua", "Osiris"]
 }

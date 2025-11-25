@@ -52,6 +52,7 @@ function GameMode.GetTiers(cow, harvard, score)
         { name = C.EnemyTier[6], min = 120, value = 68, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
         { name = C.EnemyTier[7], min = 160, value = 118, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
         { name = C.EnemyTier[8], min = 200, value = 146, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+		{ name = C.EnemyTier[9], min = 240, value = 240, amount = #Enemy.GetByTier(C.EnemyTier[9]) },
     }
 
     if GameMode.IsHardMode() then
@@ -64,6 +65,7 @@ function GameMode.GetTiers(cow, harvard, score)
             { name = C.EnemyTier[6], min = 90, value = 56, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
             { name = C.EnemyTier[7], min = 120, value = 86, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
             { name = C.EnemyTier[8], min = 150, value = 108, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+			{ name = C.EnemyTier[9], min = 180, value = 155, amount = #Enemy.GetByTier(C.EnemyTier[9]) },
         }
     end
 
@@ -77,7 +79,8 @@ function GameMode.GetTiers(cow, harvard, score)
             { name = C.EnemyTier[5], min = 45, value = 24, amount = #Enemy.GetByTier(C.EnemyTier[5]) },
             { name = C.EnemyTier[6], min = 60, value = 32, amount = #Enemy.GetByTier(C.EnemyTier[6]) },
             { name = C.EnemyTier[7], min = 80, value = 60, amount = #Enemy.GetByTier(C.EnemyTier[7]) },
-            { name = C.EnemyTier[8], min = 100, value = 86, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+            { name = C.EnemyTier[8], min = 100, value = 82, amount = #Enemy.GetByTier(C.EnemyTier[8]) },
+			{ name = C.EnemyTier[9], min = 140, value = 100, amount = #Enemy.GetByTier(C.EnemyTier[9]) },
         }
     end
 
@@ -234,7 +237,7 @@ function GameMode.GenerateScenario(score, tiers)
                             table.insert(timeline, roundIndex + 1, {})
                             numRounds = numRounds + 1
                         end
-                    elseif tier.name == C.EnemyTier[8] then
+                    elseif tier.name == C.EnemyTier[8] or tier.name == C.EnemyTier[9] then
 						table.insert(timeline, {})
 						table.insert(timeline, {})
                         numRounds = numRounds + 2
@@ -457,15 +460,17 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
 
 -- Elminster's Intelligence should not be scaling at the same rate as a cow's Strength. One gains the ability to hit you, the other's already-devastating spells become irresistible.
     if enemy.Tier == 4 or enemy.Tier == "ultra" then
-        mod = math.floor(mod / 1.2)
+        mod = math.floor(mod / 1.3333)
     elseif enemy.Tier == 5 or enemy.Tier == "epic" then
-        mod = math.floor(mod / 1.5)
+        mod = math.floor(mod / 1.6333)
     elseif enemy.Tier == 6 or enemy.Tier == "legendary" then
-        mod = math.floor(mod / 2)
+        mod = math.floor(mod / 2.2222)
     elseif enemy.Tier == 7 or enemy.Tier == "mythical" then
-        mod = math.floor(mod / 3.3333)
+        mod = math.floor((mod / 3.6333)-0.2)
     elseif enemy.Tier == 8 or enemy.Tier == "divine" then
-        mod = math.floor(mod / 3.8333)
+        mod = math.floor((mod / 4.4333)-0.5)
+	elseif enemy.Tier == 9 or enemy.Tier == "avatar" then
+        mod = math.floor((mod / 8.3333)-1)
     end
 
     if mod <= 0 then

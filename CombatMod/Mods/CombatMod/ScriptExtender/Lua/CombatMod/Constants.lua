@@ -30,6 +30,7 @@ C = {
         "legendary",
         "mythical",
         "divine",
+		"avatar",
     },
     RoguelikeScenario = "Roguelike",
     LootRates = {

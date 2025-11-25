@@ -33,6 +33,9 @@ local Object = Libs.Struct({
     CombatHelper = nil,
     EnemyFallback = {},
 })
+-- to only send the notifs once
+seenAvatar = false
+defeatedAvatarPopUp = false
 
 ---@param round number
 ---@param enemy Enemy
@@ -773,6 +776,22 @@ function Scenario.End()
     Player.Notify(__("Scenario ended."))
     Current().Map:Clear()
     Action.GiveReward()
+	WaitTicks(72, function()
+		if seenAvatar and not defeatedAvatarPopUp then
+			defeatedAvatarPopUp = true
+			Player.AskConfirmation([[
+Congratulations! You have defeated the most difficult class of enemy printed in official D&D 5th Edition material, a CR30 divine avatar.
+There is no content more advanced than this point. You can continue fighting encounters endlessly if you like, but you will begin to see the same faces repeatedly, especially on Bias Higher Tier.
+As a reward for your victory, would you like to enable the Quick Start shop unlocks?]]):After(function(confirmed)
+				if confirmed then
+					local quickstart = table.find(Unlock.Get(), function(u)
+						return u.Id == "QUICKSTART"
+					end)
+					quickstart:Buy(Player.Host())
+				end
+			end)
+		end
+	end)
 
     Event.Trigger("ScenarioEnded", Current())
 
@@ -966,21 +985,31 @@ function Scenario.CombatSpawned(specific)
 					local turnhelper1 = Action.GMTurnHelper()
 					local turnhelper2 = Action.GMTurnHelper()
 					local turnhelper3 = Action.GMTurnHelper()
+					local turnhelper4 = Action.GMTurnHelper()
+					local turnhelper5 = Action.GMTurnHelper()
 					WaitTicks(2, function()
 						local stats = enemy:Entity().Stats.Abilities[3]
 						local init = enemy:Entity().CombatParticipant.InitiativeRoll
 						Ext.Entity.Get(turnhelper1).Stats.Abilities[3] = stats
 						Ext.Entity.Get(turnhelper1).CombatParticipant.InitiativeRoll = init
 						Ext.Entity.Get(turnhelper1):Replicate("CombatParticipant")
-						Ext.Entity.Get(turnhelper2).Stats.Abilities[3] = stats
+						Ext.Entity.Get(turnhelper2).Stats.Abilities[3] = 2
 						Ext.Entity.Get(turnhelper2).CombatParticipant.InitiativeRoll = init + 1
 						Ext.Entity.Get(turnhelper2):Replicate("CombatParticipant")
-						Ext.Entity.Get(turnhelper3).Stats.Abilities[3] = stats
+						Ext.Entity.Get(turnhelper3).Stats.Abilities[3] = 30
 						Ext.Entity.Get(turnhelper3).CombatParticipant.InitiativeRoll = init - 1
 						Ext.Entity.Get(turnhelper3):Replicate("CombatParticipant")
+						Ext.Entity.Get(turnhelper4).Stats.Abilities[3] = 30
+						Ext.Entity.Get(turnhelper4).CombatParticipant.InitiativeRoll = init
+						Ext.Entity.Get(turnhelper4):Replicate("CombatParticipant")
+						Ext.Entity.Get(turnhelper5).Stats.Abilities[3] = 2
+						Ext.Entity.Get(turnhelper5).CombatParticipant.InitiativeRoll = init
+						Ext.Entity.Get(turnhelper5):Replicate("CombatParticipant")
 						table.insert(turnHelperCollection, turnhelper1)
 						table.insert(turnHelperCollection, turnhelper2)
 						table.insert(turnHelperCollection, turnhelper3)
+						table.insert(turnHelperCollection, turnhelper4)
+						table.insert(turnHelperCollection, turnhelper5)
 					end)
 				end
 			Osi.ApplyStatus(enemy.GUID, "TOTR_TURNHELPER", -1.0)
@@ -1208,6 +1237,10 @@ Ext.Osiris.RegisterListener(
         end
 
         if table.find(s.SpawnedEnemies, function(e)
+			if e.Tier == "avatar" and not seenAvatar then
+				Player.Notify(__("An avatar has descended. This is the final challenge."))
+				seenAvatar = true
+			end
             return U.UUID.Equals(e.GUID, guid)
         end) then
             return
@@ -1351,7 +1384,7 @@ Ext.Osiris.RegisterListener(
 		end
 		
 		if PersistentVars.GMMode and not U.UUID.Equals(uuid, s.CombatHelper) then
-			Osi.SetEntityEventReal(uuid,"GLO_CombatWait",1.0)
+			Osi.SetEntityEventReal(uuid,"GLO_CombatWait",5.0)
 		end
 
         if not U.UUID.Equals(uuid, s.CombatHelper) then
@@ -1474,6 +1507,9 @@ Ext.Osiris.RegisterListener(
 			end)
 			Defer(400, function()
 				Action.RemoveDupeHelper()
+			end)
+			Defer(1400, function()
+				Net.Send("RemoveHelperPortraits")
 			end)
 		end
 	end)

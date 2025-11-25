@@ -117,7 +117,7 @@ local ngPlus = {
     {
         Id = "QUICKSTART",
         Name = __("Unlock Quick Start"),
-		Description = __("Unlock features for rapidly accelerating the beginning of your next run and making it more dangerous."),
+		Description = __("Automatically earned by defeating a CR30 divine avatar: Unlock features for rapidly accelerating the beginning of your next run and making it more dangerous."),
         Icon = "Action_EndGame_NethereseOrbBlast",
         Cost = 2000,
         Amount = 1,

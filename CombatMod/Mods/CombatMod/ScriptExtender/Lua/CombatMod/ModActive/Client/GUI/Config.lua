@@ -18,7 +18,7 @@ function Config.Main(tab)
 
     Config.Checkbox(root, "Hell Mode", "An unfair challenge for players who want a punishing experience. Powerful monsters will arrive much sooner and begin swarming.", "SuperHardMode")
 
-    Config.Checkbox(root, "Lone Wolf Mode", "BETA: A scenario rebalanced for solo players. Press ResetTemplates button at bottom of page after enabling or disabling.", "LoneWolfMode")
+    Config.Checkbox(root, "Lone Wolf Mode", "A scenario rebalanced for solo players. Press ResetTemplates button at bottom of page after enabling or disabling.", "LoneWolfMode")
 	
 	Config.Checkbox(root, "Game Master Mode", "BETA: A mode where the Host controls all monsters, acting as the psuedo-Game Master of the scenario. Intended for multiplayer.", "GMMode")
 

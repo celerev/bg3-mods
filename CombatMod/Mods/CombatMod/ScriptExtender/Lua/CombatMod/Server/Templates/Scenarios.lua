@@ -154,5 +154,12 @@ return {
             {},
             { divine },
         },
+    },
+	{
+        Name = "avatar",
+
+        Timeline = {
+            { avatar },
+        },
     }
 }

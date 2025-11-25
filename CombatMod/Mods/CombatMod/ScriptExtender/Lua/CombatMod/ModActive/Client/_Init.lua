@@ -26,6 +26,36 @@ Net.On(
     end, true)
 )
 
+local function RemoveHelperPortraits()
+	L.Info("Starting Portrait Function.")
+	local rootList = Ext.UI.GetRoot():Find("ContentRoot")
+	for i = 1, rootList.ChildrenCount do
+		L.Info("Entering Content Root.")
+		local node = rootList:Child(i)
+		local datalist = node:GetProperty("DataContext")
+		if datalist then
+			L.Info("Inside Data Context.")
+			local combatantList = datalist:GetProperty("Combatants")
+			if combatantList then
+				L.Info("Inside Combatants List.")
+				for i = #combatantList, 1, -1 do
+					L.Info("Comparing Combatant ID.")
+					if combatantList[i]:GetProperty("CurrentCombatant"):GetProperty("Name") == "heb165bbdgbb0fg4b80gad51gf637bec9bfe9" then
+						combatantList[i] = nil
+					end
+				end
+			end
+		end
+	end
+end
+
+Net.On(
+	"RemoveHelperPortraits",
+	Debounce(100, function(event)
+		RemoveHelperPortraits()
+	end, true)
+)
+
 -- Credit to atamg for this Patch 8 solution for notifications
 
 local FoundNotifRoot
