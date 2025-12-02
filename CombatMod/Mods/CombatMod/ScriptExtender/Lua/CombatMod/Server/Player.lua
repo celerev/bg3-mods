@@ -201,8 +201,8 @@ end
 function Player.ReturnToCamp()
     Event.Trigger("ReturnToCamp")
 
-    if Player.Region() == "END_Main" then
-        -- If we just came from Netherbrain, we need to clear flags preventing Long Rest
+    if Player.Region() == "END_Main" or Player.Region() == "INT_Main_A" then
+        -- If we just came from Netherbrain or Wyrm's Lookout, we need to clear flags preventing Long Rest
         Osi.ClearFlag("END_BrainBattle_Event_Started_3cd63c2e-7343-45dd-9137-4cabca2179a6", "NULL_00000000-0000-0000-0000-000000000000", 0)
         Osi.ClearFlag("END_General_State_CurrentlyInBrainBattle_0d7205b2-0d55-4540-8737-543253873cd6", "NULL_00000000-0000-0000-0000-000000000000", 0)
         Osi.PROC_END_BrainBattle_ClearBrainBattle()

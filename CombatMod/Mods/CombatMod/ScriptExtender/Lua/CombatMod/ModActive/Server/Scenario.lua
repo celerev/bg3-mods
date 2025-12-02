@@ -1236,6 +1236,10 @@ Ext.Osiris.RegisterListener(
             return
         end
 
+		if Osi.HasActiveStatus(Player.Host(), "CRE_ASTRALPRISON_GRAVITY") == 1 then
+			Osi.ApplyStatus(guid, "CRE_ASTRALPRISON_GRAVITY", -1.0)
+		end
+
         if table.find(s.SpawnedEnemies, function(e)
 			if e.Tier == "avatar" and not seenAvatar then
 				Player.Notify(__("An avatar has descended. This is the final challenge."))

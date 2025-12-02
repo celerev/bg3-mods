@@ -74,6 +74,12 @@ function StoryBypass.RemoveAllEntities()
     Osi.ToInventory("S_COL_CrownController_Ketheric_06b8891b-e71c-423b-8482-2680c3c16a4d", Player.Host())
     Osi.ToInventory("S_WYR_CrownController_Gortash_383be300-d328-4152-86df-4927482d1fd7", Player.Host())
     Osi.ToInventory("S_LOW_CrownController_Orin_360b0dfd-8e0b-48d2-a079-fcf68c104d6b", Player.Host())
+	
+	
+	-- make orpheus prison functional
+	Osi.PROC_GLO_NarrativeCombat_EndCombat("INT_Orpheus_NarrativeCombat")
+	Osi.PROC_TriggerUnregisterForPlayers("S_INT_EmperorRevealArea_f765db82-3fa8-4f4b-b92a-55bdc95fc1ba")
+	Osi.DB_GLO_NarrativeCombat_Region:Delete("INT_Orpheus_NarrativeCombat",nil)
 
     local toRemove = table.filter(Ext.Entity.GetAllEntitiesWithUuid(), StoryBypass.AllowRemoval)
 
@@ -540,7 +546,8 @@ Ext.Osiris.RegisterListener(
                 ),
                 true
             )
-        end
+        end	
+		
         if object == "S_END_CrownProxy_b06e8326-a034-4480-8652-6a66b3bd7d0a" then
             L.Debug("Removing story object ", object)
             Osi.TurnBasedTimerCancel("S_END_CrownProxy_b06e8326-a034-4480-8652-6a66b3bd7d0a", "END_NautiloidCountdown")
@@ -741,6 +748,15 @@ Event.On(
     "ScenarioMapEntered",
     ifBypassStory(function()
         StoryBypass.ClearArea(Player.Host())
+		if Player.Region() == "INT_Main_A" then
+			asylum = Map.GetAsylum(Player.Region())
+			Osi.TeleportToPosition("S_GLO_Emperor_73d49dc5-8b8b-45dc-a98c-927bb4e3169b", asylum.asylumX, asylum.asylumY, asylum.asylumZ, "", 1, 1, 1, 0, 1)
+			if Osi.DB_GLO_NarrativeCombat_Region("INT_Orpheus_NarrativeCombat","(TRIGGER)S_INT_AstralPlaneArea_37dec4e1-9db0-44a9-bd39-a5f4362d2ab2") then
+				Osi.PROC_GLO_NarrativeCombat_EndCombat("INT_Orpheus_NarrativeCombat")
+				Osi.PROC_TriggerUnregisterForPlayers("S_INT_EmperorRevealArea_f765db82-3fa8-4f4b-b92a-55bdc95fc1ba")
+				Osi.DB_GLO_NarrativeCombat_Region:Delete("INT_Orpheus_NarrativeCombat","(TRIGGER)S_INT_AstralPlaneArea_37dec4e1-9db0-44a9-bd39-a5f4362d2ab2")
+			end
+		end
     end)
 )
 

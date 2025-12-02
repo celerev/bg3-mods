@@ -73,9 +73,9 @@ C = {
         asylumZ = -1407.249,
 		},
 		Act2b = {
-		asylumX = 357.448,
-        asylumY = 19.951,
-        asylumZ = 29.953,
+		asylumX = 1154.142,
+        asylumY = 0,
+        asylumZ = -181.505,
 		},
 		Act3 = {
 		asylumX = 605.245,

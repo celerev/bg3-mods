@@ -111,6 +111,7 @@ function Player.RecruitOrigin(id)
         Osi.PROC_RemoveAllPolymorphs(C.OriginCharactersSpecial.Halsin)
         Osi.PROC_RemoveAllDialogEntriesForSpeaker(C.OriginCharactersSpecial.Halsin)
         Osi.DB_Dialogs(C.OriginCharactersSpecial.Halsin, "Halsin_InParty_890c2586-6b71-ca01-5bd6-19d533181c71")
+		Osi.SetFaction(C.OriginCharactersSpecial.Halsin, C.CompanionFaction)
     end
 
     local function recruit(character, dialog)
