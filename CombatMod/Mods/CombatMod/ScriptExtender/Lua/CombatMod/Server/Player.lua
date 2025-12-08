@@ -190,7 +190,7 @@ function Player.TeleportToCamp()
                 Osi.PROC_Camp_TeleportToCamp(entity.Uuid.EntityUuid, campEntryFallback)
             end
 
-            if Osi.IsDead(entity.Uuid.EntityUuid) == 1 and Config.AutoResurrect then
+            if Osi.IsDead(entity.Uuid.EntityUuid) == 1 and Config.AutoResurrect and Osi.HasActiveStatus(entity.Uuid.EntityUuid, "ATT_IMPLOSIONDEATH") == 0 then
                 Osi.Resurrect(entity.Uuid.EntityUuid)
                 Osi.EndTurn(entity.Uuid.EntityUuid)
             end
