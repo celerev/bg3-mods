@@ -114,14 +114,14 @@ local function init()
 	local attspells = Ext.Mod.IsModLoaded("fa49db03-caa7-49c8-7c76-e6c38b60267a")
 	if attspells then
 		attInfo = Ext.Mod.GetMod("fa49db03-caa7-49c8-7c76-e6c38b60267a").Info
-		if not (attInfo.ModVersion[1] == 1 and attInfo.ModVersion[2] == 1 and attInfo.ModVersion[3] == 8 and attInfo.ModVersion[4] == 3) then
+		if not (attInfo.ModVersion[1] == 1 and attInfo.ModVersion[2] == 1 and attInfo.ModVersion[3] == 8 and attInfo.ModVersion[4] == 4) then
 			Player.AskConfirmation([[
-The expected version of the required dependency, AdvancedTabletopSpells is not loaded. If your version is older than 1.1.8.3, please exit the game, then update to 1.1.8.3 or newer.]])
+The expected version of the required dependency, AdvancedTabletopSpells is not loaded. If your version is older than 1.1.8.4, please exit the game, then update to 1.1.8.4 or newer.]])
 		end
 	else
 		Player.AskConfirmation([[
 AdvancedTabletopSpells is not loaded. The majority of TOTR's content will be missing, and the mod will be severely unstable.
-Please exit the game, then install AdvancedTabletopSpells version 1.1.8.3 or newer.]])
+Please exit the game, then install AdvancedTabletopSpells version 1.1.8.4 or newer.]])
 	end
 		
 
@@ -156,14 +156,14 @@ GameState.OnLoad(function()
 		local attspells = Ext.Mod.IsModLoaded("fa49db03-caa7-49c8-7c76-e6c38b60267a")
 		if attspells then
 			attInfo = Ext.Mod.GetMod("fa49db03-caa7-49c8-7c76-e6c38b60267a").Info
-			if not (attInfo.ModVersion[1] == 1 and attInfo.ModVersion[2] == 1 and attInfo.ModVersion[3] == 8 and attInfo.ModVersion[4] == 3) then
+			if not (attInfo.ModVersion[1] == 1 and attInfo.ModVersion[2] == 1 and attInfo.ModVersion[3] == 8 and attInfo.ModVersion[4] == 4) then
 				Player.AskConfirmation([[
-The expected version of the required dependency, AdvancedTabletopSpells is not loaded. If your version is older than 1.1.8.3, please exit the game, then update to 1.1.8.3 or newer.]])
+The expected version of the required dependency, AdvancedTabletopSpells is not loaded. If your version is older than 1.1.8.4, please exit the game, then update to 1.1.8.4 or newer.]])
 			end
 		else
 			Player.AskConfirmation([[
 AdvancedTabletopSpells is not loaded. The majority of TOTR's content will be missing, and the mod will be unstable.
-Please exit the game, then install AdvancedTabletopSpells version 1.1.8.3 or newer.]])
+Please exit the game, then install AdvancedTabletopSpells version 1.1.8.4 or newer.]])
 		end
     end
 end)

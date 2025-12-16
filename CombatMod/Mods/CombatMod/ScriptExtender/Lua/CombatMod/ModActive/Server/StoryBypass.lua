@@ -74,12 +74,6 @@ function StoryBypass.RemoveAllEntities()
     Osi.ToInventory("S_COL_CrownController_Ketheric_06b8891b-e71c-423b-8482-2680c3c16a4d", Player.Host())
     Osi.ToInventory("S_WYR_CrownController_Gortash_383be300-d328-4152-86df-4927482d1fd7", Player.Host())
     Osi.ToInventory("S_LOW_CrownController_Orin_360b0dfd-8e0b-48d2-a079-fcf68c104d6b", Player.Host())
-	
-	
-	-- make orpheus prison functional
-	Osi.PROC_GLO_NarrativeCombat_EndCombat("INT_Orpheus_NarrativeCombat")
-	Osi.PROC_TriggerUnregisterForPlayers("S_INT_EmperorRevealArea_f765db82-3fa8-4f4b-b92a-55bdc95fc1ba")
-	Osi.DB_GLO_NarrativeCombat_Region:Delete("INT_Orpheus_NarrativeCombat",nil)
 
     local toRemove = table.filter(Ext.Entity.GetAllEntitiesWithUuid(), StoryBypass.AllowRemoval)
 
@@ -659,6 +653,7 @@ Ext.Osiris.RegisterListener(
                Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.ShadowHeart, "ShadowHeart_InParty_95ca3833-09d0-5772-b16a-c7a5e9208fe5")
            elseif player == C.OriginCharactersSpecial.Halsin then
                Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Halsin, "Halsin_InParty_890c2586-6b71-ca01-5bd6-19d533181c71")
+			   Osi.SetFaction(C.OriginCharactersSpecial.Halsin, C.CompanionFaction)
            elseif player == C.OriginCharactersSpecial.Minthara then
                Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Minthara, "Minthara_InParty_13d72d55-0d47-c280-9e9c-da076d8876d8")
                Osi.SetFaction(C.OriginCharactersSpecial.Minthara, C.CompanionFaction)
@@ -689,6 +684,7 @@ Ext.Osiris.RegisterListener(
                Osi.DB_OriginInPartyDialog(C.OriginCharactersStarter.ShadowHeart, "ShadowHeart_InParty_95ca3833-09d0-5772-b16a-c7a5e9208fe5")
            elseif player == C.OriginCharactersSpecial.Halsin then
                Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Halsin, "Halsin_InParty_890c2586-6b71-ca01-5bd6-19d533181c71")
+			   Osi.SetFaction(C.OriginCharactersSpecial.Halsin, C.CompanionFaction)
            elseif player == C.OriginCharactersSpecial.Minthara then
                Osi.DB_OriginInPartyDialog(C.OriginCharactersSpecial.Minthara, "Minthara_InParty_13d72d55-0d47-c280-9e9c-da076d8876d8")
                Osi.SetFaction(C.OriginCharactersSpecial.Minthara, C.CompanionFaction)

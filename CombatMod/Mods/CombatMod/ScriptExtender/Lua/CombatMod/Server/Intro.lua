@@ -77,8 +77,20 @@ function Intro.AskTutSkip()
                     Osi.PROC_GithChokepoint_Cancel("PLA")
                     Osi.PROC_PLA_GithChokepoint_CleanUp()
 
+					-- make orpheus prison functional
+					Osi.PROC_GLO_NarrativeCombat_EndCombat("INT_Orpheus_NarrativeCombat")
+					Osi.PROC_TriggerUnregisterForPlayers("S_INT_EmperorRevealArea_f765db82-3fa8-4f4b-b92a-55bdc95fc1ba")
+					Osi.DB_GLO_NarrativeCombat_Region:Delete("INT_Orpheus_NarrativeCombat",nil)
+
                     -- fixing Gale's arcane hunger
                     Osi.PROC_ORI_Gale_DisableDeathEffect()
+					Osi.SetFlag("ORI_Gale_Event_BombDisarmed_3d014e79-5595-9365-87bb-5cbb1f87fe5c")
+					
+					-- prevent goblin party; prevent camps from getting wrecked by act transitions
+					Osi.PROC_TOT_ClearGoal("Act1_CAMP_GoblinHuntCelebration")
+					Osi.PROC_TOT_ClearGoal("Act1_CAMP_GoblinHuntCelebration_PostEA")
+					Osi.DB_Level_InaccessibleAfterLoading:Delete(nil,nil)
+					Osi.DB_Level_InaccessibleAfterFlagSet:Delete(nil,nil)
 
                     -- maybe fixing a niche Orin interaction
                     Osi.PROC_GEN_OrinsAbduction_DisableAllImpersonations()

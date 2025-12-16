@@ -136,7 +136,13 @@ local Action = {}
 
 function Action.GiveReward()
     local reward = Current():KillScore()
-
+	
+	if PersistentVars.GMMode then
+		Player.GiveExperience(expGMHelper)
+		L.Info("GM Mode — Provided Enemy EXP: ", expGMHelper)
+		expGMHelper = 0
+	end
+	
     Osi.AddGold(Player.Host(), math.min(reward * 10, 100))
     for _, p in pairs(GU.DB.GetPlayers()) do
         Osi.AddExplorationExperience(p, 100 + reward * 10)
@@ -171,6 +177,7 @@ function Action.SpawnHelper()
 end
 
 turnHelperCollection = {}
+expGMHelper = 0
 
 function Action.GMTurnHelper()
     local s = Current()
@@ -1239,6 +1246,10 @@ Ext.Osiris.RegisterListener(
 		if Osi.HasActiveStatus(Player.Host(), "CRE_ASTRALPRISON_GRAVITY") == 1 then
 			Osi.ApplyStatus(guid, "CRE_ASTRALPRISON_GRAVITY", -1.0)
 		end
+		
+		if PersistentVars.GMMode then
+			expGMHelper = expGMHelper+Ext.Entity.Get(guid).ServerExperienceGaveOut.Experience
+		end	
 
         if table.find(s.SpawnedEnemies, function(e)
 			if e.Tier == "avatar" and not seenAvatar then

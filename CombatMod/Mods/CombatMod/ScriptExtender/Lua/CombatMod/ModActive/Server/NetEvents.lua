@@ -386,8 +386,8 @@ Net.On("Config", function(event)
 			if config.GMMode ~= nil then
 				PersistentVars.GMMode = config.GMMode
 				PersistentVars.GameMaster = Player.Host()
-				Player.Notify(__("%s is now the game master.", Osi.ResolveTranslatedString(Osi.GetDisplayName(PersistentVars.GameMaster))))
 				if PersistentVars.GMMode == true then
+					Player.Notify(__("%s is now the game master.", Osi.ResolveTranslatedString(Osi.GetDisplayName(PersistentVars.GameMaster))))
                     config.LoneWolfMode = false
                     PersistentVars.LoneWolfMode = config.LoneWolfMode
                 end
