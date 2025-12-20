@@ -459,6 +459,7 @@ Net.On("FixLongRest", function(event)
             Osi.PROC_SetBlockDismiss(player, 0)
             Osi.DB_InDangerZone:Delete(player, "ENDGAME")
         end
+		Osi.DB_INT_EmperorRevealed_WeakToAbsolute:Delete(1)
         Net.Respond(event, { true })
     end
 end)

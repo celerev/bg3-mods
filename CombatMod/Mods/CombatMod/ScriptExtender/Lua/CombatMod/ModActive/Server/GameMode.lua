@@ -89,7 +89,7 @@ function GameMode.GetTiers(cow, harvard, score)
     end
 
     if harvard then
-        tiers = { { name = "MOD_MysterySpawn_Combat", value = math.max(4, score / 100), amount = 60 } }
+        tiers = { { name = "MOD_MysterySpawn_Combat", value = math.max(12, score / 100), amount = 100 } }
     end
 
     return tiers
