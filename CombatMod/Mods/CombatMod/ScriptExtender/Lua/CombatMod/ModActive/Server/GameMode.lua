@@ -224,20 +224,20 @@ function GameMode.GenerateScenario(score, tiers)
                 local max = math.ceil(maxValue / 100)
 
                 if #timeline[roundIndex] > max and numRounds < maxRounds then
-                    -- too strong for single round
-                    if tier.name == C.EnemyTier[5] then
+                    -- too strong for single round in early appearances
+                    if maxValue < 75 and tier.name == C.EnemyTier[5] then
                         if not timeline[roundIndex + 1] then
                             table.insert(timeline, roundIndex + 1, {})
                             numRounds = numRounds + 1
                         end
-                    elseif tier.name == C.EnemyTier[6] or tier.name == C.EnemyTier[7] then
+                    elseif maxValue < 120 and tier.name == C.EnemyTier[6] or tier.name == C.EnemyTier[7] then
                         table.insert(timeline, {})
                         numRounds = numRounds + 1
                         if not timeline[roundIndex + 1] then
                             table.insert(timeline, roundIndex + 1, {})
                             numRounds = numRounds + 1
                         end
-                    elseif tier.name == C.EnemyTier[8] or tier.name == C.EnemyTier[9] then
+                    elseif maxValue < 160 and tier.name == C.EnemyTier[8] or tier.name == C.EnemyTier[9] then
 						table.insert(timeline, {})
 						table.insert(timeline, {})
                         numRounds = numRounds + 2
@@ -434,10 +434,12 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
         return
     end
 
--- Legendary Action summons like the Claws of Tu'narath become exponentially more dangerous if they're allowed to scale
-    if enemy.Name == "Temporary" then
+-- Legendary Action summons like the Claws of Tu'narath become exponentially more dangerous if they're allowed to scale,
+-- but eventually they need to start scaling for summoning to have a point
+    if score < 280 and enemy.Name == "Temporary" then
         return
     end
+
     local originalDex = baseDex
 
     local function scale(i)
@@ -459,17 +461,17 @@ function GameMode.ApplyDifficulty(enemy, score, baseDex)
     local mod = scale(score)
 
 -- Elminster's Intelligence should not be scaling at the same rate as a cow's Strength. One gains the ability to hit you, the other's already-devastating spells become irresistible.
-    if enemy.Tier == 4 or enemy.Tier == "ultra" then
+    if enemy.Tier == "ultra" then
         mod = math.floor(mod / 1.3333)
-    elseif enemy.Tier == 5 or enemy.Tier == "epic" then
+    elseif enemy.Tier == "epic" then
         mod = math.floor(mod / 1.6333)
-    elseif enemy.Tier == 6 or enemy.Tier == "legendary" then
+    elseif enemy.Name == "Temporary" or enemy.Tier == "legendary" then
         mod = math.floor(mod / 2.2222)
-    elseif enemy.Tier == 7 or enemy.Tier == "mythical" then
+    elseif enemy.Tier == "mythical" then
         mod = math.floor((mod / 3.6333)-0.2)
-    elseif enemy.Tier == 8 or enemy.Tier == "divine" then
+    elseif enemy.Tier == "divine" then
         mod = math.floor((mod / 4.4333)-0.5)
-	elseif enemy.Tier == 9 or enemy.Tier == "avatar" then
+	elseif enemy.Tier == "avatar" then
         mod = math.floor((mod / 8.3333)-1)
     end
 

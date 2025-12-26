@@ -1246,16 +1246,15 @@ Ext.Osiris.RegisterListener(
 		if Osi.HasActiveStatus(Player.Host(), "CRE_ASTRALPRISON_GRAVITY") == 1 then
 			Osi.ApplyStatus(guid, "CRE_ASTRALPRISON_GRAVITY", -1.0)
 		end
-		
-		if PersistentVars.GMMode then
-			expGMHelper = expGMHelper+Ext.Entity.Get(guid).ServerExperienceGaveOut.Experience
-		end	
 
         if table.find(s.SpawnedEnemies, function(e)
 			if e.Tier == "avatar" and not seenAvatar then
 				Player.Notify(__("An avatar has descended. This is the final challenge."))
 				seenAvatar = true
 			end
+			if PersistentVars.GMMode and e.Name ~= "Temporary" then
+				expGMHelper = expGMHelper+Ext.Entity.Get(guid).ServerExperienceGaveOut.Experience
+			end	
             return U.UUID.Equals(e.GUID, guid)
         end) then
             return
@@ -1269,7 +1268,7 @@ Ext.Osiris.RegisterListener(
         Schedule(function()
             local e = Enemy.CreateTemporary(guid)
 
-            if Osi.IsAlly(Player.Host(), guid) == 0 and Osi.GetTemplate(guid) ~= "TOT_Turn_Helper_3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" then
+            if (Osi.IsAlly(Player.Host(), guid) == 0 or PersistentVars.GMMode) and Osi.GetTemplate(guid) ~= "TOT_Turn_Helper_3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" then
                 table.insert(s.SpawnedEnemies, e)
                 Player.Notify(__("Enemy %s joined.", e:GetTranslatedName()))
 

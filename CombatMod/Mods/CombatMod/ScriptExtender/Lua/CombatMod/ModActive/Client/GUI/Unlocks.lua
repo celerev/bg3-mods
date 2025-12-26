@@ -183,7 +183,7 @@ function ClientUnlock.Buy(root, unlock)
 end
 
 function ClientUnlock.GetCharacters()
-    local characters = table.values(GE.GetParty())
+    local characters = table.values(GE.GetPCs())
 
     table.sort(characters, function(a, b)
         return a.Uuid.EntityUuid < b.Uuid.EntityUuid
