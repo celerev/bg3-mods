@@ -26,6 +26,22 @@ function M.Entity.GetParty()
     return Ext.Entity.GetAllEntitiesWithComponent("PartyMember")
 end
 
+function M.Entity.GetPCs()
+	local result = {}
+    local recruited = Ext.Entity.GetAllEntitiesWithComponent("Origin")
+	local party = Ext.Entity.GetAllEntitiesWithComponent("PartyMember")
+	for _, player in ipairs(party) do
+		for _, char in ipairs(recruited) do
+			if player==char then
+				result[#result+1] = player
+				break
+			end
+		end
+    end
+	
+	return result
+end
+
 ---@return EntityHandle
 function M.Entity.GetHost()
     if Ext.IsClient() then
