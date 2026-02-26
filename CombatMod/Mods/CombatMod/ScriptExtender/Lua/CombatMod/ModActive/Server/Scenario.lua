@@ -207,6 +207,17 @@ function Action.GMTurnHelper()
 	return turnhelper
 end
 
+function Action.CreateTurnHelperList()
+	for i = 1, 15 do
+		local turnhelper = Action.GMTurnHelper()
+		WaitTicks(4, function()
+			Ext.Entity.Get(turnhelper).CombatParticipant.InitiativeRoll = i
+			Ext.Entity.Get(turnhelper):Replicate("CombatParticipant")
+			table.insert(turnHelperCollection, turnhelper)
+		end)
+	end
+end
+
 function Action.RemoveHelper()
     local s = Current()
     if s.CombatHelper then
@@ -988,40 +999,11 @@ function Scenario.CombatSpawned(specific)
             end
 	
 			if PersistentVars.GMMode then
-				if Osi.HasActiveStatus(enemy.GUID, "TOTR_TURNHELPER") == 0 and Osi.GetTemplate(enemy.GUID) ~= "TOT_Turn_Helper_3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0" then
-					local turnhelper1 = Action.GMTurnHelper()
-					local turnhelper2 = Action.GMTurnHelper()
-					local turnhelper3 = Action.GMTurnHelper()
-					local turnhelper4 = Action.GMTurnHelper()
-					local turnhelper5 = Action.GMTurnHelper()
-					WaitTicks(2, function()
-						local stats = enemy:Entity().Stats.Abilities[3]
-						local init = enemy:Entity().CombatParticipant.InitiativeRoll
-						Ext.Entity.Get(turnhelper1).Stats.Abilities[3] = stats
-						Ext.Entity.Get(turnhelper1).CombatParticipant.InitiativeRoll = init
-						Ext.Entity.Get(turnhelper1):Replicate("CombatParticipant")
-						Ext.Entity.Get(turnhelper2).Stats.Abilities[3] = 2
-						Ext.Entity.Get(turnhelper2).CombatParticipant.InitiativeRoll = init + 1
-						Ext.Entity.Get(turnhelper2):Replicate("CombatParticipant")
-						Ext.Entity.Get(turnhelper3).Stats.Abilities[3] = 30
-						Ext.Entity.Get(turnhelper3).CombatParticipant.InitiativeRoll = init - 1
-						Ext.Entity.Get(turnhelper3):Replicate("CombatParticipant")
-						Ext.Entity.Get(turnhelper4).Stats.Abilities[3] = 30
-						Ext.Entity.Get(turnhelper4).CombatParticipant.InitiativeRoll = init
-						Ext.Entity.Get(turnhelper4):Replicate("CombatParticipant")
-						Ext.Entity.Get(turnhelper5).Stats.Abilities[3] = 2
-						Ext.Entity.Get(turnhelper5).CombatParticipant.InitiativeRoll = init
-						Ext.Entity.Get(turnhelper5):Replicate("CombatParticipant")
-						table.insert(turnHelperCollection, turnhelper1)
-						table.insert(turnHelperCollection, turnhelper2)
-						table.insert(turnHelperCollection, turnhelper3)
-						table.insert(turnHelperCollection, turnhelper4)
-						table.insert(turnHelperCollection, turnhelper5)
-					end)
-				end
-			Osi.ApplyStatus(enemy.GUID, "TOTR_TURNHELPER", -1.0)
-			--	Scenario.AssignToGM(enemy)
+				Defer(1000, function()
+					Scenario.AssignToGM(enemy)
+				end)
 			end
+
             return Osi.IsInCombat(enemy.GUID) == 1
         end, {
             immediate = true,
@@ -1036,7 +1018,7 @@ end
 function Scenario.AssignToGM(enemy)
     SetFaction(enemy.GUID, C.EnemyFaction)
     AddPartyFollower(enemy.GUID, PersistentVars.GameMaster)
-	Osi.RemoveStatus(enemy.GUID, "TOTR_TURNHELPER")
+	--Osi.RemoveStatus(enemy.GUID, "TOTR_TURNHELPER")
 	return
 end
 
@@ -1432,7 +1414,12 @@ Ext.Osiris.RegisterListener(
                             end)
                         end
                     end
-
+					if PersistentVars.GMMode then
+						Action.CreateTurnHelperList()
+						Defer(1400, function()
+							Net.Send("RemoveHelperPortraits")
+						end)
+					end
                     Player.Notify(__("Combat started."))
 
                     Scenario.CombatSpawned()
@@ -1489,9 +1476,9 @@ Ext.Osiris.RegisterListener(
     --        Scenario.CloseEnemyDistance():After(function()
     --            Scenario.GroupDistantEnemies()
     --        end)
-		if PersistentVars.GMMode then
-			Osi.RemoveAllPartyFollowers(PersistentVars.GameMaster)
-		end
+--		if PersistentVars.GMMode then
+--			Osi.RemoveAllPartyFollowers(PersistentVars.GameMaster)
+--		end
 
         Scenario.CombatSpawned()
 
@@ -1509,22 +1496,5 @@ Ext.Osiris.RegisterListener(
 		if not s:HasStarted() then
             return
         end
-
-		if PersistentVars.GMMode then
-			local enemies = table.filter(s.SpawnedEnemies, function(e)
-				return specific == nil or eq(e, specific)
-			end)
-			Defer(1000, function()
-				for _, enemy in ipairs(enemies) do
-					Scenario.AssignToGM(enemy)
-				end
-			end)
-			Defer(400, function()
-				Action.RemoveDupeHelper()
-			end)
-			Defer(1400, function()
-				Net.Send("RemoveHelperPortraits")
-			end)
-		end
 	end)
 )
