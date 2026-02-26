@@ -1093,6 +1093,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 14,
+			Level = 6,
+			Pwr = 38.5,
+			Stats = -1,
+			Vit = 82,
+		},
+		Name = "MOD_Wight_Combat",
+		TemplateId = "3bab719c-9393-4102-95e5-3d84501403f5",
+		Tier = "high",
+	},
+	{
+		Info = {
 			AC = 12,
 			Level = 1,
 			Pwr = 28.5,
