@@ -67,7 +67,7 @@ end
 local multis = {
     {
         Id = "MOD_BOOSTS",
-        Name = Localization.Get("h911e33dag904ag4b7egb05ag43bea41fbe2b"),
+        Name = __("Unlock Multipliers"),
         Icon = "PassiveFeature_Generic_Explosion",
         Cost = 1000,
         Amount = 1,
@@ -77,7 +77,7 @@ local multis = {
     },
     {
         Id = "ExpMultiplier",
-        Name = Localization.Get("hfe5ed56bg3754g4a3dgafa9g70d9759f0a28"),
+        Name = __("Gain double XP"),
         Icon = "Spell_MagicJar",
         Cost = 100,
         Amount = 1,
@@ -89,7 +89,7 @@ local multis = {
     },
     {
         Id = "LootMultiplier",
-        Name = Localization.Get("h982827a7g7b1eg4374g908bgc2a67bf187cc"),
+        Name = __("Gain 50%% more loot"),
         Icon = "Spell_Transmutation_FleshToGold",
         Cost = 100,
         Amount = 1,
@@ -101,7 +101,7 @@ local multis = {
     },
     {
         Id = "CurrencyMultiplier",
-        Name = Localization.Get("h033b172cgdf4bg49b5g831ag3db061ec7174"),
+        Name = __("Gain 20%% more Currency"),
         Icon = "Item_LOOT_COINS_Electrum_Pile_Small_A",
         Cost = 100,
         Amount = 1,
@@ -116,8 +116,8 @@ local multis = {
 local ngPlus = {
     {
         Id = "QUICKSTART",
-        Name = Localization.Get("h99d767f5g0d21g40a7gb1f2g97034979447e"),
-		Description = Localization.Get("h9076514cg9b9cg489egb1d7gb7e709f39be9"),
+        Name = __("Unlock Quick Start"),
+		Description = __("Automatically earned by defeating a CR30 divine avatar: Unlock features for rapidly accelerating the beginning of your next run and making it more dangerous."),
         Icon = "Action_EndGame_NethereseOrbBlast",
         Cost = 2000,
         Amount = 1,
@@ -127,7 +127,7 @@ local ngPlus = {
     },
     {
         Id = "NG MOD_BOOSTS",
-        Name = Localization.Get("h8402b358g3ddeg4eebg9455gce18a891002b"),
+        Name = __("Quick Start: - Unlock Multipliers for Free"),
         Icon = "PassiveFeature_Generic_Explosion",
         Cost = 0,
         Amount = 1,
@@ -143,8 +143,8 @@ local ngPlus = {
     },
     {
         Id = "BuyRogueScore",
-        Name = Localization.Get("ha36188ccg166dg4e87g8dddg67bc3c7a9b46"),
-		Description = Localization.Get("h8ad3fa67g955ag492ag8002g2a991761252c"),
+        Name = __("Quick Start: - %s RogueScore", "+50"),
+		Description = __("Accelerates the beginning of a run by capapulting you into more dangerous encounters."),
         Icon = "GenericIcon_Intent_Buff",
         Cost = 20,
         Amount = nil,
@@ -156,7 +156,7 @@ local ngPlus = {
     },
     {
         Id = "ScoreMultiplier",
-        Name = Localization.Get("h93c6451bg121fg406dga782g17807153dda5"),
+        Name = __("Quick Start: - Gain 2x RogueScore, doubling the rate difficulty increases"),
         Icon = "GenericIcon_Intent_Buff",
         Cost = 0,
         Amount = 1,
@@ -168,7 +168,7 @@ local ngPlus = {
     },
     {
         Id = "CurrencyPlus",
-        Name = Localization.Get("h5b24b956gfa5dg4cbdgaf46g9ab930aecb95"),
+        Name = "Quick Start: - +100 Currency",
         Icon = "Item_CONT_GEN_Chest_Rich_B",
         Cost = 0,
         Amount = 1,
@@ -180,7 +180,7 @@ local ngPlus = {
     },
     {
         Id = "BuyExpPlus",
-        Name = Localization.Get("h8a656ee4g11bdg46a6ga0a0g295513c20718"),
+        Name = "Quick Start: - 1000 EXP",
         Icon = "Action_Dash",
         Cost = 0,
         Amount = 3,
@@ -192,7 +192,7 @@ local ngPlus = {
     },
     {
         Id = "BuyLootPlus",
-        Name = Localization.Get("h5bb414bag85d4g4f1ega7e5g8bf83b2bd3c1"),
+        Name = __("Quick Start: - Roll Loot %dx", 10),
         Icon = "Item_CONT_GEN_Chest_Jewel_A",
         Cost = 0,
         Amount = 10,
@@ -207,9 +207,9 @@ local ngPlus = {
     },
     {
         Id = "BuyStockPlus",
-        Name = Localization.Get("hd85c346cgca52g4696g836cg41acba4551c2"),
+        Name = __("Reset Stock"),
         Icon = "Item_BOOK_SignedTradeVisa",
-        Description = Localization.GEt("h444d27cfgdecdg4329g8559g4aceeb256128"),
+        Description = __("Resets the stock of purchased standard unlocks."),
         Cost = 1000,
         Amount = nil,
         Requirement = { "QUICKSTART" },
@@ -250,9 +250,9 @@ return table.extend({
     },
     {
         Id = "TadpoleCeremorph",
-        Name = Localization.Get("h1d8640a4gb73eg43a7ga61cg640f20536131"),
+        Name = __("Start Ceremorphosis"),
         Icon = "TadpoleSuperPower_IllithidPersuasion",
-        Description = Localization.Get("h92dfe356g7208g4764gaeaag88f551e159bf"),
+        Description = __("Includes %s", __("Unlock Tadpole Power")),
         Cost = 300,
         Amount = nil,
         Character = true,
@@ -261,13 +261,14 @@ return table.extend({
             unlockTadpole(character)
             Osi.SetTag(character, "c0cd4ed8-11d1-4fb1-ae3a-3a14e41267c8")
             Osi.ApplyStatus(character, "TAD_PARTIAL_CEREMORPH", -1)
+            -- Osi.RemoveCustomMaterialOverride(character, "398ca8ae-c3c0-47f5-8e45-d9402e198389")
         end,
     },
     {
         Id = "BuyAscension", -- God of Ambition, same as in the base game epilogue, except allowing the user to change equipment
         Name = Localization.Get("h4232ff7cgcfb9g4a22g9443gf87f1019d70e"),
         Icon = "statIcons_GaleGod",
-        Description = Localization.Get("h0eef4fd1g0e66g415bg811agd54dcf8adc18"),
+        Description = __("With unyielding ambition, grasp the Crown of Karsus and make its might yours."),
         Requirement = 150,
         Cost = 1200,
         Amount = 1,
@@ -311,9 +312,9 @@ return table.extend({
     },
     {
         Id = "TadAwaken",
-        Name = Localization.Get("ha161e914ga226g41c7g971agd92959199ced"),
+        Name = __("Awakened Illithid Powers"),
         Icon = "PassiveFeature_CRE_GithInfirmary_Awakened",
-        Description = Localization.Get("h02c55962g989ag4901ga98cg8fcf76a9a120"),
+        Description = __("Use all Illithid Powers with Bonus Actions."),
         Cost = 100,
         Requirement = 50,
         Amount = 1,
@@ -337,8 +338,8 @@ return table.extend({
     },
     {
         Id = "BuyEmperor",
-        Name = Localization.Get("hb5358b68ged6bg44e4g9937ga73e425fe42f"),
-        Description = Localization.Get("h90c02129gaf64g4a78g99cdg50d209d7af4a"),
+        Name = __("Spawn Mindflayer Companion"),
+        Description = __("Spawns the Emperor as controllable party follower. After each Long Rest, you'll receive a spell to resummon them."),
         Icon = "TadpoleSuperPower_IllithidExpertise",
         Cost = 300,
         Requirement = 75,
@@ -352,8 +353,8 @@ return table.extend({
     },
     {
         Id = "BuyNightsong",
-        Name = Localization.Get("hb1600df6gae4ag4718gbc08gf91f423e0e97"),
-        Description = Localization.Get("h43f57ae6gaf36g40b2ga036gb0234eed0b71"),
+        Name = __("Sword of the Silverlight"),
+        Description = __("Spawns Dame Aylin as controllable party follower. After each Long Rest, you'll receive a spell to resummon them."),
         Icon = "Action_EndGameAlly_NightsongSummon",
         Cost = 300,
         Requirement = 75,
@@ -367,8 +368,8 @@ return table.extend({
     },
     {
         Id = "BuyOwlbear",
-        Name = Localization.Get("h8eadfd16g2e13g4590gb62bg633680a154ed"),
-        Description = Localization.Get("hd9e32922gc2d9g4589gbc85g5ab127e322f2"),
+        Name = __("Battle-Ready Owlbear"),
+        Description = __("Your owlbear cub is all grown up and ready to rage. Spawns the Armoured Owlbear as controllable party follower. After each Long Rest, you'll receive a spell to resummon them."),
         Icon = "Action_EndGameAlly_OwlbearCubSummon",
         Cost = 300,
         Requirement = 75,
@@ -382,7 +383,7 @@ return table.extend({
     },
     {
         Id = "Tadpole",
-        Name = Localization.Get("hd82de71dg534dg4616g8462g2d155883cbdc"),
+        Name = __("Get a Tadpole"),
         Icon = "Item_LOOT_Druid_Autopsy_Set_Tadpole",
         Cost = 30,
         Amount = nil,
@@ -393,7 +394,7 @@ return table.extend({
     },
     {
         Id = "BuyExp",
-        Name = Localization.Get("hb2f56aafgcdabg40bbgbacag70631cde37ad"),
+        Name = "1000 EXP",
         Icon = "Action_Dash_Bonus",
         Cost = 40,
         Amount = 4,
@@ -404,7 +405,7 @@ return table.extend({
     },
     {
         Id = "BuyLoot",
-        Name = Localization.Get("hc1437176g44abg4a53gb5ffg1f5e5b08842c"),
+        Name = __("Roll Loot %dx", 10),
         Icon = "Item_CONT_GEN_Chest_Jewel_B",
         Cost = 30,
         Amount = 10,
@@ -418,7 +419,7 @@ return table.extend({
     },
     {
         Id = "BuyLootRare",
-        Name = Localization.Get("hb2251e14gb711g4033ga0a1g78198e0b43cd"),
+        Name = __("Roll Rare Loot %dx", 5),
         Icon = "Item_CONT_GEN_Chest_Jewel_C",
         Cost = 50,
         Requirement = 50,
@@ -437,7 +438,7 @@ return table.extend({
     },
     {
         Id = "BuyLootEpic",
-        Name = Localization.Get("h58b7b74fg8e45g478ega657g7e96427c6107"),
+        Name = __("Roll Epic Loot %dx", 3),
         Icon = "Item_CONT_GEN_Chest_Jewel_A",
         Cost = 100,
         Requirement = 50,
@@ -456,7 +457,7 @@ return table.extend({
     },
     {
         Id = "BuyLootLegendary",
-        Name = Localization.Get("h188e21d6g5551g4745gbfd8g3d08377badc9"),
+        Name = __("Roll Legendary Loot %dx", 1),
         Icon = "Item_CONT_GEN_Chest_Jewel_D",
         Cost = 100,
         Requirement = 50,
@@ -475,7 +476,7 @@ return table.extend({
     },
     {
         Id = "BuySupplies",
-        Name = Localization.Get("hfb500d01g378eg43abg9b3agff1ade0e4506"),
+        Name = __("Buy 40 Camp Supplies"),
         Icon = "Item_CONT_GEN_CampSupplySack",
         Cost = 40,
         Amount = nil,
@@ -486,8 +487,8 @@ return table.extend({
     },
     {
        Id = "ShortRestRecovery",
-       Name = Localization.Get("h663f9bc0g9e93g47e4ga6cag2d0ab9d776f7"),
-       Description = Localization.Get("hd1272b21g0733g44e7gb599gf46b8bb13322"),
+       Name = "Restore some extra resources on Short Rest",
+       Description = __("Causes a limited amount of Long Rest resources to be regained on each Short Rest. The amount scales with character level."),
        Icon = "Action_EndGame_IsobelHeal",
        Cost = 250,
        Requirement = 100,
@@ -563,8 +564,8 @@ return table.extend({
 --    },
     {
         Id = "Moonshield",
-        Name = Localization.Get("h9fb9cfb8gfde3g435aga3b9g7d9f1c507ab3"),
-        Description = Localization.Get("h2eb7e250g6f5dg4c8agaca1gff2104280673"),
+        Name = __("Get Pixie Blessing"),
+        Description = __("Counter the Shadow Curse."),
         Icon = "statIcons_Moonshield",
         Cost = 30,
         Amount = 1,
@@ -583,9 +584,9 @@ return table.extend({
     },
     {
         Id = "BreakOath",
-        Name = Localization.Get("h3eb286b1g0613g41c9g8f7eg0293b5cfe999"),
+        Name = __("Break/Restore Oath"),
         Icon = "statIcons_OathBroken",
-        Description = Localization.Get("h6321b88bg0464g4537ga25cgaa37e3cd460d"),
+        Description = __("Needs to be a Paladin."),
         Cost = 10,
         Amount = nil,
         Character = true,
@@ -641,7 +642,7 @@ return table.extend({
         Id = "BuyIntellectDevourerCompanion",
         Name = Localization.Get("h71c08839ga8ccg45e7g825ag5b57ac274b1e"),
         Icon = "Spell_ConjureUs",
-        Description = Localization.Get("h8d833245gf471g4882gb0ddga6f7c58baed3"),
+        Description = __("Gain ability to conjure an intellect devourer companion"),
         Cost = 120,
         Requirement = 50,
         Amount = 1,
@@ -722,7 +723,7 @@ return table.extend({
         Id = "BuyBrand",
         Name = Localization.Get("h7cc7adeag848fg491cga683g0faeaea082c3"),
         Icon = "Item_TOOL_GOB_Branding_Tool_A",
-        Description = Localization.Get("h3f06b29fgee73g4fa6g9090g627b22ce2c3f"),
+        Description = __("Bear the Absolute's Brand."),
         Cost = 20,
         Amount = 2,
         Character = true,
@@ -831,7 +832,7 @@ return table.extend({
         Id = "BuyVolosGuide",
         Name = Localization.Get("h397d3e3fgf2c3g4f5cg8974g7784ef35cc21"),
         Icon = "PassiveFeature_PactOfTheTome",
-        Description = Localization.Get("h8cbbf143ga45cg4547ga745g215e06edd50a"),
+        Description = __("With steadfast application of knowledge from Volo's preeminent work, affected entities gain +2 to Attack Rolls, Saving Throws, and Ability Checks."),
         Cost = 400,
         Requirement = 150,
         Amount = 1,
@@ -851,7 +852,7 @@ return table.extend({
         Id = "BuyThanielBuff",
         Name = Localization.Get("h221a4b23g1fe7g4c43g834bg2863ae271223"),
         Icon = "statIcons_Momentum",
-        Description = Localization.Get("hf21573f5g0d33g4acaga833ge2ecab662902"),
+        Description = __("The reunited soul Thaniel provides a +1 to all Ability Scores and an additional 2m movement speed."),
         Cost = 275,
         Requirement = 150,
         Amount = 1,
@@ -871,7 +872,7 @@ return table.extend({
         Id = "BuyMolBuff",
         Name = Localization.Get("hd6eee16fgaf11g483bgb572g1923ad837611"),
         Icon = "Action_Monster_Cambion_FireRay",
-        Description = Localization.Get("ha6f6614cg0ab1g44e4gaf1eg00b3e01c1a23"),
+        Description = __("Equipped with Mol's tricks of the trade. Reduce Fire damage by 5 and gain the ability to cast Rays of Fire."),
         Cost = 350,
         Requirement = 150,
         Amount = 1,
@@ -891,7 +892,7 @@ return table.extend({
         Id = "BuyArabellaBuff",
         Name = Localization.Get("hcec0f370geccfg445egaf70g1974159ff90b"),
         Icon = "Spell_Abjuration_FreedomOfMovement",
-        Description = Localization.Get("h0439851dgc0a2g49f6g9714gfcf1e4557edd"),
+        Description = __("One must remove all obstacles to follow one's destiny - Arabella's favour grants affected entities the benefits of Freedom of Movement."),
         Cost = 350,
         Requirement = 150,
         Amount = 1,
