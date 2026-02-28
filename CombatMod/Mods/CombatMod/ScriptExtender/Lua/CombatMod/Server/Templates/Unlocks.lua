@@ -298,7 +298,17 @@ return table.extend({
         Character = true,
         Requirement = 225,
         OnBuy = function(self, character)
-            Osi.ApplyStatus(character, "MIND_FLAYER_FORM", -1)
+			if Osi.HasAppliedStatus(character, "EPI_GALEGOD") == 1 then
+				Osi.RemoveStatus(character, "EPI_GALEGOD")
+				Osi.ApplyStatus(character, "MIND_FLAYER_FORM", -1)
+				Osi.ApplyStatus(character, "EPI_GALEGOD_MINDFLAYER", -1)
+			elseif Osi.HasAppliedStatus(character, "TOT_ASCENSION") == 1 then
+				Osi.RemoveStatus(character, "TOT_ASCENSION")
+				Osi.ApplyStatus(character, "MIND_FLAYER_FORM", -1)
+				Osi.ApplyStatus(character, "TOT_ASCENSION_MINDFLAYER", -1)
+			else
+				Osi.ApplyStatus(character, "MIND_FLAYER_FORM", -1)
+			end
             -- takes a bit to transform
             WaitTicks(100, function()
                 self:OnReapply()

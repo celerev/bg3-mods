@@ -823,6 +823,9 @@ function Scenario.Stop()
 		Osi.RemoveAllPartyFollowers(PersistentVars.GameMaster)
 		Action.RemoveTurnHelper()
 	end
+	if seenAvatar then
+		seenAvatar = false
+	end
     Event.Trigger("ScenarioStopped", Current())
     Enemy.Cleanup()
     Current().Map:Clear()

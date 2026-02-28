@@ -380,6 +380,8 @@ local items = {
 	"MOD_MalebrancheRanseur",
 	"MOD_ATT_FiernaBlade",
 	"MOD_ATT_BelialRanseur",
+	"MOD_ATT_WightSword",
+	"MOD_ATT_WightBow",
 	"MOD_LorenzoGlaive",
 	"MOD_Whisper",
 	"MOD_Helper_Spell_DarkStar",
