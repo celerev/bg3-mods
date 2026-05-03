@@ -140,16 +140,18 @@ function Player.RecruitOrigin(id)
         Osi.SetLevel(character, 1)
         Osi.RequestRespec(character)
 
-        WaitTicks(20, function()
+        WaitTicks(32, function()
             local entity = Ext.Entity.Get(character)
 
             if not entity.Experience then
                 entity:CreateComponent("Experience")
             end
-            entity.Experience.TotalExperience = 0
-            entity.AvailableLevel.Level = 1
-            entity:Replicate("AvailableLevel")
-            entity:Replicate("Experience")
+			WaitTicks(24, function()
+				entity.Experience.TotalExperience = 0
+				entity.AvailableLevel.Level = 1
+				entity:Replicate("AvailableLevel")
+				entity:Replicate("Experience")
+			end)
 
             local teamExp = 0
             for _, character in pairs(GU.DB.GetPlayers()) do
