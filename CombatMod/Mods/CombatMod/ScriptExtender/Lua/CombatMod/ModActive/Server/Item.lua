@@ -445,7 +445,7 @@ function Item.SpawnLoot(loot, x, y, z, autoPickup)
         return
     end
 
-    Async.Interval(300 - (#pingedLoot * 2), function(self)
+    Async.Interval(200 - (#pingedLoot * 2), function(self)
         i = i + 1
 
         if i > #pingedLoot then
@@ -462,8 +462,9 @@ function Item.SpawnLoot(loot, x, y, z, autoPickup)
             return
         end
 
-        local x2 = x + math.newRandom() * math.newRandom(-1, 1)
-        local z2 = z + math.newRandom() * math.newRandom(-1, 1)
+		-- the spawn coordinates don't matter at all, it doesn't need newRandom.
+        local x2 = x + math.random() * math.random(-1, 1)
+        local z2 = z + math.random() * math.random(-1, 1)
         local item = pingedLoot[i]
 
         if item:Spawn(x2, y, z2) then
@@ -700,35 +701,7 @@ Event.On(
         end
 
         local rolls = math.floor(scenario:KillScore() * lootMultiplier)
-
-        local function rollsToChunks()
-            local size = 20
-            local chunks = {}
-
-            for i = 1, math.floor(rolls / size) do
-                table.insert(chunks, size)
-            end
-
-            local mod = rolls % size
-            if mod > 0 then
-                table.insert(chunks, mod)
-            end
-
-            return chunks
-        end
-
-        local results = {
-            Async.SyncAll(table.map(rollsToChunks(), function(chunk)
-                return Defer(100, U.Bind(Item.GenerateLoot, chunk, scenario.LootRates))
-            end)),
-        }
-
-        local loot = {}
-        for _, r in ipairs(results) do
-            table.extend(loot, r[1])
-        end
-
-        L.Dump("Loot", loot, scenario.LootRates, rolls, #loot)
+        local chunkSize = 20
 
         local map = scenario.Map
         local x, y, z = map.Enter[1], map.Enter[2], map.Enter[3]
@@ -736,6 +709,20 @@ Event.On(
             x, y, z = Player.Pos()
         end
 
-        Item.SpawnLoot(loot, x, y, z, true)
+        Async.Interval(40, function(self)
+            if rolls <= 0 then
+                self:Clear()
+                return
+            end
+
+            local currentChunk = math.min(chunkSize, rolls)
+            rolls = rolls - currentChunk
+
+            local loot = Item.GenerateLoot(currentChunk, scenario.LootRates)
+            L.Dump("Loot Chunk", loot, scenario.LootRates, currentChunk, #loot)
+            Item.SpawnLoot(loot, x, y, z, true)
+        end)
     end)
 )
+
+

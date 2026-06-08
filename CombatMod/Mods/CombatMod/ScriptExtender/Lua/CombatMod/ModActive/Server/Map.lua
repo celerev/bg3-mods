@@ -100,9 +100,10 @@ function Object:TeleportToSpawn(guid, spawn, withOffset)
             end
 
             local offset = math.floor(offset)
+			-- the spawn coordinates don't matter at all, it doesn't need newRandom.
             if offset > 0 then
-                x = x + math.newRandom() * math.newRandom(-offset, offset)
-                z = z + math.newRandom() * math.newRandom(-offset, offset)
+                x = x + math.random() * math.random(-offset, offset)
+                z = z + math.random() * math.random(-offset, offset)
             end
         end
 
@@ -131,9 +132,10 @@ function Object:SpawnIn(enemy, spawn, faceTowards)
 
     pcall(function()
         local offset = tonumber(Config.RandomizeSpawnOffset)
+		-- the spawn coordinates don't matter at all, it doesn't need newRandom.
         if offset > 0 then
-            x = x + math.newRandom() * math.newRandom(-offset, offset)
-            z = z + math.newRandom() * math.newRandom(-offset, offset)
+            x = x + math.random() * math.random(-offset, offset)
+            z = z + math.random() * math.random(-offset, offset)
         end
     end)
 
