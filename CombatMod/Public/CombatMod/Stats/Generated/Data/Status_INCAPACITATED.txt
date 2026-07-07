@@ -1,0 +1,5 @@
+new entry "BANISHED"
+type "StatusData"
+data "StatusType" "INCAPACITATED"
+using "BANISHED"
+data "Boosts" "DetectDisturbancesBlock(true);Detach();Invulnerable();DialogueBlock();CanShootThrough(true);SightRangeOverride(0);LeaveTriggers()"
