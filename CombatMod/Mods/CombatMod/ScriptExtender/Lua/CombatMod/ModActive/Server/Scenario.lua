@@ -124,6 +124,34 @@ local function ifScenario(func)
     end
 end
 
+function GMTurnHelper()
+    local s = Current()
+	
+	local asylum = {}
+
+    asylum = Map.GetAsylum(Player.Region())
+	
+	local x, y, z = table.unpack(s.Map.Enter)
+
+    local turnhelper = Osi.CreateAt("3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0", x, y, z, 0, 1, "")
+    if not turnhelper then
+        L.Error("Failed to create turn helper.")
+        return
+    end
+
+    Osi.SetTag(turnhelper, "9787450d-f34d-43bd-be88-d2bac00bb8ee") -- AI_UNPREFERRED_TARGET
+    Osi.SetFaction(turnhelper, C.EnemyFaction)
+	
+	Osi.SetHostileAndEnterCombat(C.EnemyFaction, C.ScenarioHelper.Faction, turnhelper, s.CombatHelper)
+	
+	WaitTicks(64, function()
+        Osi.TeleportToPosition(turnhelper, asylum.asylumX, asylum.asylumY, asylum.asylumZ, "", 1, 1, 1, 0, 1)
+    end)
+
+    L.Debug("Turn helper spawned.", turnhelper)
+	return turnhelper
+end
+
 -------------------------------------------------------------------------------------------------
 --                                                                                             --
 --                                           Actions                                           --
@@ -179,37 +207,10 @@ end
 turnHelperCollection = {}
 expGMHelper = 0
 
-function Action.GMTurnHelper()
-    local s = Current()
-	
-	local asylum = {}
 
-    asylum = Map.GetAsylum(Player.Region())
-	
-	local x, y, z = table.unpack(s.Map.Enter)
-
-    local turnhelper = Osi.CreateAt("3f0377a6-1bf5-4e9e-a186-d2a934f0a0c0", x, y, z, 0, 1, "")
-    if not turnhelper then
-        L.Error("Failed to create turn helper.")
-        return
-    end
-
-    Osi.SetTag(turnhelper, "9787450d-f34d-43bd-be88-d2bac00bb8ee") -- AI_UNPREFERRED_TARGET
-    Osi.SetFaction(turnhelper, C.EnemyFaction)
-	
-	Osi.SetHostileAndEnterCombat(C.EnemyFaction, C.ScenarioHelper.Faction, turnhelper, s.CombatHelper)
-	
-	WaitTicks(64, function()
-        Osi.TeleportToPosition(turnhelper, asylum.asylumX, asylum.asylumY, asylum.asylumZ, "", 1, 1, 1, 0, 1)
-    end)
-
-    L.Debug("Turn helper spawned.", turnhelper)
-	return turnhelper
-end
-
-function Action.CreateTurnHelperList()
+function CreateTurnHelperList()
 	for i = 1, 15 do
-		local turnhelper = Action.GMTurnHelper()
+		local turnhelper = GMTurnHelper()
 		WaitTicks(4, function()
 			Ext.Entity.Get(turnhelper).CombatParticipant.InitiativeRoll = i
 			Ext.Entity.Get(turnhelper):Replicate("CombatParticipant")
@@ -217,6 +218,8 @@ function Action.CreateTurnHelperList()
 		end)
 	end
 end
+
+Action.CreateTurnHelperList = CreateTurnHelperList
 
 function Action.RemoveHelper()
     local s = Current()
@@ -615,6 +618,12 @@ end
 --                                            Public                                           --
 --                                                                                             --
 -------------------------------------------------------------------------------------------------
+
+Scenario.CreateTurnHelperList = CreateTurnHelperList
+
+function Scenario.RemoveHelperIcons()
+	Net.Send("RemoveHelperPortraits")
+end
 
 ---@return table
 function Scenario.GetTemplates()

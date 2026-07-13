@@ -23,3 +23,8 @@ new entry "StillnessOfMind"
 type "PassiveData"
 using "StillnessOfMind"
 data "Boosts" "StatusImmunity(COL_RESONANCESTONE_BUFF)"
+
+new entry "MAG_StunnImmunity_Passive"
+type "PassiveData"
+using "MAG_StunnImmunity_Passive"
+data "Boosts" "StatusImmunity(SG_Stunned)"

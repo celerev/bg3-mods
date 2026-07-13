@@ -34,14 +34,17 @@ local function RemoveHelperPortraits()
 		local node = rootList:Child(i)
 		local datalist = node:GetProperty("DataContext")
 		if datalist then
-			L.Info("Inside Data Context.")
-			local combatantList = datalist:GetProperty("Combatants")
-			if combatantList then
-				L.Info("Inside Combatants List.")
-				for i = #combatantList, 1, -1 do
-					L.Info("Comparing Combatant ID.")
-					if combatantList[i]:GetProperty("CurrentCombatant"):GetProperty("Name") == "heb165bbdgbb0fg4b80gad51gf637bec9bfe9" then
-						combatantList[i] = nil
+			local combatantsCheck = Ext.DumpExport(datalist:GetAllProperties())
+			if string.find(combatantsCheck, "Combatants") then
+				L.Debug("Inside Data Context.")
+				local combatantList = datalist:GetProperty("Combatants")
+				if combatantList then
+					L.Info("Inside Combatants List.")
+					for i = #combatantList, 1, -1 do
+						L.Info("Comparing Combatant ID.")
+						if combatantList[i]:GetProperty("CurrentCombatant"):GetProperty("Name") == "heb165bbdgbb0fg4b80gad51gf637bec9bfe9" then
+							combatantList[i] = nil
+						end
 					end
 				end
 			end
