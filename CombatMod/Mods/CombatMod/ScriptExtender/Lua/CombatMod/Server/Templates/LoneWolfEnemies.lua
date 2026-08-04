@@ -829,6 +829,18 @@ return {
 	},
 	{
 		Info = {
+			AC = 17,
+			Level = 9,
+			Pwr = 92.0,
+			Stats = 15,
+			Vit = 76,
+		},
+		Name = "TOT_Githyanki_Gishra_Chief",
+		TemplateId = "6e966a6f-1e54-4307-842d-7cdebc0cc558",
+		Tier = "epic",
+	},
+	{
+		Info = {
 			AC = 14,
 			Level = 9,
 			Pwr = 122.0,
@@ -2620,6 +2632,18 @@ return {
 	{
 		Info = {
 			AC = 16,
+			Level = 11,
+			Pwr = 82.5,
+			Stats = 17,
+			Vit = 88,
+		},
+		Name = "TOT_Dolor",
+		TemplateId = "f3b04992-f073-449b-9191-0c059747adee",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 16,
 			Level = 10,
 			Pwr = 54.0,
 			Stats = 10,
@@ -3676,6 +3700,18 @@ return {
 	{
 		Info = {
 			AC = 15,
+			Level = 5,
+			Pwr = 73.5,
+			Stats = 12,
+			Vit = 55,
+		},
+		Name = "TOT_UND_Omeluum",
+		TemplateId = "ba576a2a-90f7-45ab-8265-7fb11f58fa6c",
+		Tier = "ultra",
+	},
+	{
+		Info = {
+			AC = 15,
 			Level = 12,
 			Pwr = 99.5,
 			Stats = 12,
@@ -3937,18 +3973,18 @@ return {
 		TemplateId = "1dd82bc3-8f1c-404a-b8c6-18126f094304",
 		Tier = "ultra",
 	},
---	{
---		Info = {
---			AC = 14,
---			Level = 20,
---			Pwr = 179.5,
---			Stats = 24,
---			Vit = 185,
---		},
---		Name = "TOT_S_GLO_Elminster",
---		TemplateId = "52eb0a9e-f706-4e2c-9174-4da6c77f789f",
---		Tier = "legendary",
---	},
+	{
+		Info = {
+			AC = 14,
+			Level = 20,
+			Pwr = 179.5,
+			Stats = 24,
+			Vit = 185,
+		},
+		Name = "TOT_S_GLO_Elminster",
+		TemplateId = "52eb0a9e-f706-4e2c-9174-4da6c77f789f",
+		Tier = "legendary",
+	},
 	{
 		Info = {
 			AC = 16,
@@ -4355,6 +4391,18 @@ return {
 		},
 		Name = "TOT_S_GLO_Desire_Hooded",
 		TemplateId = "bee463e5-69ff-4426-9dc9-6d5f49b596d4",
+		Tier = "high",
+	},
+	{
+		Info = {
+			AC = 12,
+			Level = 10,
+			Pwr = 61.0,
+			Stats = 12,
+			Vit = 44,
+		},
+		Name = "TOT_Rolan",
+		TemplateId = "cf75bc65-dbd2-4cb0-b0ba-289a8d5cd6c0",
 		Tier = "high",
 	},
 	-- {
