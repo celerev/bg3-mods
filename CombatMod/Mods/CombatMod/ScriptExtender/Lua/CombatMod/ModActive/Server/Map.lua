@@ -96,7 +96,7 @@ function Object:TeleportToSpawn(guid, spawn, withOffset)
         if withOffset then
             local offset = tonumber(Config.RandomizeSpawnOffset)
             if not GC.IsNonPlayer(guid) then
-                ofsset = offset / 2
+                offset = offset / 2
             end
 
             local offset = math.floor(offset)
