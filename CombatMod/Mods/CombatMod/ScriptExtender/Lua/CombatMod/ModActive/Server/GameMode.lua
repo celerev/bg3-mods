@@ -104,24 +104,24 @@ function GameMode.GenerateScenario(score, tiers)
     local preferredRounds = 3
     local emptyRoundChance = 0.2 -- 20% chance for a round to be empty
     local scoreTolerance = tiers[1].value
-    if score > 70 then
-       emptyRoundChance = 0.1
-    elseif score > 120 then
-        preferredRounds = 2
-        emptyRoundChance = 0.05
-    elseif score > 200 then
-        preferredRounds = 2
+    if score > 3000 then
+        maxRounds = math.ceil(score / 100)
+        preferredRounds = math.ceil(score / 300)
         emptyRoundChance = 0
+        scoreTolerance = math.ceil(score / 30)
     elseif score > 500 then
         maxRounds = 20
         preferredRounds = 4
         emptyRoundChance = 0
         scoreTolerance = 50
-    elseif score > 3000 then
-        maxRounds = math.ceil(score / 100)
-        preferredRounds = math.ceil(score / 300)
+    elseif score > 200 then
+        preferredRounds = 2
         emptyRoundChance = 0
-        scoreTolerance = math.ceil(score / 30)
+    elseif score > 120 then
+        preferredRounds = 2
+        emptyRoundChance = 0.05
+    elseif score > 70 then
+        emptyRoundChance = 0.1
     end
 
     score = score >= tiers[1].value and score or tiers[1].value
