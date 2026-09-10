@@ -349,6 +349,10 @@ Net.On("Config", function(event)
                 External.LoadConfig()
             end
 
+            if config.LootIncludesCampSlot ~= nil or config.Reset then
+                Item.ClearCache()
+            end
+
             if config.RoguelikeMode ~= nil then
                 if PersistentVars.RogueModeActive ~= config.RoguelikeMode then
                     PersistentVars.RogueModeActive = config.RoguelikeMode
