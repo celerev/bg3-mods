@@ -155,40 +155,38 @@ function Item.Create(name, type, rootTemplate, rarity)
     return item
 end
 
-local itemCache = {
-    Objects = {},
-    Armor = {},
-    Weapons = {},
-    CombatObjects = {},
-    ModList = nil,
-}
+local itemCache = {}
 
 function Item.ClearCache()
-    itemCache = {
-        Objects = {},
-        Armor = {},
-        Weapons = {},
-        CombatObjects = {},
-        ModList = nil,
-    }
+    itemCache = {}
 end
 
-function Item.Get(items, type, rarity)
-    return table.map(items, function(name)
-        local item = Object.New(name, type)
+local function bucketByRarity(names, type)
+    local buckets = { All = {} }
 
-        if rarity == nil or item.Rarity == rarity then
-            return item
+    for _, name in ipairs(names) do
+        local item = Object.New(name, type)
+        table.insert(buckets.All, item)
+
+        if not buckets[item.Rarity] then
+            buckets[item.Rarity] = {}
         end
-    end)
+        table.insert(buckets[item.Rarity], item)
+    end
+
+    return buckets
+end
+
+function Item.Get(buckets, rarity)
+    return buckets[rarity or "All"] or {}
 end
 
 function Item.Objects(rarity, forCombat)
     local cacheKey = forCombat and "CombatObjects" or "Objects"
     local type = forCombat and "CombatObject" or "Object"
 
-    if #itemCache[cacheKey] > 0 then
-        return Item.Get(itemCache[cacheKey], type, rarity)
+    if itemCache[cacheKey] then
+        return Item.Get(itemCache[cacheKey], rarity)
     end
 
     if objects == nil then
@@ -262,14 +260,14 @@ function Item.Objects(rarity, forCombat)
         return true
     end)
 
-    itemCache[cacheKey] = items
+    itemCache[cacheKey] = bucketByRarity(items, type)
 
-    return Item.Get(items, type, rarity)
+    return Item.Get(itemCache[cacheKey], rarity)
 end
 
 function Item.Armor(rarity)
-    if #itemCache.Armor > 0 then
-        return Item.Get(itemCache.Armor, "Armor", rarity)
+    if itemCache.Armor then
+        return Item.Get(itemCache.Armor, rarity)
     end
 
     if armor == nil then
@@ -321,14 +319,14 @@ function Item.Armor(rarity)
         return true
     end)
 
-    itemCache.Armors = items
+    itemCache.Armor = bucketByRarity(items, "Armor")
 
-    return Item.Get(items, "Armor", rarity)
+    return Item.Get(itemCache.Armor, rarity)
 end
 
 function Item.Weapons(rarity)
-    if #itemCache.Weapons > 0 then
-        return Item.Get(itemCache.Weapons, "Weapon", rarity)
+    if itemCache.Weapons then
+        return Item.Get(itemCache.Weapons, rarity)
     end
 
     if weapons == nil then
@@ -372,9 +370,9 @@ function Item.Weapons(rarity)
         return true
     end)
 
-    itemCache.Weapons = items
+    itemCache.Weapons = bucketByRarity(items, "Weapon")
 
-    return Item.Get(items, "Weapon", rarity)
+    return Item.Get(itemCache.Weapons, rarity)
 end
 
 -- not used
