@@ -157,7 +157,7 @@ end
 
 local itemCache = {
     Objects = {},
-    Armor = {},
+    Armors = {},
     Weapons = {},
     CombatObjects = {},
     ModList = nil,
@@ -166,7 +166,7 @@ local itemCache = {
 function Item.ClearCache()
     itemCache = {
         Objects = {},
-        Armor = {},
+        Armors = {},
         Weapons = {},
         CombatObjects = {},
         ModList = nil,
@@ -268,8 +268,8 @@ function Item.Objects(rarity, forCombat)
 end
 
 function Item.Armor(rarity)
-    if #itemCache.Armor > 0 then
-        return Item.Get(itemCache.Armor, "Armor", rarity)
+    if #itemCache.Armors > 0 then
+        return Item.Get(itemCache.Armors, "Armor", rarity)
     end
 
     if armor == nil then

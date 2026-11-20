@@ -107,6 +107,9 @@ function Control.StartPanel(root)
         local mapSelPagination = Components.Pagination(mapSelection.Root, {}, 5)
 
         Net.On("GetSelection", function(event)
+			if not event.Payload then
+				return
+			end
             scenarioSelection.Reset()
             mapSelection.Reset()
 			difficultySelection.Reset()
